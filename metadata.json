@@ -1,0 +1,6 @@
+{
+  "name": "OpenClaw Academy",
+  "description": "Landing page pelatihan cybersecurity & penetration testing tingkat pemula (beginner) oleh OpenClaw Academy, didukung oleh FEDUCATION.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
