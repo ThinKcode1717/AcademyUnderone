@@ -49,7 +49,7 @@ export const translations = {
 
     // Value Props
     val_badge: 'Mengapa Pilih Kami',
-    val_title: 'Mengapa Pilih OpenClaw Academy?',
+    val_title: 'Mengapa Pilih UnderOne Academy?',
     val_subtitle: 'Kami merancang ekosistem belajar yang ramah, terstruktur, dan sepenuhnya mendukung perkembangan peserta yang belajar dari tingkat paling dasar.',
 
     // Skills benefits
@@ -132,7 +132,7 @@ export const translations = {
     reg_success_email: 'Email Aktif:',
     reg_success_package: 'Paket Belajar:',
     reg_success_bg: 'Latar Belakang:',
-    reg_success_p: 'Tim pendaftaran OpenClaw Academy akan segera menghubungi Anda dalam waktu maksimal 24 jam melalui email atau WhatsApp untuk proses aktivasi dan panduan login kelas perdana Anda.',
+    reg_success_p: 'Tim pendaftaran UnderOne Academy akan segera menghubungi Anda dalam waktu maksimal 24 jam melalui email atau WhatsApp untuk proses aktivasi dan panduan login kelas perdana Anda.',
     reg_success_wa: 'Hubungi via WhatsApp (Instan)',
     reg_success_reset: 'Daftar Peserta Lain',
     reg_lbl_name: 'Nama Lengkap',
@@ -146,7 +146,7 @@ export const translations = {
     reg_lbl_motivation_optional: '(Opsional)',
     reg_lbl_motivation_chars: 'karakter',
     reg_lbl_schedule: 'Pilihan Waktu Belajar yang Diinginkan:',
-    reg_agree: 'Saya setuju dengan syarat & ketentuan serta kebijakan privasi OpenClaw Academy. Kami berkomitmen untuk menjaga keamanan data Anda.',
+    reg_agree: 'Saya setuju dengan syarat & ketentuan serta kebijakan privasi UnderOne Academy. Kami berkomitmen untuk menjaga keamanan data Anda.',
     reg_btn: 'Daftar Sekarang - Konsultasi Gratis',
     reg_btn_loading: 'Memproses Pendaftaran Anda...',
     reg_err_name: 'Nama lengkap minimal terdiri dari 3 karakter.',
@@ -174,7 +174,7 @@ export const translations = {
     // FAQ
     faq_badge: 'Pertanyaan Umum',
     faq_title: 'Ada Pertanyaan? Kami Punya Jawabannya',
-    faq_subtitle: 'Kumpulan pertanyaan yang paling sering diajukan oleh calon peserta mengenai sistem belajar dan kelas OpenClaw Academy.',
+    faq_subtitle: 'Kumpulan pertanyaan yang paling sering diajukan oleh calon peserta mengenai sistem belajar dan kelas UnderOne Academy.',
     faq_search_placeholder: 'Cari pertanyaan Anda di sini...',
     faq_not_found: 'Pertanyaan tidak ditemukan. Silakan hubungi konsultan kami melalui formulir pendaftaran di atas.',
 
@@ -269,7 +269,7 @@ export const translations = {
 
     // Value Props
     val_badge: 'Why Choose Us',
-    val_title: 'Why Choose OpenClaw Academy?',
+    val_title: 'Why Choose UnderOne Academy?',
     val_subtitle: 'We design a friendly, structured learning ecosystem that fully supports students learning from the absolute basics.',
 
     // Skills benefits
@@ -352,7 +352,7 @@ export const translations = {
     reg_success_email: 'Active Email:',
     reg_success_package: 'Selected Package:',
     reg_success_bg: 'Current Background:',
-    reg_success_p: 'The OpenClaw Academy team will contact you within 24 hours via email or WhatsApp to guide you through activation and course login details.',
+    reg_success_p: 'The UnderOne Academy team will contact you within 24 hours via email or WhatsApp to guide you through activation and course login details.',
     reg_success_wa: 'Contact via WhatsApp (Instant)',
     reg_success_reset: 'Register Another Student',
     reg_lbl_name: 'Full Name',
@@ -366,7 +366,7 @@ export const translations = {
     reg_lbl_motivation_optional: '(Optional)',
     reg_lbl_motivation_chars: 'characters',
     reg_lbl_schedule: 'Preferred Class Schedules:',
-    reg_agree: 'I agree to the terms, conditions, and privacy policy of OpenClaw Academy. We promise to keep your personal data secure.',
+    reg_agree: 'I agree to the terms, conditions, and privacy policy of UnderOne Academy. We promise to keep your personal data secure.',
     reg_btn: 'Register Now - Free Consultation',
     reg_btn_loading: 'Processing Your Registration...',
     reg_err_name: 'Full name must be at least 3 characters long.',
@@ -394,7 +394,7 @@ export const translations = {
     // FAQ
     faq_badge: 'Frequently Asked Questions',
     faq_title: 'Have Questions? We Have Answers',
-    faq_subtitle: 'A collection of frequently asked questions by candidates regarding the learning path and OpenClaw Academy system.',
+    faq_subtitle: 'A collection of frequently asked questions by candidates regarding the learning path and UnderOne Academy system.',
     faq_search_placeholder: 'Search for questions here...',
     faq_not_found: 'No matching questions found. Please contact our counselor using the registration form above.',
 
