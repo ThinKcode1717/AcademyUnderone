@@ -159,18 +159,31 @@ export default function Footer() {
 
             {/* Contacts Info Small List */}
             <div className="space-y-2 pt-2 border-t border-cyber-slate/20 text-xs text-cyber-text-sec">
-              <div className="flex items-center space-x-2">
+              <a 
+                href="mailto:cs@underone.id" 
+                className="flex items-center space-x-2 hover:text-white transition-colors duration-200"
+              >
                 <Mail className="w-4 h-4 text-brand-red flex-shrink-0" />
-                <span>training@openclaw.id</span>
-              </div>
-              <div className="flex items-center space-x-2">
+                <span>cs@underone.id</span>
+              </a>
+              <a 
+                href="https://wa.me/6285119551741" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center space-x-2 hover:text-white transition-colors duration-200"
+              >
                 <Phone className="w-4 h-4 text-brand-red flex-shrink-0" />
                 <span>+62 851-1955-1741 (WhatsApp)</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <MapPin className="w-4 h-4 text-brand-red flex-shrink-0" />
-                <span>Jakarta Selatan, DKI Jakarta, Indonesia</span>
-              </div>
+              </a>
+              <a 
+                href="https://maps.app.goo.gl/ZqZY57xBUpF4FmAT9" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-start space-x-2 hover:text-white transition-colors duration-200 group"
+              >
+                <MapPin className="w-4 h-4 text-brand-red flex-shrink-0 mt-0.5" />
+                <span className="leading-relaxed">Jl. Durian No.44c, RT.2/RW.4, Jagakarsa, Kec. Jagakarsa, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12620</span>
+              </a>
             </div>
           </div>
 
