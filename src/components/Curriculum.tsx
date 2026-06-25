@@ -11,10 +11,10 @@ export default function Curriculum() {
   const [activeWeek, setActiveWeek] = useState<number>(0);
 
   const stats = [
-    { label: 'DURASI TOTAL', value: '8 Minggu' },
-    { label: 'SESI LIVE', value: '24 Jam Kelas' },
-    { label: 'LABORATORIUM', value: 'Unlimited Lab' },
-    { label: 'MENTORSHIP', value: '1-on-1 Session' },
+    { label: 'DURASI TOTAL', value: '4 Minggu' },
+    { label: 'SESI LIVE', value: '2x per Minggu' },
+    { label: 'LABORATORIUM', value: 'Safe Sandbox' },
+    { label: 'MENTORSHIP', value: 'Q&A + Forum' },
   ];
 
   return (
@@ -27,10 +27,10 @@ export default function Curriculum() {
             <span>Roadmap Pembelajaran</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Kurikulum 8 Minggu Hands-On
+            Kurikulum 4 Minggu Hands-On
           </h2>
           <p className="text-cyber-text-sec text-base sm:text-lg">
-            Kurikulum terstruktur yang melatih Anda dari konsep dasar hingga teknik pertahanan dan eksploitasi tingkat lanjut.
+            Kurikulum terstruktur langkah demi langkah yang membimbing orang awam murni hingga mahir menggunakan OpenClaw.
           </p>
         </div>
 

@@ -3,15 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export type PackageType = 'starter' | 'professional' | 'elite';
+export type PackageType = 'starter' | 'standard' | 'premium';
 
 export interface Registration {
   id: string;
   fullName: string;
   email: string;
-  phone: string;
+  phone?: string;
   selectedPackage: PackageType;
-  experienceLevel: 'beginner' | 'intermediate' | 'advanced' | string;
+  experienceLevel: 'beginner' | 'some-it' | 'basic-networking' | string;
+  background: 'student' | 'professional' | 'self-taught' | 'career-changer' | 'other' | string;
+  openClawExperience: string;
   motivation: string;
   linkedIn?: string;
   preferredSchedule: string[];

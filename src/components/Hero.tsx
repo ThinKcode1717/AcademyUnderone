@@ -16,18 +16,18 @@ export default function Hero({ onCtaclick, onSecondaryClick }: HeroProps) {
   const [currentLine, setCurrentLine] = useState(0);
 
   const lines = [
-    'root@openclaw-lab:~# nmap -sV -T4 10.10.11.14',
-    'Starting Nmap 7.92 ( https://nmap.org )',
-    'Nmap scan report for openclaw.academy (10.10.11.14)',
-    'PORT   STATE SERVICE VERSION',
-    '22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu',
-    '80/tcp open  http    Nginx 1.18.0 (OWASP Top 10 vuln detected)',
-    'root@openclaw-lab:~# exploit --target 10.10.11.14 --port 80',
-    '[*] Initializing exploit: webapp/owasp_sqli...',
-    '[+] Payload sent. Establishing reverse shell connection...',
-    '[+] Session 1 opened! Connection established at 2026-06-24',
-    'openclaw-session_1$ whoami',
-    'claw_academy_student_ethical_hacker_verified ✓'
+    'root@openclaw-pemula:~# openclaw --scan safe-target.local',
+    'Menghubungkan ke laboratorium belajar terisolasi...',
+    'Nmap scan report untuk target-aman.openclaw (10.10.12.5)',
+    'PORT   STATUS   KETERANGAN',
+    '80     AKTIF    Website Simulasi (Aman untuk dicoba)',
+    '21     AKTIF    Pintu Masuk File (Protokol FTP)',
+    'root@openclaw-pemula:~# analyze-report --file scan_result.json',
+    '[*] Menganalisis hasil scan dalam format bahasa sederhana...',
+    '[+] Penjelasan: Website target memiliki pintu terbuka.',
+    '[+] Rekomendasi: Tutup pintu nomor 21 jika tidak digunakan.',
+    'openclaw-session_1$ echo "Selamat Datang!"',
+    'Belajar OpenClaw dari nol terbukti menyenangkan & aman! ✓'
   ];
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export default function Hero({ onCtaclick, onSecondaryClick }: HeroProps) {
       const resetTimeout = setTimeout(() => {
         setTerminalText([]);
         setCurrentLine(0);
-      }, 5000);
+      }, 6000);
       return () => clearTimeout(resetTimeout);
     }
   }, [currentLine]);
@@ -64,17 +64,17 @@ export default function Hero({ onCtaclick, onSecondaryClick }: HeroProps) {
             {/* Early Bird Promo Badge */}
             <div className="inline-flex items-center space-x-2 bg-brand-red/10 border border-brand-red/30 px-3 py-1.5 rounded-full text-xs font-mono text-white">
               <ShieldAlert className="w-4 h-4 text-brand-red animate-pulse" />
-              <span>EARLY BIRD PROMO: DISKON 20% UNTUK BATCH BARU</span>
+              <span>EARLY BIRD PROMO: BATCH PEMULA BARU DIBUKA</span>
             </div>
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-              Master <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-red-light to-brand-red">Pentesting</span> dari Nol hingga Mahir
+              Belajar OpenClaw Dari Nol - <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-red-light to-brand-red">Tidak Perlu Pengalaman</span> Sebelumnya
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg sm:text-xl text-cyber-text-sec max-w-2xl leading-relaxed">
-              Belajar cybersecurity langsung dari praktisi industri berpengalaman. Transformasi karir Anda dalam <strong className="text-white font-semibold">8 minggu</strong> dengan kurikulum 100% hands-on projects di live lab environment.
+              Mau belajar hal baru di dunia cybersecurity? OpenClaw adalah tool yang powerful dan bisa dipelajari siapa saja. Dalam <strong className="text-white font-semibold">4 minggu</strong>, Anda akan tahu cara kerjanya dan bisa pakai sendiri. Dimulai dari basic, langkah demi langkah.
             </p>
 
             {/* Trust Indicators (Small) */}
@@ -85,18 +85,18 @@ export default function Hero({ onCtaclick, onSecondaryClick }: HeroProps) {
                     <Star key={i} className="w-4 h-4 fill-current" />
                   ))}
                 </div>
-                <span className="font-semibold text-white">4.9/5</span>
-                <span>(1,200+ review)</span>
+                <span className="font-semibold text-white">4.7/5</span>
+                <span>(150+ student reviews)</span>
               </div>
               <div className="h-4 w-px bg-cyber-slate hidden sm:block"></div>
               <div className="flex items-center space-x-2">
-                <span className="text-white font-semibold">2,500+</span>
-                <span>Alumni Lulus</span>
+                <span className="text-white font-semibold">800+ Pemula</span>
+                <span>Belajar Sukses</span>
               </div>
               <div className="h-4 w-px bg-cyber-slate hidden sm:block"></div>
               <div className="flex items-center space-x-1.5">
                 <Award className="w-4.5 h-4.5 text-accent-cyan" />
-                <span className="text-white font-medium">Didukung oleh FEDUCATION</span>
+                <span className="text-white font-medium">Instruktur Sabar & Berpengalaman</span>
               </div>
             </div>
 
@@ -107,7 +107,7 @@ export default function Hero({ onCtaclick, onSecondaryClick }: HeroProps) {
                 onClick={onCtaclick}
                 className="px-8 py-4 rounded-xl text-base font-bold bg-brand-red hover:bg-brand-red-dark text-white transition-all duration-300 shadow-lg hover:shadow-brand-red/30 glow-red transform hover:-translate-y-1 text-center cursor-pointer flex items-center justify-center space-x-2"
               >
-                <span>Daftar Sekarang - Gratis Konsultasi</span>
+                <span>Mulai Belajar Sekarang</span>
                 <ChevronRight className="w-5 h-5" />
               </button>
               <button
@@ -115,7 +115,7 @@ export default function Hero({ onCtaclick, onSecondaryClick }: HeroProps) {
                 onClick={onSecondaryClick}
                 className="px-8 py-4 rounded-xl text-base font-semibold border-2 border-cyber-slate hover:border-brand-red/60 text-cyber-text-sec hover:text-white bg-cyber-charcoal/40 hover:bg-cyber-slate/30 transition-all duration-300 text-center flex items-center justify-center space-x-2 cursor-pointer"
               >
-                <span>Lihat Kurikulum</span>
+                <span>Lihat Kurikulum Lengkap</span>
               </button>
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function Hero({ onCtaclick, onSecondaryClick }: HeroProps) {
                   </div>
                   <div className="flex items-center space-x-1.5 text-xs text-cyber-text-muted font-mono">
                     <TerminalIcon className="w-3.5 h-3.5 text-accent-cyan" />
-                    <span>interactive-exploiter-v1.sh</span>
+                    <span>openclaw-pemula-v3.sh</span>
                   </div>
                   <div className="w-12"></div> {/* spacer */}
                 </div>
@@ -147,12 +147,12 @@ export default function Hero({ onCtaclick, onSecondaryClick }: HeroProps) {
                   {terminalText.map((line, index) => {
                     const isCommand = line.startsWith('root@') || line.startsWith('openclaw-session_1$');
                     const isSuccess = line.startsWith('[+]') || line.includes('✓');
-                    const isAlert = line.includes('vuln detected');
+                    const isAlert = line.includes('Website Simulasi');
                     
                     let textColor = 'text-cyber-text-sec';
                     if (isCommand) textColor = 'text-accent-cyan font-bold';
                     else if (isSuccess) textColor = 'text-accent-green font-semibold';
-                    else if (isAlert) textColor = 'text-brand-red font-semibold animate-pulse';
+                    else if (isAlert) textColor = 'text-brand-red font-semibold';
 
                     return (
                       <div key={index} className={`${textColor} break-all`}>
@@ -169,15 +169,15 @@ export default function Hero({ onCtaclick, onSecondaryClick }: HeroProps) {
                 <div className="p-4 bg-cyber-charcoal/60 border-t border-cyber-slate/50 grid grid-cols-3 gap-2 text-center text-xs font-mono">
                   <div className="border-r border-cyber-slate/50">
                     <span className="block text-[10px] text-cyber-text-muted">DIFFICULTY</span>
-                    <span className="text-accent-cyan font-bold">BEGINNER +</span>
+                    <span className="text-accent-cyan font-bold">PEMULA (ZERO EXP)</span>
                   </div>
                   <div className="border-r border-cyber-slate/50">
                     <span className="block text-[10px] text-cyber-text-muted">DURATION</span>
-                    <span className="text-white font-bold">8 WEEKS</span>
+                    <span className="text-white font-bold">4 MINGGU</span>
                   </div>
                   <div>
                     <span className="block text-[10px] text-cyber-text-muted">LAB ACCESS</span>
-                    <span className="text-accent-green font-bold">LIFETIME</span>
+                    <span className="text-accent-green font-bold">SAFE SANDBOX</span>
                   </div>
                 </div>
 

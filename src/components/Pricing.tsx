@@ -39,57 +39,58 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
     {
       id: 'starter' as PackageType,
       name: 'Starter Package',
-      price: 'Rp 1.500.000',
-      originalPrice: 'Rp 1.875.000',
-      duration: '8 Minggu Pelatihan',
-      description: 'Sangat cocok untuk belajar mandiri dan memahami dasar-dasar pertahanan siber.',
+      price: 'Rp 699.000',
+      originalPrice: 'Rp 999.000',
+      duration: '4 Minggu Pelatihan',
+      description: 'Dibuat khusus untuk budget-conscious. Belajar mandiri dengan dukungan komunitas terpercaya.',
       features: [
-        'Akses Rekaman Video Pembelajaran',
-        'Akses 4 Modul Lab Praktis Mandiri',
-        'Dukungan Komunitas Siswa',
-        'Sesi Tanya Jawab via Discord',
-        'Sertifikat Kelulusan Standar',
+        'Akses Materi Utama 4 Minggu',
+        'Akses Shared Sandbox Environment',
+        'Dukungan Forum Komunitas',
+        '2x per Minggu Group Q&A Session',
+        'Sertifikat Kelulusan Resmi',
+        'Sangat Pas Untuk Pemula Murni'
       ],
       cta: 'Pilih Paket Starter',
       featured: false,
     },
     {
-      id: 'professional' as PackageType,
-      name: 'Professional',
-      price: 'Rp 2.999.000',
-      originalPrice: 'Rp 3.749.000',
-      duration: '8 Minggu Pelatihan & Lab',
-      description: 'Pilihan paling populer. Dilengkapi bimbingan langsung & interaksi dua arah.',
+      id: 'standard' as PackageType,
+      name: 'Standard Package',
+      price: 'Rp 1.499.000',
+      originalPrice: 'Rp 1.999.000',
+      duration: '4 Minggu + 2 Bulan Akses',
+      description: 'Rekomendasi terbaik bagi kebanyakan siswa. Dapatkan bimbingan privat agar belajar lebih terarah.',
       features: [
         'Semua Fitur Paket Starter',
-        'Akses Kelas Sesi Live Mentoring (3x/Minggu)',
-        'Bimbingan Langsung 1-on-1 (1x/Minggu)',
-        'Prioritas Review Tugas Lab dari Mentor',
+        'Tambahan 2 Bulan Akses Portal',
+        'Akses Laboratorium Private Sandbox',
+        'Dukungan Layanan Priority Support',
+        '1x per Bulan Sesi Mentoring 1-on-1',
         'Review Resume & Profil LinkedIn',
-        'Sertifikasi Resmi OpenClaw & FEDUCATION',
-        'Program Penyaluran Kerja Aktif',
+        '81% Siswa Memilih Paket Ini'
       ],
-      cta: 'Daftar Paket Professional',
+      cta: 'Pilih Paket Standard',
       featured: true,
-      badge: 'PALING POPULER',
+      badge: 'MOST POPULAR',
     },
     {
-      id: 'elite' as PackageType,
-      name: 'Elite Cyber Specialist',
-      price: 'Rp 4.499.000',
-      originalPrice: 'Rp 5.625.000',
-      duration: '8 Minggu + 3 Bulan Lab Elit',
-      description: 'Bagi Anda yang berkomitmen penuh menjadi pakar cybersecurity tingkat lanjut.',
+      id: 'premium' as PackageType,
+      name: 'Premium Package',
+      price: 'Rp 2.299.000',
+      originalPrice: 'Rp 2.999.000',
+      duration: '4 Minggu + 6 Bulan Akses',
+      description: 'Akses tanpa batas (all-access) untuk kesiapan penuh terjun di industri keamanan siber.',
       features: [
-        'Semua Fitur Paket Professional',
-        'Tambahan 3 Bulan Akses Premium Lab Advanced',
-        'Mentorship 1-on-1 Tanpa Batas (Unlimited)',
-        'Grup Eksklusif Private Alumni Elite',
-        'Bimbingan Capstone Project Khusus Enterprise',
-        'Dukungan Konsultasi Karir & Referensi Mentor 24/7',
-        'Jaminan Prioritas Interview Kerja Pertama',
+        'Semua Fitur Paket Standard',
+        'Tambahan 6 Bulan Akses Portal',
+        'Akses Laboratorium Premium Sandbox',
+        'Dukungan Layanan VIP 24/7',
+        '2x per Bulan Sesi Mentoring 1-on-1',
+        'Akses Prioritas Update Modul Baru',
+        'Program Penyaluran Portofolio Prioritas'
       ],
-      cta: 'Daftar Paket Elite',
+      cta: 'Pilih Paket Premium',
       featured: false,
     }
   ];
@@ -228,30 +229,43 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
         </div>
 
         {/* Extras & Guarantees */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto pt-4 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto pt-4 text-left">
           
           {/* Group Promo */}
           <div className="bg-cyber-charcoal/40 border border-cyber-slate/40 p-6 rounded-xl flex items-start space-x-4">
-            <div className="p-2.5 bg-accent-cyan/10 rounded-lg text-accent-cyan">
+            <div className="p-2.5 bg-accent-cyan/10 rounded-lg text-accent-cyan shrink-0">
               <Percent className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-bold text-white text-base">Group Discount (3+ Peserta)</h4>
+              <h4 className="font-bold text-white text-base">Diskon Grup (3+ Orang)</h4>
               <p className="text-xs text-cyber-text-sec mt-1 leading-relaxed">
-                Daftar bersama rekan kantor atau teman kuliah Anda. Hubungi tim admin kami untuk mendapatkan <strong className="text-accent-cyan font-semibold">diskon 15% tambahan</strong> per paket.
+                Belajar bersama teman atau rekan kantor Anda. Dapatkan tambahan <strong className="text-accent-cyan font-semibold">potongan harga 15% per paket</strong> untuk pendaftaran rombongan.
               </p>
             </div>
           </div>
 
           {/* Refund Guarantee */}
           <div className="bg-cyber-charcoal/40 border border-cyber-slate/40 p-6 rounded-xl flex items-start space-x-4">
-            <div className="p-2.5 bg-accent-green/10 rounded-lg text-accent-green">
+            <div className="p-2.5 bg-accent-green/10 rounded-lg text-accent-green shrink-0">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-bold text-white text-base">7-Day Money-Back Guarantee</h4>
+              <h4 className="font-bold text-white text-base">30-Day Money-Back Guarantee</h4>
               <p className="text-xs text-cyber-text-sec mt-1 leading-relaxed">
-                Kami menjamin kepuasan Anda. Jika dalam 7 hari pertama paska kelas dimulai Anda merasa tidak puas dengan kualitas materi atau mentoring, hubungi kami untuk <strong className="text-accent-green font-semibold">100% refund</strong>.
+                Garansi 30 hari tanpa risiko. Jika setelah mendaftar Anda merasa program ini tidak sesuai ekspektasi, ajukan refund penuh 100%. Kami kembalikan dana Anda tanpa berbelit-belit.
+              </p>
+            </div>
+          </div>
+
+          {/* Flexible Payment */}
+          <div className="bg-cyber-charcoal/40 border border-cyber-slate/40 p-6 rounded-xl flex items-start space-x-4">
+            <div className="p-2.5 bg-brand-red/10 rounded-lg text-brand-red shrink-0">
+              <Clock className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="font-bold text-white text-base">Cicilan Fleksibel 3x</h4>
+              <p className="text-xs text-cyber-text-sec mt-1 leading-relaxed">
+                Keringanan pembayaran khusus paket <strong className="text-brand-red-light font-semibold">Standard</strong> dan <strong className="text-brand-red-light font-semibold">Premium</strong>. Bisa dicicil hingga 3 kali pembayaran tanpa bunga tambahan.
               </p>
             </div>
           </div>

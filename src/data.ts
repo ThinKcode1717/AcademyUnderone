@@ -7,165 +7,193 @@ import { FAQItem, WeeklyModule, SkillBenefit, Testimonial } from './types';
 
 export const valueProps = [
   {
-    title: "Kurikulum Praktis",
-    description: "100% hands-on projects, bukan teori membosankan.",
-    subDetail: "Skenario dunia nyata di live lab environment terisolasi.",
-    iconName: "Terminal",
+    title: "Dirancang Khusus untuk Pemula",
+    description: "Materi pembelajaran disusun dari tingkat dasar agar mudah dipahami oleh peserta tanpa latar belakang teknologi.",
+    subDetail: "Kami menghindari penggunaan istilah teknis yang rumit dan menjelaskan setiap konsep dasar secara bertahap.",
+    iconName: "SmilingFace",
   },
   {
-    title: "Mentor Bersertifikat",
-    description: "Pembelajaran dari praktisi dengan 10+ tahun pengalaman.",
-    subDetail: "Direct mentorship, live Q&A, dan bimbingan karir personal.",
-    iconName: "ShieldAlert",
+    title: "Metode Pembelajaran Praktis",
+    description: "Proses belajar menitikberatkan pada latihan praktis langsung di lingkungan simulasi yang aman.",
+    subDetail: "Setiap pembahasan dilengkapi dengan sesi praktik terarah yang dapat dicoba langsung menggunakan komputer pribadi Anda.",
+    iconName: "HandsDoing",
   },
   {
-    title: "Career Support",
-    description: "Bantuan penyaluran kerja & peluang networking luas.",
-    subDetail: "Review CV, persiapan interview, dan koneksi langsung recruiter.",
-    iconName: "Briefcase",
+    title: "Bimbingan Instruktur Berdedikasi",
+    description: "Didampingi secara intensif oleh instruktur berpengalaman yang memahami tantangan belajar peserta pemula.",
+    subDetail: "Sesi tanya jawab interaktif disediakan pada setiap pertemuan untuk memastikan pemahaman Anda tetap terjaga.",
+    iconName: "TeacherMentor",
   },
   {
-    title: "Akses Selamanya",
-    description: "Akses lifetime ke material & update modul gratis selamanya.",
-    subDetail: "Perbarui skill Anda kapan saja tanpa biaya tambahan.",
-    iconName: "Clock",
+    title: "Komunitas Belajar yang Suportif",
+    description: "Bergabung bersama ratusan peserta belajar lainnya yang memiliki minat dan tujuan karir yang sama.",
+    subDetail: "Tersedia akses ke grup diskusi terarah, forum tanya jawab, serta ruang berbagi materi belajar penunjang.",
+    iconName: "PeopleCommunity",
   }
 ];
 
 export const skillsBenefits: SkillBenefit[] = [
   {
-    title: "Network Penetration Testing",
-    capability: "Identifikasi vulnerability & kelemahan pada infrastruktur jaringan.",
-    industry: "IT Security, SOC Analyst, Network Administrator",
+    title: "Memahami Koneksi Sistem",
+    capability: "Tahu bagaimana komputer, website, dan server saling terhubung dan berkomunikasi satu sama lain.",
+    industry: "Sangat dasar dan penting: \"Bukan sihir, semuanya memiliki logika di baliknya.\"",
     iconName: "Server",
   },
   {
-    title: "Web Application Security",
-    capability: "Menemukan & mengeksploitasi celah keamanan web (OWASP Top 10).",
-    industry: "AppSec Engineer, Bug Bounty Hunter, Web Developer",
+    title: "Konsep Keamanan Dasar",
+    capability: "Mengerti mengapa keamanan siber itu penting dan langkah praktis untuk melindungi sistem secara umum.",
+    industry: "Bisa diaplikasikan di pekerjaan teknologi apa pun, bahkan berguna melindungi diri sendiri.",
     iconName: "Globe",
   },
   {
-    title: "Social Engineering & OSINT",
-    capability: "Pengumpulan informasi intelijen & eksploitasi faktor manusia.",
-    industry: "Security Consultant, Red Teamer, OSINT Analyst",
+    title: "Percaya Diri Menggunakan Tool",
+    capability: "Bisa menggunakan tools profesional seperti OpenClaw dengan nyaman dan tanpa rasa takut salah klik.",
+    industry: "Meningkatkan nilai jual Anda di mata perekrut kerja (dari nol ke bisa pakai tool profesional).",
     iconName: "Fingerprint",
   },
   {
-    title: "Forensics & Incident Response",
-    capability: "Investigasi forensik digital & penanganan pasca-insiden keamanan.",
-    industry: "Incident Responder, Digital Forensics Analyst",
+    title: "Scan & Analisis Sistem Aman",
+    capability: "Melakukan pemindaian (scanning) sistem dengan aman dan tahu cara membaca data hasil scanning tersebut.",
+    industry: "Keterampilan inti (core skill) dalam melakukan penilaian keamanan digital (security assessment).",
     iconName: "Activity",
   },
   {
-    title: "Malware Analysis Fundamentals",
-    capability: "Analisis perilaku (behavioral) malware dasar secara aman.",
-    industry: "Threat Intelligence Analyst, Malware Analyst",
+    title: "Membaca Laporan Teknis",
+    capability: "Bisa membaca dan memahami isi laporan keamanan teknis yang sebelumnya terlihat sangat membingungkan.",
+    industry: "Keterampilan yang sangat bernilai tinggi dalam posisi teknologi atau koordinasi bisnis apa pun.",
     iconName: "Bug",
   },
   {
-    title: "Linux & Command Line Mastery",
-    capability: "Navigasi terminal Linux tingkat lanjut & scripting otomatisasi.",
-    industry: "System Administrator, DevSecOps Specialist",
+    title: "Berpikir Kritis Soal Keamanan",
+    capability: "Mampu mengajukan pertanyaan cerdas dan menganalisis potensi celah keamanan di tempat kerja atau kehidupan.",
+    industry: "Membantu Anda berkembang dengan pemahaman mendalam: \"Tahu apa yang perlu Anda cari tahu.\"",
     iconName: "Cpu",
   },
   {
-    title: "Ethical Hacking Mindset",
-    capability: "Berpikir kreatif seperti hacker untuk pertahanan taktis.",
-    industry: "All Technology and Security Careers",
+    title: "Confidence dalam Skill Teknologi",
+    capability: "Meningkatkan rasa percaya diri untuk terus belajar dan memperdalam wawasan seputar dunia teknologi.",
+    industry: "Mengubah pola pikir dari \"Saya bukan orang teknologi\" menjadi \"Saya juga bisa belajar teknologi.\"",
     iconName: "Eye",
   },
   {
-    title: "Compliance & Security Standards",
-    capability: "Pemahaman kerangka kerja keamanan standar industri (ISO 27001, NIST).",
-    industry: "Compliance Officer, Security Auditor, CISO Assistant",
+    title: "Membuka Peluang Karir Baru",
+    capability: "Membangun fondasi kuat untuk melangkah ke karir menjanjikan di bidang cybersecurity.",
+    industry: "Langkah awal sebelum masuk ke spesialisasi lebih dalam (DevSecOps, Analis SOC, Auditor Keamanan).",
     iconName: "FileCheck",
   }
 ];
 
 export const weeklyModules: WeeklyModule[] = [
   {
-    week: "Minggu 1-2",
-    title: "Networking Fundamentals, Linux Basics & Pentesting Framework",
-    description: "Membangun fondasi kuat mengenai komunikasi data, sistem operasi Linux, dan standar alur kerja peretasan etis.",
+    week: "Minggu 1",
+    title: "Pengenalan & Setup (Understand the basics)",
+    description: "Menghilangkan kebingungan seputar OpenClaw. Di minggu pertama ini, kami membimbing Anda dari proses penginstalan hingga mencoba pemindaian pertama Anda secara aman.",
     details: [
-      "Pemahaman mendalam TCP/IP, OSI Model, IP Addressing, dan DNS",
-      "Kuasai Linux Command Line, manajemen hak akses, dan Shell Scripting dasar",
-      "Mempelajari metodologi PTES (Penetration Testing Execution Standard)"
+      "Module 1.1: Apa itu OpenClaw? Kenapa ini penting dipelajari? (Menepis mitos hacker di film Hollywood)",
+      "Module 1.2: Dasar Internet & Jaringan (Bagaimana komputer berkomunikasi - IP, Port, dan Protokol dengan analogi sederhana)",
+      "Module 1.3: Instalasi OpenClaw & Setup Environment (Walkthrough langkah demi langkah untuk sistem Windows, Mac, dan Linux)",
+      "Module 1.4: Tur Antarmuka (Interface Tour) OpenClaw (Mengenal tombol dan navigasi utama tanpa rasa takut merusak sistem)"
     ],
-    labName: "Lab 1: Terminal Kung-Fu & Network Recon"
+    labName: "Lab 1: Hello OpenClaw - Menjalankan scan pertama pada target aman simulasi"
   },
   {
-    week: "Minggu 3-4",
-    title: "Network Scanning, Enumeration & Vulnerability Assessment",
-    description: "Mendeteksi target aktif, memetakan layanan yang berjalan, dan menganalisis potensi celah keamanan.",
+    week: "Minggu 2",
+    title: "Reconnaissance Basics (Learning to collect information safely)",
+    description: "Belajar mengumpulkan informasi awal mengenai target secara legal dan etis. Di sini Anda akan memahami cara kerja pemindaian informasi yang sesungguhnya.",
     details: [
-      "Menguasai Nmap secara mendalam, teknik scanning tersembunyi, dan integrasi Shodan API",
-      "Enumerasi protokol jaringan krusial (SMB, SSH, FTP, SNMP, LDAP)",
-      "Vulnerability assessment otomatis menggunakan Nessus dan validasi manual"
+      "Module 2.1: Sisi Hukum & Etika (Paling penting! Memahami perbedaan belajar legal dengan peretasan ilegal)",
+      "Module 2.2: Konsep Pengumpulan Informasi (Reconnaissance Pasif vs Aktif secara sederhana)",
+      "Module 2.3: Menggunakan Fitur Scanning OpenClaw (Langkah demi langkah melakukan scan mandiri)",
+      "Module 2.4: Menganalisis Scan Pertama Anda (Membaca hasil keluaran scanning dan mengerti tingkat bahaya/severity)"
     ],
-    labName: "Lab 2: Active Target Recon & Vulnerability Mapping"
+    labName: "Lab 2: Scan & Report - Melakukan reconnaissance mandiri dan mendokumentasikan hasilnya"
   },
   {
-    week: "Minggu 5-6",
-    title: "Web Application Security & Exploit Development (Basics)",
-    description: "Menjelajahi kerentanan web paling umum dan memahami mekanisme eksploitasi software.",
+    week: "Minggu 3",
+    title: "Understanding Vulnerabilities (What does it mean when OpenClaw finds something?)",
+    description: "Menguak makna di balik temuan OpenClaw. Anda akan belajar mengenali jenis-jenis kerentanan keamanan paling umum dengan bahasa sehari-hari.",
     details: [
-      "Analisis mendalam celah OWASP Top 10 (SQL Injection, XSS, CSRF, IDOR)",
-      "Menggunakan Burp Suite Pro untuk mengintersepsi, menganalisis, dan memodifikasi traffic web",
-      "Konsep Buffer Overflow dasar dan teknik penggunaan Metasploit Framework"
+      "Module 3.1: Apa itu Kerentanan Keamanan (Vulnerability)? (Penjelasan analogi dunia nyata tanpa jargon membingungkan)",
+      "Module 3.2: 10 Kerentanan Umum yang Bisa Ditemukan OpenClaw (Contoh nyata dan cara mendeteksinya)",
+      "Module 3.3: Menginterpretasikan Laporan Kerentanan (Membaca detail kerentanan, rating risiko, dan dampaknya)",
+      "Module 3.4: Membuat Laporan Penilaian Sederhana (Dokumentasi temuan dan cara rekomendasi perbaikan dasar)"
     ],
-    labName: "Lab 3: SQLi and XSS Exploitation in Sandbox WebApp"
+    labName: "Lab 3: Full Scan & Analysis - Melakukan audit keamanan lengkap di lingkungan sandbox sandbox"
   },
   {
-    week: "Minggu 7-8",
-    title: "Incident Response, Capstone Project & Career Placement",
-    description: "Menyatukan semua keterampilan dalam uji simulasi nyata, penanganan serangan, dan persiapan masuk industri.",
+    week: "Minggu 4",
+    title: "Integration, Best Practices & Next Steps (Putting it all together)",
+    description: "Menggabungkan semua keahlian yang telah Anda pelajari untuk diaplikasikan ke skenario nyata, serta merencanakan karir ke depan.",
     details: [
-      "Prinsip penanganan insiden keamanan dan investigasi log server",
-      "Capstone Project: Menembus lab 'HackTheBox' buatan OpenClaw",
-      "Review CV/LinkedIn 1-on-1, latihan wawancara teknis, dan penyaluran kerja langsung"
+      "Module 4.1: Membangun Alur Kerja Anda (Membuat template pemindaian harian untuk efisiensi kerja)",
+      "Module 4.2: OpenClaw dalam Ekosistem Keamanan (Bagaimana tool ini bekerja beriringan dengan standar keamanan industri)",
+      "Module 4.3: Prospek Karir & Peluang Kerja di Bidang Keamanan (Membahas berbagai jenis peran, tip resume, dan wawancara)",
+      "Module 4.4: Belajar Berkelanjutan & Komunitas (Resource gratis, forum belajar, dan tips update info teknologi)"
     ],
-    labName: "Lab 4: Capstone Exam (Capture the Flag)"
+    labName: "Lab 4: Capstone Project - Simulasi audit keamanan menyeluruh dan refleksi hasil belajar"
   }
 ];
 
 export const FAQs: FAQItem[] = [
   {
-    question: "Apakah saya harus memiliki pengalaman IT sebelumnya?",
-    answer: "Tidak perlu. Kursus ini dirancang khusus dari nol (absolute beginner). Kami membimbing Anda mulai dari dasar-dasar jaringan komputer dan perintah dasar Linux hingga teknik penetrasi tingkat lanjut secara bertahap."
+    question: "Apakah saya perlu background IT atau programming?",
+    answer: "Tidak perlu sama sekali! Kurikulum kami dirancang khusus dari nol untuk orang yang baru pertama kali belajar. Yang paling penting adalah rasa ingin tahu dan kemauan untuk mencoba langkah demi langkah."
   },
   {
-    question: "Apa itu OpenClaw dan apa bedanya dengan kursus lain?",
-    answer: "OpenClaw Academy adalah platform pelatihan cybersecurity yang menekankan 100% pembelajaran praktis (hands-on) di lingkungan lab simulasi asli. Kami bermitra dengan FEDUCATION untuk memastikan kurikulum kami tersertifikasi secara industri."
+    question: "Saya takut tidak mengerti. Apakah instrukturnya sabar?",
+    answer: "Sangat sabar! Instruktur kami sangat memahami bagaimana rasanya belajar hal baru dari nol. Tidak ada pertanyaan yang dianggap bodoh, ada sesi tanya-jawab interaktif khusus di setiap kelas."
+  },
+  {
+    question: "Apakah akan ada banyak coding atau pemrograman?",
+    answer: "Tidak ada keharusan bisa coding. OpenClaw adalah sebuah program/tool siap pakai yang ramah pengguna. Anda hanya perlu memahami tombol-tombol utama dan logika dasar pemakaiannya."
   },
   {
     question: "Berapa jam per minggu yang harus saya luangkan?",
-    answer: "Pelatihan ini membutuhkan komitmen sekitar 15-20 jam per minggu. Sesi live diadakan di luar jam kerja (malam hari atau akhir pekan), sehingga sangat cocok untuk mahasiswa maupun profesional yang sedang bekerja."
+    answer: "Sekitar 15-20 jam per minggu. Waktunya sangat fleksibel—Anda bisa membaginya sendiri sepanjang minggu (misalnya 3 jam per hari), sehingga sangat cocok dilakukan sambil bekerja atau kuliah."
   },
   {
-    question: "Apakah saya akan mendapatkan sertifikat resmi?",
-    answer: "Ya, tentu saja. Peserta yang menyelesaikan seluruh modul, tugas praktis mingguan, dan lulus ujian Capstone Project akan menerima Sertifikat Kelulusan Resmi yang didukung oleh FEDUCATION dan OpenClaw."
+    question: "Apa yang terjadi jika saya berhalangan hadir saat sesi live?",
+    answer: "Seluruh sesi live direkam dengan kualitas tinggi dan diunggah ke Portal Siswa maksimal 2 jam setelah kelas selesai. Anda bisa menonton ulang kapan saja dan bertanya di forum komunitas jika ada materi yang kurang dipahami."
   },
   {
-    question: "Bagaimana jika saya berhalangan hadir saat sesi live?",
-    answer: "Seluruh sesi live direkam dengan kualitas tinggi dan diunggah ke Portal Siswa dalam waktu maksimal 2 jam setelah kelas selesai. Anda juga bisa menanyakan pertanyaan langsung di forum komunitas alumni jika ada materi yang kurang dipahami."
+    question: "Apakah ini legal untuk dipelajari? Apakah saya akan belajar meretas secara ilegal?",
+    answer: "Pelatihan ini 100% legal dan etis. Kita belajar di dalam lingkungan simulasi laboratorium terisolasi yang diizinkan (sandbox). Kami juga menyediakan materi khusus mengenai aturan hukum keamanan siber nasional agar Anda tahu batasannya."
   },
   {
-    question: "Dukungan karir apa yang akan saya dapatkan?",
-    answer: "Setiap alumni mendapatkan bantuan karir tanpa batas waktu: review resume/CV personal, perbaikan profil LinkedIn, simulasi interview (technical & HR), serta penyaluran kerja ke 30+ mitra perusahaan cybersecurity nasional."
+    question: "Bagaimana dengan lab praktisnya? Apakah aman bagi komputer saya?",
+    answer: "Sangat aman! Laboratorium kami berjalan di server cloud sandbox milik OpenClaw. Komputer Anda tidak akan terkena virus atau risiko apa pun saat melakukan eksperimen pemindaian sistem."
   },
   {
-    question: "Apakah ada garansi uang kembali (refund)?",
-    answer: "Ya, kami menawarkan 100% jaminan uang kembali dalam waktu 7 hari sejak kelas pertama dimulai jika Anda merasa program ini tidak sesuai dengan ekspektasi Anda. Tanpa pertanyaan berbelit-belit."
+    question: "Apakah saya bisa mengakses materi selamanya?",
+    answer: "Tergantung pilihan paket Anda. Starter memberikan akses materi selama 4 minggu (selama kursus berjalan), Standard memberikan akses selama 2 bulan tambahan setelah kursus selesai, dan Premium memberikan akses penuh selama 6 bulan. Ditambah, semua paket mendapatkan akses seumur hidup ke komunitas alumni."
   },
   {
-    question: "Bagaimana metode pembayarannya? Apakah bisa dicicil?",
-    answer: "Pembayaran dapat dilakukan melalui transfer bank manual, QRIS, e-wallet, atau kartu kredit. Kami juga menyediakan opsi pembayaran bertahap (cicilan) 2x hingga 3x untuk paket Professional dan Elite."
+    question: "Apakah ada jaminan langsung dapat pekerjaan setelah kursus?",
+    answer: "Kami tidak memberikan janji atau garansi kerja instan, tetapi kami akan membantu Anda 100% menyiapkan portofolio, latihan wawancara kerja, menata resume/CV, serta menyalurkan profil Anda langsung ke jaringan industri rekanan FEDUCATION."
   },
   {
-    question: "Berapa lama saya bisa mengakses materi dan laboratorium praktis?",
-    answer: "Anda mendapatkan akses seumur hidup (lifetime access) ke portal video pembelajaran, slide, cheatsheet, dan update modul di masa mendatang. Untuk live laboratory server, Anda mendapatkan durasi akses aktif sesuai dengan tingkat paket pilihan Anda."
+    question: "Bagaimana jika saya merasa kursus ini tidak cocok setelah memulainya?",
+    answer: "Kami menawarkan garansi uang kembali 100% dalam waktu 30 hari sejak pendaftaran dimulai tanpa banyak pertanyaan bertele-tele jika Anda merasa program ini tidak sesuai ekspektasi Anda."
+  },
+  {
+    question: "Apakah saya perlu membeli software atau perangkat keras mahal tambahan?",
+    answer: "Tidak! OpenClaw adalah aplikasi gratis dan open-source. Semua materi penunjang pembelajaran sudah termasuk lengkap di dalam biaya pelatihan awal."
+  },
+  {
+    question: "Apakah saya bisa belajar sambil bekerja penuh waktu (full-time)?",
+    answer: "Bisa banget! Sebagian besar alumni kami adalah pekerja kantoran yang sibuk. Rekaman materi yang fleksibel dan bimbingan komunitas siap membantu Anda menyesuaikan ritme belajar sendiri."
+  },
+  {
+    question: "Apakah akan ada pendampingan privat (mentoring) 1-on-1?",
+    answer: "Pendampingan privat tersedia untuk tier Standard (1x per bulan) dan Premium (2x per bulan). Untuk semua paket, Anda juga bebas berkonsultasi di sesi tanya jawab mingguan bersama grup."
+  },
+  {
+    question: "Bagaimana cara mendaftarnya? Apakah prosesnya rumit?",
+    answer: "Sangat sederhana! Anda hanya perlu mengisi formulir pendaftaran di bagian bawah halaman ini dalam 1 menit, memilih paket yang diinginkan, dan instruksi pembayaran beserta tautan bergabung langsung dikirim ke email/WhatsApp Anda."
+  },
+  {
+    question: "Apakah ada komunitas setelah kelas selesai?",
+    answer: "Tentu saja! Anda akan diundang ke dalam grup alumni seumur hidup di mana Anda bisa terus berjejaring, berbagi info lowongan kerja, berdiskusi proyek, dan saling membantu dalam karir teknologi ke depan."
   }
 ];
 
@@ -173,27 +201,27 @@ export const testimonials: Testimonial[] = [
   {
     id: "t1",
     name: "Adi Pratama",
-    role: "Junior SOC Analyst",
-    company: "Cyber Security Indonesia",
-    quote: "Dari tidak tahu apa-apa tentang IT, sekarang saya bekerja sebagai SOC Analyst Junior. Lab praktis dari OpenClaw sangat membantu mempercepat pemahaman saya! Rekomendasi banget untuk pemula.",
+    role: "Lulusan Non-IT / Mandiri",
+    company: "Sekarang di Tech Support",
+    quote: "Dulu saya pikir belajar security itu hanya untuk jenius matematika. Penjelasan instruktur di OpenClaw begitu sederhana, menggunakan analogi sehari-hari yang mudah diingat. Sekarang saya sangat percaya diri mengoperasikan tools siber profesional!",
     rating: 5,
     avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer"
   },
   {
     id: "t2",
     name: "Rina Wijaya",
-    role: "Information Security Consultant",
-    company: "FEDUCATION Partner",
-    quote: "Sebagai lulusan non-IT, bimbingan mentor 1-on-1 sangat bernilai tinggi. Resume saya direview hingga menarik perhatian recruiter dalam hitungan minggu. Berhasil pivot karir dengan sukses!",
+    role: "Career Changer",
+    company: "Mantan Pegawai Administrasi",
+    quote: "Sebagai pemula murni, saya sempat takut merasa bodoh saat bertanya. Namun di OpenClaw, suasananya sangat mendukung, ramah, dan bebas menghakimi. Kursus terbaik untuk siapa saja yang ingin pivot ke dunia siber!",
     rating: 5,
     avatarUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer"
   },
   {
     id: "t3",
     name: "Kevin Sanjaya",
-    role: "QA Security Specialist",
-    company: "Global Tech Solutions",
-    quote: "Kurikulumnya sangat up-to-date dengan kebutuhan industri saat ini. Teknik OWASP Top 10 yang diajarkan sangat aplikatif untuk pekerjaan sehari-hari saya sebagai QA. Recommended!",
+    role: "Mahasiswa Tingkat Akhir",
+    company: "Universitas Swasta",
+    quote: "Kuliah seringkali terlalu banyak teori abstrak. Praktik langsung 70% di lab simulasi OpenClaw ini membuka mata saya tentang cara kerja jaringan komputer di dunia nyata secara aman. Sangat direkomendasikan untuk pemula IT!",
     rating: 5,
     avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer"
   }

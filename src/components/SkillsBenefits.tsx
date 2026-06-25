@@ -41,13 +41,13 @@ export default function SkillsBenefits() {
         {/* Section header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center space-x-1.5 bg-accent-cyan/10 border border-accent-cyan/20 px-3 py-1 rounded-full text-xs font-mono text-accent-cyan uppercase tracking-wider">
-            <span>Kurikulum Berbasis Industri</span>
+            <span>Hasil Belajar Pemula</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Skill Utama Yang Akan Anda Kuasai
+            Apa yang Bisa Kamu Lakukan Setelah Belajar OpenClaw?
           </h2>
           <p className="text-cyber-text-sec text-base sm:text-lg">
-            Kurikulum kami disesuaikan dengan standar industri global agar lulusan dapat langsung mengisi kekosongan talenta cybersecurity profesional.
+            Selesai program 4 minggu ini, Anda akan memiliki pemahaman dan kemampuan praktis yang nyata di dunia teknologi keamanan:
           </p>
         </div>
 
@@ -85,7 +85,7 @@ export default function SkillsBenefits() {
               </p>
 
               <div className="pt-3 border-t border-cyber-slate/40">
-                <span className="text-[11px] font-mono text-cyber-text-muted block mb-1">PROSPEK JABATAN:</span>
+                <span className="text-[11px] font-mono text-cyber-text-muted block mb-1">MENGAPA BERGUNA:</span>
                 <span className="text-xs font-semibold text-accent-cyan block">
                   {skill.industry}
                 </span>
@@ -93,7 +93,7 @@ export default function SkillsBenefits() {
 
               {/* Info hint */}
               <span className="absolute bottom-2 right-3 text-[10px] font-mono text-cyber-text-muted opacity-0 group-hover:opacity-100 transition-opacity">
-                Click to expand info
+                Detail kompetensi
               </span>
             </div>
           ))}
@@ -108,42 +108,42 @@ export default function SkillsBenefits() {
             <div className="lg:col-span-8 space-y-4 text-left">
               <div className="inline-flex items-center space-x-2 bg-accent-green/10 border border-accent-green/20 px-3 py-1 rounded-full text-xs font-mono text-accent-green">
                 <TrendingUp className="w-4 h-4 text-accent-green" />
-                <span>PANGSA PASAR TUMBUH 23% YoY</span>
+                <span>INDUSTRI DENGAN DEMAND TINGGI</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-                Peluang Karir & Proyeksi Gaji Cybersecurity
+                Potensi Karir di Bidang Cybersecurity Pemula
               </h3>
               <p className="text-cyber-text-sec text-sm sm:text-base leading-relaxed">
-                Kebutuhan akan analis keamanan siber terus meningkat di Indonesia. Banyak perusahaan kesulitan merekrut praktisi tersertifikasi, menjadikan profesi ini memiliki potensi pendapatan di atas rata-rata bidang teknologi lainnya.
+                Memiliki keahlian mengoperasikan OpenClaw dan memahami konsep keamanan siber adalah nilai tambah yang sangat tinggi. Banyak sekali career switcher dan lulusan non-IT memulai langkah awal mereka dari pemahaman siber praktis ini.
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
                 <div className="bg-cyber-navy/50 p-4 rounded-xl border border-cyber-slate/40">
-                  <span className="block text-[11px] font-mono text-cyber-text-muted">GAJI AWAL (JUNIOR)</span>
-                  <span className="text-xl sm:text-2xl font-bold text-white block mt-1">Rp 8 - 15 Juta</span>
-                  <span className="text-[10px] text-cyber-text-sec block mt-1">Sesuai dengan level pemula</span>
+                  <span className="block text-[11px] font-mono text-cyber-text-muted">JUNIOR IT SECURITY</span>
+                  <span className="text-xl sm:text-2xl font-bold text-white block mt-1">Rp 7 - 12 Juta</span>
+                  <span className="text-[10px] text-cyber-text-sec block mt-1">Sesuai untuk entry-level</span>
                 </div>
                 <div className="bg-cyber-navy/50 p-4 rounded-xl border border-cyber-slate/40">
-                  <span className="block text-[11px] font-mono text-cyber-text-muted">GAJI SENIOR LEVEL</span>
-                  <span className="text-xl sm:text-2xl font-bold text-brand-red-light block mt-1">Rp 25 - 50+ Juta</span>
-                  <span className="text-[10px] text-cyber-text-sec block mt-1">Dengan pengalaman 3-5 tahun</span>
+                  <span className="block text-[11px] font-mono text-cyber-text-muted">CAREER GROWTH POTENTIAL</span>
+                  <span className="text-xl sm:text-2xl font-bold text-brand-red-light block mt-1">Sangat Luas</span>
+                  <span className="text-[10px] text-cyber-text-sec block mt-1">Bisa pivot ke analis SOC/Security</span>
                 </div>
                 <div className="bg-cyber-navy/50 p-4 rounded-xl border border-cyber-slate/40">
-                  <span className="block text-[11px] font-mono text-cyber-text-muted">KEBUTUHAN INDUSTRI</span>
-                  <span className="text-xl sm:text-2xl font-bold text-accent-cyan block mt-1">Sangat Tinggi</span>
-                  <span className="text-[10px] text-cyber-text-sec block mt-1">Perbankan, FinTech, E-Commerce</span>
+                  <span className="block text-[11px] font-mono text-cyber-text-muted">PERSYARATAN CODING</span>
+                  <span className="text-xl sm:text-2xl font-bold text-accent-cyan block mt-1">0% Wajib</span>
+                  <span className="text-[10px] text-cyber-text-sec block mt-1">Hanya butuh rasa ingin tahu</span>
                 </div>
               </div>
             </div>
 
             <div className="lg:col-span-4 flex flex-col items-center justify-center p-6 border-2 border-dashed border-cyber-slate rounded-xl bg-cyber-navy/40">
               <Briefcase className="w-12 h-12 text-brand-red mb-3" />
-              <span className="text-xs font-mono text-cyber-text-muted mb-1">PARTNER PENYALURAN</span>
+              <span className="text-xs font-mono text-cyber-text-muted mb-1">PROGRAM DUKUNGAN</span>
               <span className="text-lg font-bold text-white text-center leading-snug">
-                FEDUCATION Placement Network
+                FEDUCATION Education Partner
               </span>
               <p className="text-xs text-cyber-text-sec text-center mt-2 leading-relaxed">
-                Koneksi langsung ke 30+ perusahaan rekanan yang siap merekrut lulusan terbaik dari OpenClaw Academy.
+                Lembaga resmi kredibel yang mendukung penyusunan kurikulum kami agar ramah dipahami orang awam sekalipun.
               </p>
             </div>
 

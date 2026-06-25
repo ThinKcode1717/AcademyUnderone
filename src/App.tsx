@@ -25,10 +25,11 @@ const mockLeads: Registration[] = [
     fullName: 'Rizky Amalia',
     email: 'rizky.amalia@gmail.com',
     phone: '081298765432',
-    selectedPackage: 'professional',
+    selectedPackage: 'standard',
     experienceLevel: 'beginner',
-    motivation: 'Ingin berkarir sebagai pentester profesional dan bergabung dengan jaringan penyaluran kerja partner FEDUCATION.',
-    linkedIn: 'https://linkedin.com/in/rizky-amalia',
+    background: 'career-changer',
+    openClawExperience: 'Heard about it, curious',
+    motivation: 'Ingin belajar OpenClaw dari nol untuk memajukan karir IT saya.',
     preferredSchedule: ['malam'],
     submittedAt: '2026-06-23T14:30:00.000Z',
   },
@@ -37,17 +38,18 @@ const mockLeads: Registration[] = [
     fullName: 'Dony Saputra',
     email: 'dony.saputra@outlook.com',
     phone: '085712345678',
-    selectedPackage: 'elite',
-    experienceLevel: 'basic-networking',
-    motivation: 'Meningkatkan keahlian keamanan siber demi memuluskan ujian sertifikasi industri.',
-    linkedIn: 'https://linkedin.com/in/dony-saputra',
-    preferredSchedule: ['weekend', 'malam'],
+    selectedPackage: 'premium',
+    experienceLevel: 'Tried briefly',
+    background: 'professional',
+    openClawExperience: 'Tried briefly',
+    motivation: 'Ingin mencoba lab sandbox premium OpenClaw untuk melatih tim di kantor.',
+    preferredSchedule: ['weekend'],
     submittedAt: '2026-06-24T02:15:00.000Z',
   },
 ];
 
 export default function App() {
-  const [selectedPackage, setSelectedPackage] = useState<PackageType>('professional');
+  const [selectedPackage, setSelectedPackage] = useState<PackageType>('standard');
   const [registrations, setRegistrations] = useState<Registration[]>([]);
   const [isAdminOpen, setIsAdminOpen] = useState(false);
 

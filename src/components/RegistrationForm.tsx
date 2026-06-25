@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { ShieldCheck, Mail, User, Phone, Linkedin, BookOpen, Clock, Send, Calendar } from 'lucide-react';
+import { ShieldCheck, Mail, User, Phone, BookOpen, Clock, Send, Calendar, CheckSquare, Info } from 'lucide-react';
 import { PackageType, Registration } from '../types';
 
 interface RegistrationFormProps {
@@ -22,10 +22,11 @@ export default function RegistrationForm({
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [experienceLevel, setExperienceLevel] = useState('beginner');
+  const [background, setBackground] = useState('student');
+  const [openClawExperience, setOpenClawExperience] = useState('Never heard of it');
   const [motivation, setMotivation] = useState('');
-  const [linkedIn, setLinkedIn] = useState('');
   const [preferredSchedule, setPreferredSchedule] = useState<string[]>([]);
+  const [agreeToPrivacy, setAgreeToPrivacy] = useState(true);
 
   // Errors state
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -60,13 +61,15 @@ export default function RegistrationForm({
       tempErrors.email = 'Masukkan format email yang valid.';
     }
 
-    const phoneRegex = /^(?:\+62|62|0)8[1-9][0-9]{6,11}$/;
-    if (!phone.trim() || !phoneRegex.test(phone.replace(/\s+/g, ''))) {
-      tempErrors.phone = 'Masukkan nomor HP Indonesia yang valid (contoh: 081234567890).';
+    if (phone.trim()) {
+      const phoneRegex = /^(?:\+62|62|0)8[1-9][0-9]{6,11}$/;
+      if (!phoneRegex.test(phone.replace(/\s+/g, ''))) {
+        tempErrors.phone = 'Masukkan nomor HP Indonesia yang valid (contoh: 081234567890).';
+      }
     }
 
-    if (linkedIn.trim() && !linkedIn.toLowerCase().includes('linkedin.com/')) {
-      tempErrors.linkedIn = 'Masukkan URL profil LinkedIn yang valid.';
+    if (!agreeToPrivacy) {
+      tempErrors.agree = 'Anda harus menyetujui kebijakan privasi.';
     }
 
     setErrors(tempErrors);
@@ -89,11 +92,12 @@ export default function RegistrationForm({
         id: Math.random().toString(36).substring(2, 9),
         fullName,
         email,
-        phone,
+        phone: phone || undefined,
         selectedPackage: formPackage,
-        experienceLevel,
+        experienceLevel: openClawExperience, // maps openclaw experience directly
+        background,
+        openClawExperience,
         motivation,
-        linkedIn: linkedIn || undefined,
         preferredSchedule,
         submittedAt: new Date().toISOString(),
       };
@@ -111,9 +115,9 @@ export default function RegistrationForm({
     setFullName('');
     setEmail('');
     setPhone('');
-    setExperienceLevel('beginner');
+    setBackground('student');
+    setOpenClawExperience('Never heard of it');
     setMotivation('');
-    setLinkedIn('');
     setPreferredSchedule([]);
     setIsSubmitted(false);
     setErrors({});
@@ -131,10 +135,10 @@ export default function RegistrationForm({
             <span>Formulir Pendaftaran</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Amankan Slot Kursus Anda Sekarang
+            Mulai Belajar OpenClaw Sekarang
           </h2>
           <p className="text-cyber-text-sec text-sm sm:text-base max-w-2xl mx-auto">
-            Isi formulir pendaftaran di bawah ini. Konsultan pendaftaran kami akan menghubungi Anda melalui WhatsApp atau email dalam waktu 24 jam untuk verifikasi & konsultasi gratis.
+            Isi formulir singkat di bawah ini (hanya 1 menit). Konsultan pendaftaran kami akan segera menghubungi Anda untuk verifikasi dan panduan konsultasi awal gratis.
           </p>
         </div>
 
@@ -147,42 +151,45 @@ export default function RegistrationForm({
               <ShieldCheck className="w-10 h-10" />
             </div>
 
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white">Pendaftaran Berhasil!</h3>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-white">Selamat! Pendaftaran Anda Diterima</h3>
             
             <div className="max-w-md mx-auto space-y-3 bg-cyber-navy/50 p-6 rounded-xl border border-cyber-slate text-left">
               <span className="text-xs font-mono text-cyber-text-muted block uppercase tracking-wider">RINGKASAN PENDAFTARAN:</span>
               <div className="text-sm space-y-1.5">
                 <p className="text-cyber-text-sec">
-                  <strong className="text-white">Nama:</strong> {fullName}
+                  <strong className="text-white">Nama Lengkap:</strong> {fullName}
                 </p>
                 <p className="text-cyber-text-sec">
-                  <strong className="text-white">Email:</strong> {email}
+                  <strong className="text-white">Email Aktif:</strong> {email}
                 </p>
                 <p className="text-cyber-text-sec">
-                  <strong className="text-white">Paket Terpilih:</strong>{' '}
+                  <strong className="text-white">Paket Belajar:</strong>{' '}
                   <span className="text-brand-red font-bold uppercase">{formPackage}</span>
+                </p>
+                <p className="text-cyber-text-sec">
+                  <strong className="text-white">Latar Belakang:</strong> <span className="capitalize">{background}</span>
                 </p>
               </div>
             </div>
 
-            <p className="text-cyber-text-sec text-sm sm:text-base max-w-lg mx-auto">
-              Terima kasih telah mendaftar di OpenClaw Academy. Email konfirmasi telah dikirimkan secara otomatis. Tim konsultan kami akan segera menghubungi nomor WhatsApp Anda (<strong className="text-white">{phone}</strong>) untuk menjadwalkan konsultasi awal gratis.
+            <p className="text-cyber-text-sec text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
+              Tim pendaftaran OpenClaw Academy akan segera menghubungi Anda dalam waktu maksimal 24 jam melalui email atau WhatsApp untuk proses aktivasi dan panduan login kelas perdana Anda.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <a
                 id="success-wa-btn"
-                href={`https://wa.me/6281234567890?text=Halo%20OpenClaw%20Academy%2C%20saya%20sudah%20mengisi%20pendaftaran%20untuk%20paket%20${formPackage}.%20Bisa%20bantu%20langkah%20selanjutnya%3F`}
+                href={`https://wa.me/6281234567890?text=Halo%20OpenClaw%20Academy%2C%20saya%20${encodeURIComponent(fullName)}%20baru%20saja%20mendaftar%20untuk%20paket%20${formPackage}.%20Bisa%20bantu%20langkah%20selanjutnya%3F`}
                 target="_blank"
                 rel="noreferrer"
-                className="px-6 py-3.5 rounded-xl bg-accent-green hover:bg-green-600 text-cyber-navy font-bold text-sm w-full sm:w-auto text-center"
+                className="px-6 py-3.5 rounded-xl bg-accent-green hover:bg-green-600 text-cyber-navy font-bold text-sm w-full sm:w-auto text-center cursor-pointer transition-all"
               >
                 Hubungi via WhatsApp (Instan)
               </a>
               <button
                 id="success-reset-btn"
                 onClick={handleReset}
-                className="px-6 py-3.5 rounded-xl border border-cyber-slate hover:border-cyber-text-muted text-cyber-text-sec text-sm w-full sm:w-auto"
+                className="px-6 py-3.5 rounded-xl border border-cyber-slate hover:border-cyber-text-muted text-cyber-text-sec text-sm w-full sm:w-auto cursor-pointer"
               >
                 Daftar Peserta Lain
               </button>
@@ -246,7 +253,7 @@ export default function RegistrationForm({
                 {/* Phone Number */}
                 <div className="space-y-2">
                   <label htmlFor="reg-phone" className="block text-sm font-semibold text-white">
-                    Nomor WhatsApp <span className="text-brand-red">*</span>
+                    Nomor WhatsApp <span className="text-cyber-text-muted text-xs">(Opsional)</span>
                   </label>
                   <div className="relative">
                     <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-cyber-text-muted">
@@ -255,7 +262,6 @@ export default function RegistrationForm({
                     <input
                       id="reg-phone"
                       type="tel"
-                      required
                       placeholder="Contoh: 081234567890"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
@@ -270,7 +276,7 @@ export default function RegistrationForm({
                 {/* Selected Package Tier */}
                 <div className="space-y-2">
                   <label htmlFor="reg-package" className="block text-sm font-semibold text-white">
-                    Pilih Paket Pelatihan <span className="text-brand-red">*</span>
+                    Pilih Paket Belajar <span className="text-brand-red">*</span>
                   </label>
                   <div className="relative">
                     <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-cyber-text-muted">
@@ -285,81 +291,85 @@ export default function RegistrationForm({
                       }}
                       className="w-full pl-10 pr-4 py-3 rounded-lg border border-cyber-slate bg-cyber-navy text-white text-sm focus:outline-none focus:border-brand-red transition appearance-none"
                     >
-                      <option value="starter">Starter Package (Rp 1.500.000)</option>
-                      <option value="professional">Professional Package (Rp 2.999.000) - Populer</option>
-                      <option value="elite">Elite Cyber Specialist (Rp 4.499.000)</option>
+                      <option value="starter">Starter Package (Rp 699.000) - Cocok untuk budget</option>
+                      <option value="standard">Standard Package (Rp 1.499.000) - Terpopuler</option>
+                      <option value="premium">Premium Package (Rp 2.299.000) - Semua Akses</option>
                     </select>
                   </div>
                 </div>
 
-                {/* Experience / IT Background */}
+                {/* Current Role/Background Dropdown */}
                 <div className="space-y-2">
                   <label htmlFor="reg-background" className="block text-sm font-semibold text-white">
-                    Latar Belakang / Level IT <span className="text-brand-red">*</span>
+                    Latar Belakang Saat Ini <span className="text-brand-red">*</span>
                   </label>
                   <div className="relative">
                     <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-cyber-text-muted">
-                      <Clock className="w-5 h-5" />
+                      <User className="w-5 h-5" />
                     </span>
                     <select
                       id="reg-background"
-                      value={experienceLevel}
-                      onChange={(e) => setExperienceLevel(e.target.value)}
+                      value={background}
+                      onChange={(e) => setBackground(e.target.value)}
                       className="w-full pl-10 pr-4 py-3 rounded-lg border border-cyber-slate bg-cyber-navy text-white text-sm focus:outline-none focus:border-brand-red transition appearance-none"
                     >
-                      <option value="beginner">Pemula Mutlak (Absolute Beginner / Non-IT)</option>
-                      <option value="some-it">Memiliki Sedikit Pengetahuan Dasar IT</option>
-                      <option value="basic-networking">Memahami Dasar Jaringan Komputer & Linux</option>
+                      <option value="student">Pelajar / Mahasiswa (IT / Non-IT)</option>
+                      <option value="professional">Karyawan / Profesional Bekerja</option>
+                      <option value="self-taught">Pecinta Belajar Otodidak (Self-taught)</option>
+                      <option value="career-changer">Ingin Beralih Karir (Career Changer)</option>
+                      <option value="other">Lainnya</option>
                     </select>
                   </div>
                 </div>
 
-                {/* LinkedIn Profile (Optional) */}
+                {/* OpenClaw Experience Dropdown */}
                 <div className="space-y-2">
-                  <label htmlFor="reg-linkedin" className="block text-sm font-semibold text-white">
-                    URL Profil LinkedIn <span className="text-cyber-text-muted text-xs">(Opsional)</span>
+                  <label htmlFor="reg-experience" className="block text-sm font-semibold text-white">
+                    Pengalaman dengan OpenClaw <span className="text-brand-red">*</span>
                   </label>
                   <div className="relative">
                     <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-cyber-text-muted">
-                      <Linkedin className="w-5 h-5" />
+                      <Calendar className="w-5 h-5" />
                     </span>
-                    <input
-                      id="reg-linkedin"
-                      type="text"
-                      placeholder="https://linkedin.com/in/nama-anda"
-                      value={linkedIn}
-                      onChange={(e) => setLinkedIn(e.target.value)}
-                      className={`w-full pl-10 pr-4 py-3 rounded-lg border bg-cyber-navy text-white text-sm focus:outline-none focus:border-brand-red transition ${
-                        errors.linkedIn ? 'border-brand-red/80' : 'border-cyber-slate'
-                      }`}
-                    />
+                    <select
+                      id="reg-experience"
+                      value={openClawExperience}
+                      onChange={(e) => setOpenClawExperience(e.target.value)}
+                      className="w-full pl-10 pr-4 py-3 rounded-lg border border-cyber-slate bg-cyber-navy text-white text-sm focus:outline-none focus:border-brand-red transition appearance-none"
+                    >
+                      <option value="Never heard of it">Belum pernah mendengar sama sekali</option>
+                      <option value="Heard about it, curious">Pernah mendengar & sangat penasaran</option>
+                      <option value="Tried briefly">Pernah mencoba sekilas sebelumnya</option>
+                    </select>
                   </div>
-                  {errors.linkedIn && <span className="text-xs text-brand-red block">{errors.linkedIn}</span>}
                 </div>
 
               </div>
 
-              {/* Motivation text area */}
+              {/* Motivation / Why interested */}
               <div className="space-y-2">
-                <label htmlFor="reg-motivation" className="block text-sm font-semibold text-white">
-                  Motivasi Mengikuti Pelatihan <span className="text-cyber-text-muted text-xs">(Opsional)</span>
-                </label>
+                <div className="flex justify-between items-center">
+                  <label htmlFor="reg-motivation" className="block text-sm font-semibold text-white">
+                    Mengapa Anda Tertarik Belajar? <span className="text-cyber-text-muted text-xs">(Opsional)</span>
+                  </label>
+                  <span className="text-[10px] text-cyber-text-muted font-mono">{motivation.length}/200 karakter</span>
+                </div>
                 <textarea
                   id="reg-motivation"
-                  maxLength={500}
-                  placeholder="Ceritakan singkat tujuan karir Anda atau apa yang ingin dicapai setelah lulus (maksimal 500 karakter)..."
+                  maxLength={200}
+                  placeholder="Contoh: Ingin beralih karir ke bidang keamanan digital atau ingin mempelajari hal baru yang seru."
                   value={motivation}
                   onChange={(e) => setMotivation(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-cyber-slate bg-cyber-navy text-white text-sm focus:outline-none focus:border-brand-red transition h-28 resize-y"
+                  className="w-full px-4 py-3 rounded-lg border border-cyber-slate bg-cyber-navy text-white text-sm focus:outline-none focus:border-brand-red transition h-20 resize-y"
                 ></textarea>
               </div>
 
               {/* Preferred schedule checklists */}
               <div className="space-y-3">
                 <label className="block text-sm font-semibold text-white">
-                  Jadwal Mentoring Kelas yang Anda Preferensikan:
+                  Pilihan Waktu Belajar yang Diinginkan:
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <label className="flex items-center space-x-3 bg-cyber-navy p-3.5 rounded-lg border border-cyber-slate/60 hover:border-cyber-slate cursor-pointer select-none">
                     <input
                       type="checkbox"
@@ -368,8 +378,8 @@ export default function RegistrationForm({
                       className="accent-brand-red w-4 h-4"
                     />
                     <div className="text-left">
-                      <span className="text-xs font-bold text-white block">Hari Kerja Malam (Weekday Evenings)</span>
-                      <span className="text-[10px] text-cyber-text-sec block mt-0.5">Senin - Rabu, 19:00 - 21:30 WIB</span>
+                      <span className="text-xs font-bold text-white block">Malam Hari (Workdays)</span>
+                      <span className="text-[9px] text-cyber-text-sec block mt-0.5">Senin - Rabu Malam</span>
                     </div>
                   </label>
                   <label className="flex items-center space-x-3 bg-cyber-navy p-3.5 rounded-lg border border-cyber-slate/60 hover:border-cyber-slate cursor-pointer select-none">
@@ -380,19 +390,40 @@ export default function RegistrationForm({
                       className="accent-brand-red w-4 h-4"
                     />
                     <div className="text-left">
-                      <span className="text-xs font-bold text-white block">Akhir Pekan (Weekend Sesi)</span>
-                      <span className="text-[10px] text-cyber-text-sec block mt-0.5">Sabtu atau Minggu, 09:30 - 15:00 WIB</span>
+                      <span className="text-xs font-bold text-white block">Akhir Pekan (Weekend)</span>
+                      <span className="text-[9px] text-cyber-text-sec block mt-0.5">Sabtu / Minggu</span>
+                    </div>
+                  </label>
+                  <label className="flex items-center space-x-3 bg-cyber-navy p-3.5 rounded-lg border border-cyber-slate/60 hover:border-cyber-slate cursor-pointer select-none">
+                    <input
+                      type="checkbox"
+                      checked={preferredSchedule.includes('fleksibel')}
+                      onChange={() => handleScheduleChange('fleksibel')}
+                      className="accent-brand-red w-4 h-4"
+                    />
+                    <div className="text-left">
+                      <span className="text-xs font-bold text-white block">Fleksibel (Kapan saja)</span>
+                      <span className="text-[9px] text-cyber-text-sec block mt-0.5">Menyesuaikan jadwal</span>
                     </div>
                   </label>
                 </div>
               </div>
 
-              {/* GDPR and submission notice */}
+              {/* Checkbox Privacy Policy */}
               <div className="pt-4 border-t border-cyber-slate/40 text-xs text-cyber-text-sec space-y-4">
-                <p>
-                  Dengan menekan tombol kirim di bawah, Anda menyetujui bahwa data Anda akan disimpan secara aman di sistem pendaftaran OpenClaw Academy dan didukung sepenuhnya oleh FEDUCATION sesuai dengan Kebijakan Privasi data kami.
-                </p>
-                
+                <label className="flex items-start space-x-2.5 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={agreeToPrivacy}
+                    onChange={() => setAgreeToPrivacy(!agreeToPrivacy)}
+                    className="accent-brand-red w-4 h-4 mt-0.5"
+                  />
+                  <span>
+                    Saya setuju dengan syarat & ketentuan serta kebijakan privasi OpenClaw Academy. Kami berjanji tidak akan menyepam email Anda.
+                  </span>
+                </label>
+                {errors.agree && <span className="text-xs text-brand-red block">{errors.agree}</span>}
+
                 <button
                   id="reg-submit-btn"
                   type="submit"
@@ -400,7 +431,7 @@ export default function RegistrationForm({
                   className="w-full py-4 rounded-xl font-bold bg-brand-red hover:bg-brand-red-dark text-white transition-all duration-300 shadow-md hover:shadow-brand-red/25 glow-red flex items-center justify-center space-x-2 text-base cursor-pointer disabled:bg-cyber-slate disabled:cursor-not-allowed"
                 >
                   <Send className="w-5 h-5" />
-                  <span>{loading ? 'Mengirim Pendaftaran...' : 'Kirim Pendaftaran & Jadwalkan Konsultasi'}</span>
+                  <span>{loading ? 'Memproses Pendaftaran...' : 'Daftar Sekarang - Gratis Konsultasi'}</span>
                 </button>
               </div>
 

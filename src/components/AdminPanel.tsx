@@ -29,8 +29,8 @@ export default function AdminPanel({
   // Calculate statistics
   const totalLeads = registrations.length;
   const starterCount = registrations.filter((r) => r.selectedPackage === 'starter').length;
-  const professionalCount = registrations.filter((r) => r.selectedPackage === 'professional').length;
-  const eliteCount = registrations.filter((r) => r.selectedPackage === 'elite').length;
+  const standardCount = registrations.filter((r) => r.selectedPackage === 'standard').length;
+  const premiumCount = registrations.filter((r) => r.selectedPackage === 'premium').length;
 
   const formatDate = (isoStr: string) => {
     try {
@@ -87,12 +87,12 @@ export default function AdminPanel({
               <span className="text-2xl font-black text-accent-cyan block mt-1">{starterCount}</span>
             </div>
             <div className="bg-cyber-charcoal border border-cyber-slate p-4 rounded-xl">
-              <span className="block text-[10px] font-mono text-cyber-text-muted uppercase">PROFESSIONAL</span>
-              <span className="text-2xl font-black text-brand-red block mt-1">{professionalCount}</span>
+              <span className="block text-[10px] font-mono text-cyber-text-muted uppercase">STANDARD</span>
+              <span className="text-2xl font-black text-brand-red block mt-1">{standardCount}</span>
             </div>
             <div className="bg-cyber-charcoal border border-cyber-slate p-4 rounded-xl">
-              <span className="block text-[10px] font-mono text-cyber-text-muted uppercase">ELITE CYBER</span>
-              <span className="text-2xl font-black text-accent-gold block mt-1">{eliteCount}</span>
+              <span className="block text-[10px] font-mono text-cyber-text-muted uppercase">PREMIUM</span>
+              <span className="text-2xl font-black text-accent-gold block mt-1">{premiumCount}</span>
             </div>
           </div>
 
@@ -140,7 +140,7 @@ export default function AdminPanel({
                       <span className={`px-2.5 py-1 rounded text-[10px] font-mono font-bold uppercase ${
                         lead.selectedPackage === 'starter'
                           ? 'bg-accent-cyan/10 border border-accent-cyan/20 text-accent-cyan'
-                          : lead.selectedPackage === 'professional'
+                          : lead.selectedPackage === 'standard'
                           ? 'bg-brand-red/10 border border-brand-red/20 text-brand-red'
                           : 'bg-accent-gold/10 border border-accent-gold/20 text-accent-gold'
                       }`}>

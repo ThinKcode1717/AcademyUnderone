@@ -4,21 +4,21 @@
  */
 
 import React from 'react';
-import { Terminal, ShieldCheck, Briefcase, Clock, ShieldAlert } from 'lucide-react';
+import { Smile, Wrench, GraduationCap, Users, ShieldAlert } from 'lucide-react';
 import { valueProps } from '../data';
 
 export default function ValueProps() {
   // Map string to Lucide React component
   const getIcon = (name: string) => {
     switch (name) {
-      case 'Terminal':
-        return <Terminal className="w-6 h-6 text-brand-red" />;
-      case 'ShieldAlert':
-        return <ShieldCheck className="w-6 h-6 text-brand-red" />;
-      case 'Briefcase':
-        return <Briefcase className="w-6 h-6 text-brand-red" />;
-      case 'Clock':
-        return <Clock className="w-6 h-6 text-brand-red" />;
+      case 'SmilingFace':
+        return <Smile className="w-6 h-6 text-brand-red" />;
+      case 'HandsDoing':
+        return <Wrench className="w-6 h-6 text-brand-red" />;
+      case 'TeacherMentor':
+        return <GraduationCap className="w-6 h-6 text-brand-red" />;
+      case 'PeopleCommunity':
+        return <Users className="w-6 h-6 text-brand-red" />;
       default:
         return <ShieldAlert className="w-6 h-6 text-brand-red" />;
     }
@@ -31,13 +31,13 @@ export default function ValueProps() {
         {/* Section header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center space-x-1.5 bg-brand-red/10 border border-brand-red/20 px-3 py-1 rounded-full text-xs font-mono text-brand-red uppercase tracking-wider">
-            <span>Metodologi Pembelajaran</span>
+            <span>Mengapa Pilih Kami</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Mengapa Memilih OpenClaw Academy?
+            Mengapa Pilih OpenClaw Academy?
           </h2>
           <p className="text-cyber-text-sec text-base sm:text-lg">
-            Kami merancang ekosistem pembelajaran yang tidak hanya memberikan pengetahuan teoritis, melainkan kesiapan penuh untuk berkarir langsung di dunia industri keamanan siber.
+            Kami merancang lingkungan belajar paling ramah, bebas intimidasi, dan sepenuhnya berfokus pada progres pemula dari nol.
           </p>
         </div>
 
