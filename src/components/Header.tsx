@@ -4,7 +4,8 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Shield, Database } from 'lucide-react';
+import { Menu, X, Shield, Database, Sun, Moon } from 'lucide-react';
+import { useApp } from '../context/AppContext';
 
 interface HeaderProps {
   onOpenAdmin: () => void;
@@ -12,6 +13,7 @@ interface HeaderProps {
 }
 
 export default function Header({ onOpenAdmin, leadCount }: HeaderProps) {
+  const { language, setLanguage, theme, setTheme, t } = useApp();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -28,12 +30,12 @@ export default function Header({ onOpenAdmin, leadCount }: HeaderProps) {
   }, []);
 
   const navLinks = [
-    { name: 'Mengapa Kami', href: '#mengapa-kami' },
-    { name: 'Skill Kuasai', href: '#skill-kuasai' },
-    { name: 'Kurikulum', href: '#kurikulum' },
-    { name: 'Harga', href: '#harga' },
-    { name: 'Mitra', href: '#mitra' },
-    { name: 'FAQ', href: '#faq' },
+    { name: t('nav_why_us'), href: '#mengapa-kami' },
+    { name: t('nav_skills'), href: '#skill-kuasai' },
+    { name: t('nav_curriculum'), href: '#kurikulum' },
+    { name: t('nav_pricing'), href: '#harga' },
+    { name: t('nav_partners'), href: '#mitra' },
+    { name: t('nav_faq'), href: '#faq' },
   ];
 
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -62,7 +64,7 @@ export default function Header({ onOpenAdmin, leadCount }: HeaderProps) {
               <Shield className="w-6 h-6 text-brand-red group-hover:scale-110 transition-transform duration-300" />
             </div>
             <div>
-              <span className="text-xl font-extrabold tracking-tight text-white block leading-none">
+              <span className="text-xl font-extrabold tracking-tight text-theme-title block leading-none">
                 OPEN<span className="text-brand-red">CLAW</span>
               </span>
               <span className="text-[10px] font-mono text-accent-cyan tracking-wider uppercase block mt-1">
@@ -78,7 +80,7 @@ export default function Header({ onOpenAdmin, leadCount }: HeaderProps) {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleScrollTo(e, link.href)}
-                className="text-sm font-medium text-cyber-text-sec hover:text-white transition-colors duration-200 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full"
+                className="text-sm font-medium text-cyber-text-sec hover:text-theme-title transition-colors duration-200 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.name}
               </a>
@@ -87,13 +89,42 @@ export default function Header({ onOpenAdmin, leadCount }: HeaderProps) {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
+            {/* Language Switcher */}
+            <div className="flex items-center space-x-1 border border-cyber-slate bg-cyber-charcoal/50 p-1 rounded-lg">
+              <button
+                onClick={() => setLanguage('id')}
+                className={`px-2 py-0.5 text-[11px] font-mono font-bold rounded transition-colors cursor-pointer ${
+                  language === 'id' ? 'bg-brand-red text-white' : 'text-cyber-text-sec hover:text-theme-title'
+                }`}
+              >
+                ID
+              </button>
+              <button
+                onClick={() => setLanguage('en')}
+                className={`px-2 py-0.5 text-[11px] font-mono font-bold rounded transition-colors cursor-pointer ${
+                  language === 'en' ? 'bg-brand-red text-white' : 'text-cyber-text-sec hover:text-theme-title'
+                }`}
+              >
+                EN
+              </button>
+            </div>
+
+            {/* Theme Toggle */}
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="p-2 rounded-lg border border-cyber-slate bg-cyber-charcoal/50 text-cyber-text-sec hover:text-theme-title hover:border-brand-red transition duration-200 cursor-pointer"
+              aria-label="Toggle Theme"
+            >
+              {theme === 'dark' ? <Sun className="w-4 h-4 text-accent-gold" /> : <Moon className="w-4 h-4 text-brand-red" />}
+            </button>
+
             <button
               id="header-admin-btn"
               onClick={onOpenAdmin}
-              className="flex items-center space-x-1.5 px-3 py-1.5 rounded-md text-xs font-mono border border-cyber-slate bg-cyber-charcoal text-accent-cyan hover:border-accent-cyan hover:bg-cyber-slate/50 transition-all duration-200"
+              className="flex items-center space-x-1.5 px-3 py-1.5 rounded-md text-xs font-mono border border-cyber-slate bg-cyber-charcoal text-accent-cyan hover:border-accent-cyan hover:bg-cyber-slate/50 transition-all duration-200 cursor-pointer"
             >
               <Database className="w-3.5 h-3.5" />
-              <span>Admin Leads</span>
+              <span>{t('nav_admin')}</span>
               {leadCount > 0 && (
                 <span className="bg-brand-red text-white text-[10px] px-1.5 py-0.5 rounded-full font-sans font-bold">
                   {leadCount}
@@ -106,7 +137,7 @@ export default function Header({ onOpenAdmin, leadCount }: HeaderProps) {
               onClick={(e) => handleScrollTo(e, '#registrasi')}
               className="px-5 py-2 rounded-lg text-sm font-semibold bg-brand-red hover:bg-brand-red-dark text-white transition-all duration-300 shadow-md hover:shadow-brand-red/20 glow-red transform hover:-translate-y-0.5"
             >
-              Daftar Sekarang
+              {t('nav_cta')}
             </a>
           </div>
 
@@ -115,7 +146,7 @@ export default function Header({ onOpenAdmin, leadCount }: HeaderProps) {
             <button
               id="header-admin-mobile-btn"
               onClick={onOpenAdmin}
-              className="p-2 rounded-md border border-cyber-slate text-accent-cyan bg-cyber-charcoal"
+              className="p-2 rounded-md border border-cyber-slate text-accent-cyan bg-cyber-charcoal cursor-pointer"
               title="Admin Leads"
             >
               <Database className="w-4 h-4" />
@@ -123,7 +154,7 @@ export default function Header({ onOpenAdmin, leadCount }: HeaderProps) {
             <button
               id="header-hamburger"
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-md text-cyber-text-sec hover:text-white hover:bg-cyber-slate focus:outline-none transition-colors"
+              className="p-2 rounded-md text-cyber-text-sec hover:text-theme-title hover:bg-cyber-slate focus:outline-none transition-colors cursor-pointer"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -143,22 +174,53 @@ export default function Header({ onOpenAdmin, leadCount }: HeaderProps) {
               key={link.name}
               href={link.href}
               onClick={(e) => handleScrollTo(e, link.href)}
-              className="block px-4 py-3 rounded-lg text-base font-semibold text-cyber-text-sec hover:text-white hover:bg-cyber-charcoal transition-all"
+              className="block px-4 py-3 rounded-lg text-base font-semibold text-cyber-text-sec hover:text-theme-title hover:bg-cyber-charcoal transition-all"
             >
               {link.name}
             </a>
           ))}
           <div className="pt-4 border-t border-cyber-slate/50 space-y-3 px-4">
+            {/* Language and Theme for Mobile */}
+            <div className="flex items-center justify-between py-2 border-b border-cyber-slate/30">
+              <span className="text-xs font-mono text-cyber-text-sec">Lang / Theme</span>
+              <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-1 border border-cyber-slate bg-cyber-charcoal/50 p-1 rounded-lg">
+                  <button
+                    onClick={() => setLanguage('id')}
+                    className={`px-2 py-0.5 text-[10px] font-mono font-bold rounded transition-colors cursor-pointer ${
+                      language === 'id' ? 'bg-brand-red text-white' : 'text-cyber-text-sec'
+                    }`}
+                  >
+                    ID
+                  </button>
+                  <button
+                    onClick={() => setLanguage('en')}
+                    className={`px-2 py-0.5 text-[10px] font-mono font-bold rounded transition-colors cursor-pointer ${
+                      language === 'en' ? 'bg-brand-red text-white' : 'text-cyber-text-sec'
+                    }`}
+                  >
+                    EN
+                  </button>
+                </div>
+                <button
+                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                  className="p-1.5 rounded-lg border border-cyber-slate bg-cyber-charcoal/50 text-cyber-text-sec cursor-pointer"
+                >
+                  {theme === 'dark' ? <Sun className="w-4 h-4 text-accent-gold" /> : <Moon className="w-4 h-4 text-brand-red" />}
+                </button>
+              </div>
+            </div>
+
             <button
               id="header-admin-menu-mobile"
               onClick={() => {
                 setIsOpen(false);
                 onOpenAdmin();
               }}
-              className="w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-lg text-sm font-mono border border-cyber-slate bg-cyber-charcoal text-accent-cyan"
+              className="w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-lg text-sm font-mono border border-cyber-slate bg-cyber-charcoal text-accent-cyan cursor-pointer"
             >
               <Database className="w-4 h-4" />
-              <span>Admin Leads ({leadCount})</span>
+              <span>{t('nav_admin')} ({leadCount})</span>
             </button>
             <a
               id="header-cta-mobile"
@@ -166,7 +228,7 @@ export default function Header({ onOpenAdmin, leadCount }: HeaderProps) {
               onClick={(e) => handleScrollTo(e, '#registrasi')}
               className="block w-full text-center px-4 py-3 rounded-lg text-base font-bold bg-brand-red text-white glow-red"
             >
-              Daftar Sekarang
+              {t('nav_cta')}
             </a>
           </div>
         </div>

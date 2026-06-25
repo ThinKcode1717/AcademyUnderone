@@ -6,8 +6,10 @@
 import React, { useState } from 'react';
 import { Server, Globe, Fingerprint, Activity, Bug, Cpu, Eye, FileCheck, HelpCircle, Briefcase, TrendingUp } from 'lucide-react';
 import { skillsBenefits } from '../data';
+import { useApp } from '../context/AppContext';
 
 export default function SkillsBenefits() {
+  const { t, language } = useApp();
   const [selectedSkill, setSelectedSkill] = useState<number | null>(null);
 
   // Map string to Lucide Icon
@@ -41,19 +43,19 @@ export default function SkillsBenefits() {
         {/* Section header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center space-x-1.5 bg-accent-cyan/10 border border-accent-cyan/20 px-3 py-1 rounded-full text-xs font-mono text-accent-cyan uppercase tracking-wider">
-            <span>Hasil Belajar Pemula</span>
+            <span>{t('skills_badge')}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Apa yang Bisa Kamu Lakukan Setelah Belajar OpenClaw?
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-theme-title">
+            {t('skills_title')}
           </h2>
           <p className="text-cyber-text-sec text-base sm:text-lg">
-            Selesai program 4 minggu ini, Anda akan memiliki pemahaman dan kemampuan praktis yang nyata di dunia teknologi keamanan:
+            {t('skills_subtitle')}
           </p>
         </div>
 
         {/* Skills Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {skillsBenefits.map((skill, index) => (
+          {skillsBenefits[language].map((skill, index) => (
             <div
               key={index}
               id={`skill-card-${index}`}
@@ -75,7 +77,7 @@ export default function SkillsBenefits() {
                 }`}>
                   {getIcon(skill.iconName, 'w-5.5 h-5.5')}
                 </div>
-                <h3 className="font-bold text-base sm:text-lg text-white leading-snug group-hover:text-white">
+                <h3 className="font-bold text-base sm:text-lg text-theme-title leading-snug group-hover:text-brand-red-light">
                   {skill.title}
                 </h3>
               </div>
@@ -85,7 +87,7 @@ export default function SkillsBenefits() {
               </p>
 
               <div className="pt-3 border-t border-cyber-slate/40">
-                <span className="text-[11px] font-mono text-cyber-text-muted block mb-1">MENGAPA BERGUNA:</span>
+                <span className="text-[11px] font-mono text-cyber-text-muted block mb-1">{t('skills_why_useful')}</span>
                 <span className="text-xs font-semibold text-accent-cyan block">
                   {skill.industry}
                 </span>
@@ -93,7 +95,7 @@ export default function SkillsBenefits() {
 
               {/* Info hint */}
               <span className="absolute bottom-2 right-3 text-[10px] font-mono text-cyber-text-muted opacity-0 group-hover:opacity-100 transition-opacity">
-                Detail kompetensi
+                {t('skills_detail_hint')}
               </span>
             </div>
           ))}
@@ -108,42 +110,42 @@ export default function SkillsBenefits() {
             <div className="lg:col-span-8 space-y-4 text-left">
               <div className="inline-flex items-center space-x-2 bg-accent-green/10 border border-accent-green/20 px-3 py-1 rounded-full text-xs font-mono text-accent-green">
                 <TrendingUp className="w-4 h-4 text-accent-green" />
-                <span>INDUSTRI DENGAN DEMAND TINGGI</span>
+                <span>{t('skills_outlook_badge')}</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-                Potensi Karir di Bidang Cybersecurity Pemula
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-theme-title">
+                {t('skills_outlook_title')}
               </h3>
               <p className="text-cyber-text-sec text-sm sm:text-base leading-relaxed">
-                Memiliki keahlian mengoperasikan OpenClaw dan memahami konsep keamanan siber adalah nilai tambah yang sangat tinggi. Banyak sekali career switcher dan lulusan non-IT memulai langkah awal mereka dari pemahaman siber praktis ini.
+                {t('skills_outlook_desc')}
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
                 <div className="bg-cyber-navy/50 p-4 rounded-xl border border-cyber-slate/40">
-                  <span className="block text-[11px] font-mono text-cyber-text-muted">JUNIOR IT SECURITY</span>
-                  <span className="text-xl sm:text-2xl font-bold text-white block mt-1">Rp 7 - 12 Juta</span>
-                  <span className="text-[10px] text-cyber-text-sec block mt-1">Sesuai untuk entry-level</span>
+                  <span className="block text-[11px] font-mono text-cyber-text-muted">{t('skills_card_1_title')}</span>
+                  <span className="text-xl sm:text-2xl font-bold text-theme-title block mt-1">{t('skills_card_1_value')}</span>
+                  <span className="text-[10px] text-cyber-text-sec block mt-1">{t('skills_card_1_desc')}</span>
                 </div>
                 <div className="bg-cyber-navy/50 p-4 rounded-xl border border-cyber-slate/40">
-                  <span className="block text-[11px] font-mono text-cyber-text-muted">CAREER GROWTH POTENTIAL</span>
-                  <span className="text-xl sm:text-2xl font-bold text-brand-red-light block mt-1">Sangat Luas</span>
-                  <span className="text-[10px] text-cyber-text-sec block mt-1">Bisa pivot ke analis SOC/Security</span>
+                  <span className="block text-[11px] font-mono text-cyber-text-muted">{t('skills_card_2_title')}</span>
+                  <span className="text-xl sm:text-2xl font-bold text-brand-red-light block mt-1">{t('skills_card_2_value')}</span>
+                  <span className="text-[10px] text-cyber-text-sec block mt-1">{t('skills_card_2_desc')}</span>
                 </div>
                 <div className="bg-cyber-navy/50 p-4 rounded-xl border border-cyber-slate/40">
-                  <span className="block text-[11px] font-mono text-cyber-text-muted">PERSYARATAN CODING</span>
-                  <span className="text-xl sm:text-2xl font-bold text-accent-cyan block mt-1">0% Wajib</span>
-                  <span className="text-[10px] text-cyber-text-sec block mt-1">Hanya butuh rasa ingin tahu</span>
+                  <span className="block text-[11px] font-mono text-cyber-text-muted">{t('skills_card_3_title')}</span>
+                  <span className="text-xl sm:text-2xl font-bold text-accent-cyan block mt-1">{t('skills_card_3_value')}</span>
+                  <span className="text-[10px] text-cyber-text-sec block mt-1">{t('skills_card_3_desc')}</span>
                 </div>
               </div>
             </div>
 
             <div className="lg:col-span-4 flex flex-col items-center justify-center p-6 border-2 border-dashed border-cyber-slate rounded-xl bg-cyber-navy/40">
               <Briefcase className="w-12 h-12 text-brand-red mb-3" />
-              <span className="text-xs font-mono text-cyber-text-muted mb-1">PROGRAM DUKUNGAN</span>
-              <span className="text-lg font-bold text-white text-center leading-snug">
-                FEDUCATION Education Partner
+              <span className="text-xs font-mono text-cyber-text-muted mb-1">{t('skills_support_badge')}</span>
+              <span className="text-lg font-bold text-theme-title text-center leading-snug">
+                {t('skills_support_title')}
               </span>
               <p className="text-xs text-cyber-text-sec text-center mt-2 leading-relaxed">
-                Lembaga resmi kredibel yang mendukung penyusunan kurikulum kami agar ramah dipahami orang awam sekalipun.
+                {t('skills_support_desc')}
               </p>
             </div>
 

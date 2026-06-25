@@ -105,7 +105,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-cyber-navy text-white selection:bg-brand-red selection:text-white flex flex-col justify-between">
+    <div className="min-h-screen bg-cyber-navy text-theme-title selection:bg-brand-red selection:text-white flex flex-col justify-between">
       
       {/* Skip to content links for accessibility */}
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-brand-red text-white px-4 py-2 rounded-lg font-bold z-[100] transition">

@@ -6,14 +6,21 @@
 import React, { useState } from 'react';
 import { Calendar, Video, BookOpen, Key, ChevronDown, ChevronUp, CheckCircle, Terminal } from 'lucide-react';
 import { weeklyModules } from '../data';
+import { useApp } from '../context/AppContext';
 
 export default function Curriculum() {
+  const { t, language } = useApp();
   const [activeWeek, setActiveWeek] = useState<number>(0);
 
-  const stats = [
+  const stats = language === 'id' ? [
     { label: 'DURASI TOTAL', value: '4 Minggu' },
     { label: 'SESI LIVE', value: '2x per Minggu' },
     { label: 'LABORATORIUM', value: 'Safe Sandbox' },
+    { label: 'MENTORSHIP', value: 'Q&A + Forum' },
+  ] : [
+    { label: 'TOTAL DURATION', value: '4 Weeks' },
+    { label: 'LIVE SESSIONS', value: '2x per Week' },
+    { label: 'LABORATORY', value: 'Safe Sandbox' },
     { label: 'MENTORSHIP', value: 'Q&A + Forum' },
   ];
 
@@ -24,13 +31,13 @@ export default function Curriculum() {
         {/* Section header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center space-x-1.5 bg-brand-red/10 border border-brand-red/20 px-3 py-1 rounded-full text-xs font-mono text-brand-red uppercase tracking-wider">
-            <span>Roadmap Pembelajaran</span>
+            <span>{t('curr_badge')}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Kurikulum 4 Minggu Hands-On
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-theme-title">
+            {t('curr_title')}
           </h2>
           <p className="text-cyber-text-sec text-base sm:text-lg">
-            Kurikulum terstruktur langkah demi langkah yang membimbing orang awam murni hingga mahir menggunakan OpenClaw.
+            {t('curr_subtitle')}
           </p>
         </div>
 
@@ -39,7 +46,7 @@ export default function Curriculum() {
           {stats.map((stat, idx) => (
             <div key={idx} className="bg-cyber-navy/80 border border-cyber-slate/50 rounded-xl p-4 sm:p-5">
               <span className="block text-[10px] sm:text-xs font-mono text-cyber-text-muted mb-1 uppercase tracking-wider">{stat.label}</span>
-              <span className="text-lg sm:text-2xl font-bold text-white block">{stat.value}</span>
+              <span className="text-lg sm:text-2xl font-bold text-theme-title block">{stat.value}</span>
             </div>
           ))}
         </div>
@@ -49,14 +56,16 @@ export default function Curriculum() {
           
           {/* Left panel: Weekly selectors */}
           <div className="lg:col-span-5 space-y-3 text-left">
-            <span className="text-xs font-mono text-cyber-text-muted block mb-3 uppercase tracking-wider">PILIH MODUL MINGGUAN</span>
-            {weeklyModules.map((mod, idx) => (
+            <span className="text-xs font-mono text-cyber-text-muted block mb-3 uppercase tracking-wider">
+              {language === 'id' ? 'PILIH MODUL MINGGUAN' : 'SELECT WEEKLY MODULE'}
+            </span>
+            {weeklyModules[language].map((mod, idx) => (
               <button
                 key={idx}
                 onClick={() => setActiveWeek(idx)}
                 className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 flex items-center justify-between ${
                   activeWeek === idx
-                    ? 'bg-cyber-charcoal border-brand-red text-white shadow-lg shadow-brand-red/5'
+                    ? 'bg-cyber-charcoal border-brand-red text-theme-title shadow-lg shadow-brand-red/5'
                     : 'bg-cyber-navy/40 border-cyber-slate/40 text-cyber-text-sec hover:bg-cyber-charcoal/50 hover:border-cyber-slate'
                 }`}
               >
@@ -87,31 +96,33 @@ export default function Curriculum() {
               {/* Badge info */}
               <div className="flex flex-wrap items-center gap-2">
                 <span className="bg-brand-red/10 border border-brand-red/20 text-brand-red px-3 py-1 rounded-full text-xs font-mono font-bold">
-                  {weeklyModules[activeWeek].week.toUpperCase()}
+                  {weeklyModules[language][activeWeek].week.toUpperCase()}
                 </span>
-                {weeklyModules[activeWeek].labName && (
+                {weeklyModules[language][activeWeek].labName && (
                   <span className="bg-accent-cyan/10 border border-accent-cyan/20 text-accent-cyan px-3 py-1 rounded-full text-xs font-mono flex items-center space-x-1">
                     <Terminal className="w-3 h-3" />
-                    <span>{weeklyModules[activeWeek].labName}</span>
+                    <span>{weeklyModules[language][activeWeek].labName}</span>
                   </span>
                 )}
               </div>
 
               {/* Module Title */}
-              <h3 className="text-2xl font-extrabold text-white leading-tight">
-                {weeklyModules[activeWeek].title}
+              <h3 className="text-2xl font-extrabold text-theme-title leading-tight">
+                {weeklyModules[language][activeWeek].title}
               </h3>
 
               {/* Module Description */}
               <p className="text-cyber-text-sec text-base leading-relaxed">
-                {weeklyModules[activeWeek].description}
+                {weeklyModules[language][activeWeek].description}
               </p>
 
               {/* Module Details / Syllabus lists */}
               <div className="space-y-4 pt-4 border-t border-cyber-slate/40">
-                <h4 className="text-xs font-mono text-cyber-text-muted uppercase tracking-wider">MATERI PEMBELAJARAN DETAIL:</h4>
+                <h4 className="text-xs font-mono text-cyber-text-muted uppercase tracking-wider">
+                  {language === 'id' ? 'MATERI PEMBELAJARAN DETAIL:' : 'DETAILED LESSON SYLLABUS:'}
+                </h4>
                 <ul className="space-y-3">
-                  {weeklyModules[activeWeek].details.map((detail, dIdx) => (
+                  {weeklyModules[language][activeWeek].details.map((detail, dIdx) => (
                     <li key={dIdx} className="flex items-start space-x-3 text-sm text-cyber-text-sec">
                       <div className="w-2 h-2 rounded-full bg-brand-red mt-1.5 flex-shrink-0"></div>
                       <span className="leading-relaxed">{detail}</span>
@@ -124,11 +135,15 @@ export default function Curriculum() {
               <div className="bg-cyber-navy/40 p-4 rounded-xl border border-cyber-slate/40 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-6">
                 <div className="flex items-center space-x-3">
                   <Video className="w-5 h-5 text-accent-cyan" />
-                  <span className="text-xs font-mono text-cyber-text-sec">Live Lecture + Recorded Playback Available</span>
+                  <span className="text-xs font-mono text-cyber-text-sec">
+                    {language === 'id' ? 'Live Lecture + Rekaman Ulang Tersedia' : 'Live Lecture + Recorded Playback Available'}
+                  </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <BookOpen className="w-5 h-5 text-accent-green" />
-                  <span className="text-xs font-mono text-cyber-text-sec">Interactive Lab Walkthrough PDF</span>
+                  <span className="text-xs font-mono text-cyber-text-sec">
+                    {language === 'id' ? 'PDF Panduan Praktik Interaktif' : 'Interactive Lab Walkthrough PDF'}
+                  </span>
                 </div>
               </div>
 

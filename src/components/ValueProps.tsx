@@ -6,8 +6,11 @@
 import React from 'react';
 import { Smile, Wrench, GraduationCap, Users, ShieldAlert } from 'lucide-react';
 import { valueProps } from '../data';
+import { useApp } from '../context/AppContext';
 
 export default function ValueProps() {
+  const { t, language } = useApp();
+
   // Map string to Lucide React component
   const getIcon = (name: string) => {
     switch (name) {
@@ -31,19 +34,19 @@ export default function ValueProps() {
         {/* Section header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center space-x-1.5 bg-brand-red/10 border border-brand-red/20 px-3 py-1 rounded-full text-xs font-mono text-brand-red uppercase tracking-wider">
-            <span>Mengapa Pilih Kami</span>
+            <span>{t('val_badge')}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Mengapa Pilih OpenClaw Academy?
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-theme-title">
+            {t('val_title')}
           </h2>
           <p className="text-cyber-text-sec text-base sm:text-lg">
-            Kami merancang lingkungan belajar paling ramah, bebas intimidasi, dan sepenuhnya berfokus pada progres pemula dari nol.
+            {t('val_subtitle')}
           </p>
         </div>
 
         {/* Grid cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {valueProps.map((prop, index) => (
+          {valueProps[language].map((prop, index) => (
             <div
               key={index}
               id={`value-card-${index}`}
@@ -58,7 +61,7 @@ export default function ValueProps() {
               </div>
 
               {/* Card Title */}
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-brand-red-light transition-colors duration-200">
+              <h3 className="text-xl font-bold text-theme-title mb-3 group-hover:text-brand-red-light transition-colors duration-200">
                 {prop.title}
               </h3>
 

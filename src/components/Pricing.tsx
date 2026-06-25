@@ -6,12 +6,14 @@
 import React, { useState, useEffect } from 'react';
 import { Check, ShieldCheck, Percent, HelpCircle, ChevronDown, ChevronUp, Clock } from 'lucide-react';
 import { PackageType } from '../types';
+import { useApp } from '../context/AppContext';
 
 interface PricingProps {
   onSelectPackage: (pkg: PackageType) => void;
 }
 
 export default function Pricing({ onSelectPackage }: PricingProps) {
+  const { t, language } = useApp();
   // Countdown Timer state (urgency)
   const [timeLeft, setTimeLeft] = useState({ hours: 14, minutes: 42, seconds: 18 });
 
@@ -35,7 +37,7 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
 
   const formatNumber = (num: number) => num.toString().padStart(2, '0');
 
-  const packages = [
+  const packages = language === 'id' ? [
     {
       id: 'starter' as PackageType,
       name: 'Starter Package',
@@ -72,7 +74,7 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
       ],
       cta: 'Pilih Paket Standard',
       featured: true,
-      badge: 'MOST POPULAR',
+      badge: 'PALING POPULER',
     },
     {
       id: 'premium' as PackageType,
@@ -91,6 +93,64 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
         'Program Penyaluran Portofolio Prioritas'
       ],
       cta: 'Pilih Paket Premium',
+      featured: false,
+    }
+  ] : [
+    {
+      id: 'starter' as PackageType,
+      name: 'Starter Package',
+      price: '$49',
+      originalPrice: '$69',
+      duration: '4-Week Training',
+      description: 'Specifically crafted for budget-conscious learners. Independent learning with community access.',
+      features: [
+        '4-Week Core Syllabus Access',
+        'Shared Sandbox Lab Environment',
+        'Active Learning Support Forum',
+        '2x per Week Group Q&A Sessions',
+        'Official Completion Certificate',
+        'Highly Suitable for Pure Beginners'
+      ],
+      cta: 'Choose Starter Plan',
+      featured: false,
+    },
+    {
+      id: 'standard' as PackageType,
+      name: 'Standard Package',
+      price: '$99',
+      originalPrice: '$139',
+      duration: '4 Weeks + 2 Months Access',
+      description: 'Our highly recommended tier for most students. Receive personalized tutoring to accelerate learning.',
+      features: [
+        'All Starter Package features',
+        'Additional 2 Months Portal Access',
+        'Private Sandbox Lab Access',
+        'Priority Support Handling',
+        '1x per Month 1-on-1 Mentoring Session',
+        'Resume & LinkedIn Profile Review',
+        '81% of Students Choose This Plan'
+      ],
+      cta: 'Choose Standard Plan',
+      featured: true,
+      badge: 'MOST POPULAR',
+    },
+    {
+      id: 'premium' as PackageType,
+      name: 'Premium Package',
+      price: '$149',
+      originalPrice: '$199',
+      duration: '4 Weeks + 6 Months Access',
+      description: 'All-access package designed for comprehensive preparation to enter the cybersecurity landscape.',
+      features: [
+        'All Standard Package features',
+        'Additional 6 Months Portal Access',
+        'Premium Dedicated Sandbox Lab',
+        '24/7 Priority VIP Support',
+        '2x per Month 1-on-1 Mentoring Sessions',
+        'Priority Access to New Syllabus Updates',
+        'Priority Career Referral & Matching Services'
+      ],
+      cta: 'Choose Premium Plan',
       featured: false,
     }
   ];
@@ -113,13 +173,13 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center space-x-1.5 bg-accent-gold/10 border border-accent-gold/20 px-3 py-1 rounded-full text-xs font-mono text-accent-gold uppercase tracking-wider">
-            <span>Investasi Masa Depan</span>
+            <span>{t('price_badge')}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Pilihan Paket Pelatihan & Investasi
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-theme-title">
+            {t('price_title')}
           </h2>
           <p className="text-cyber-text-sec text-base sm:text-lg">
-            Investasikan karir Anda dengan transparansi harga tanpa biaya tersembunyi. Tersedia opsi pembayaran bertahap dan diskon khusus.
+            {t('price_subtitle')}
           </p>
         </div>
 
@@ -130,33 +190,37 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
               <Clock className="w-6 h-6 animate-pulse" />
             </div>
             <div>
-              <span className="font-mono text-xs text-brand-red-light block font-semibold uppercase tracking-wider">DISCOUNT EARLY BIRD 20%</span>
-              <h4 className="font-bold text-white text-base">Kuota Terbatas untuk Batch Baru</h4>
-              <p className="text-xs text-cyber-text-sec">Diskon otomatis aktif saat melakukan checkout pendaftaran.</p>
+              <span className="font-mono text-xs text-brand-red-light block font-semibold uppercase tracking-wider">
+                {language === 'id' ? 'DISCOUNT EARLY BIRD 20%' : '20% EARLY BIRD DISCOUNT'}
+              </span>
+              <h4 className="font-bold text-theme-title text-base">{t('price_countdown_title')}</h4>
+              <p className="text-xs text-cyber-text-sec">
+                {language === 'id' ? 'Diskon otomatis aktif saat melakukan checkout pendaftaran.' : 'Discount automatically applied upon course registration.'}
+              </p>
             </div>
           </div>
           
           {/* Timer Display */}
           <div className="flex items-center space-x-2.5 font-mono">
             <div className="flex flex-col items-center">
-              <div className="bg-cyber-navy border border-cyber-slate/80 text-white font-extrabold text-xl w-12 h-12 rounded-lg flex items-center justify-center glow-red">
+              <div className="bg-cyber-navy border border-cyber-slate/80 text-theme-title font-extrabold text-xl w-12 h-12 rounded-lg flex items-center justify-center glow-red">
                 {formatNumber(timeLeft.hours)}
               </div>
-              <span className="text-[10px] text-cyber-text-muted mt-1">JAM</span>
+              <span className="text-[10px] text-cyber-text-muted mt-1">{t('price_hours').toUpperCase()}</span>
             </div>
             <span className="text-brand-red font-bold text-xl mb-4">:</span>
             <div className="flex flex-col items-center">
-              <div className="bg-cyber-navy border border-cyber-slate/80 text-white font-extrabold text-xl w-12 h-12 rounded-lg flex items-center justify-center glow-red">
+              <div className="bg-cyber-navy border border-cyber-slate/80 text-theme-title font-extrabold text-xl w-12 h-12 rounded-lg flex items-center justify-center glow-red">
                 {formatNumber(timeLeft.minutes)}
               </div>
-              <span className="text-[10px] text-cyber-text-muted mt-1">MENIT</span>
+              <span className="text-[10px] text-cyber-text-muted mt-1">{t('price_mins').toUpperCase()}</span>
             </div>
             <span className="text-brand-red font-bold text-xl mb-4">:</span>
             <div className="flex flex-col items-center">
-              <div className="bg-cyber-navy border border-cyber-slate/80 text-white font-extrabold text-xl w-12 h-12 rounded-lg flex items-center justify-center glow-red">
+              <div className="bg-cyber-navy border border-cyber-slate/80 text-theme-title font-extrabold text-xl w-12 h-12 rounded-lg flex items-center justify-center glow-red">
                 {formatNumber(timeLeft.seconds)}
               </div>
-              <span className="text-[10px] text-cyber-text-muted mt-1">DETIK</span>
+              <span className="text-[10px] text-cyber-text-muted mt-1">{t('price_secs').toUpperCase()}</span>
             </div>
           </div>
         </div>
@@ -182,23 +246,25 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
               {/* Package Header */}
               <div className="space-y-4">
                 <span className="text-xs font-mono text-cyber-text-muted block uppercase tracking-wider">{pkg.duration}</span>
-                <h3 className="text-2xl font-extrabold text-white">{pkg.name}</h3>
+                <h3 className="text-2xl font-extrabold text-theme-title">{pkg.name}</h3>
                 <p className="text-xs text-cyber-text-sec leading-relaxed">{pkg.description}</p>
                 
                 {/* Price Display */}
                 <div className="py-4 border-y border-cyber-slate/40 mt-2 space-y-1">
                   <div className="flex items-baseline space-x-2">
                     <span className="text-3xl sm:text-4xl font-black text-brand-red">{pkg.price}</span>
-                    <span className="text-xs text-cyber-text-muted">/ paket</span>
+                    <span className="text-xs text-cyber-text-muted">{language === 'id' ? '/ paket' : '/ package'}</span>
                   </div>
                   <div className="flex items-center space-x-1.5 text-xs text-cyber-text-muted line-through">
-                    <span>Normal: {pkg.originalPrice}</span>
+                    <span>{language === 'id' ? 'Normal:' : 'Original price:'} {pkg.originalPrice}</span>
                   </div>
                 </div>
 
                 {/* Features list */}
                 <div className="space-y-3 pt-4">
-                  <span className="text-[11px] font-mono text-cyber-text-muted block uppercase">FASILITAS YANG DIDAPAT:</span>
+                  <span className="text-[11px] font-mono text-cyber-text-muted block uppercase">
+                    {language === 'id' ? 'FASILITAS YANG DIDAPAT:' : 'BENEFITS INCLUDED:'}
+                  </span>
                   <ul className="space-y-2.5">
                     {pkg.features.map((feat, fIdx) => (
                       <li key={fIdx} className="flex items-start space-x-2.5 text-sm text-cyber-text-sec">
@@ -218,7 +284,7 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
                   className={`w-full py-3.5 rounded-xl font-bold transition-all duration-300 text-center cursor-pointer ${
                     pkg.featured
                       ? 'bg-brand-red text-white shadow-md hover:bg-brand-red-dark hover:shadow-brand-red/20 glow-red transform hover:-translate-y-0.5'
-                      : 'bg-cyber-navy border border-cyber-slate text-cyber-text-sec hover:text-white hover:bg-cyber-slate/40 hover:border-cyber-slate'
+                      : 'bg-cyber-navy border border-cyber-slate text-cyber-text-sec hover:text-theme-title hover:bg-cyber-slate/40 hover:border-cyber-slate'
                   }`}
                 >
                   {pkg.cta}
@@ -237,9 +303,13 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
               <Percent className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-bold text-white text-base">Diskon Grup (3+ Orang)</h4>
+              <h4 className="font-bold text-theme-title text-base">
+                {language === 'id' ? 'Diskon Grup (3+ Orang)' : 'Group Discount (3+ People)'}
+              </h4>
               <p className="text-xs text-cyber-text-sec mt-1 leading-relaxed">
-                Belajar bersama teman atau rekan kantor Anda. Dapatkan tambahan <strong className="text-accent-cyan font-semibold">potongan harga 15% per paket</strong> untuk pendaftaran rombongan.
+                {language === 'id'
+                  ? 'Belajar bersama teman atau rekan kantor Anda. Dapatkan tambahan potongan harga 15% per paket untuk pendaftaran rombongan.'
+                  : 'Learn together with colleagues or friends. Save an additional 15% per package for group registrations.'}
               </p>
             </div>
           </div>
@@ -250,9 +320,11 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-bold text-white text-base">30-Day Money-Back Guarantee</h4>
+              <h4 className="font-bold text-theme-title text-base">30-Day Money-Back Guarantee</h4>
               <p className="text-xs text-cyber-text-sec mt-1 leading-relaxed">
-                Garansi 30 hari tanpa risiko. Jika setelah mendaftar Anda merasa program ini tidak sesuai ekspektasi, ajukan refund penuh 100%. Kami kembalikan dana Anda tanpa berbelit-belit.
+                {language === 'id'
+                  ? 'Garansi 30 hari tanpa risiko. Jika setelah mendaftar Anda merasa program ini tidak sesuai ekspektasi, ajukan refund penuh 100%. Kami kembalikan dana Anda tanpa berbelit-belit.'
+                  : 'Risk-free 30 days guarantee. If you realize this course doesn\'t match your expectation, request a full 100% refund. We will return your payment with zero hassle.'}
               </p>
             </div>
           </div>
@@ -263,9 +335,13 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
               <Clock className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-bold text-white text-base">Cicilan Fleksibel 3x</h4>
+              <h4 className="font-bold text-theme-title text-base">
+                {language === 'id' ? 'Cicilan Fleksibel 3x' : '3x Flexible Installments'}
+              </h4>
               <p className="text-xs text-cyber-text-sec mt-1 leading-relaxed">
-                Keringanan pembayaran khusus paket <strong className="text-brand-red-light font-semibold">Standard</strong> dan <strong className="text-brand-red-light font-semibold">Premium</strong>. Bisa dicicil hingga 3 kali pembayaran tanpa bunga tambahan.
+                {language === 'id'
+                  ? 'Keringanan pembayaran khusus paket Standard dan Premium. Bisa dicicil hingga 3 kali pembayaran tanpa bunga tambahan.'
+                  : 'Installment programs available for Standard and Premium tiers. Split your payment up to 3 times with zero added interest.'}
               </p>
             </div>
           </div>
