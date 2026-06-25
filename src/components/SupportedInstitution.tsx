@@ -7,6 +7,7 @@ import React from 'react';
 import { Award, ShieldCheck, Star, Users, Briefcase, Linkedin } from 'lucide-react';
 import { testimonials } from '../data';
 import { useApp } from '../context/AppContext';
+import FeducationLogo from './FeducationLogo';
 
 export default function SupportedInstitution() {
   const { language } = useApp();
@@ -86,12 +87,9 @@ export default function SupportedInstitution() {
             <div className="absolute top-0 right-0 w-24 h-24 bg-brand-red/5 rounded-full blur-xl pointer-events-none"></div>
 
             {/* Logo of FEDUCATION */}
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md shrink-0">
-                <span className="text-cyber-navy font-black text-xl font-sans tracking-tighter">FE</span>
-              </div>
-              <div>
-                <span className="text-lg font-extrabold text-theme-title block tracking-wide">FEDUCATION Partnership</span>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 border-b border-cyber-slate/30 pb-4">
+              <FeducationLogo textColor="text-white" />
+              <div className="text-left sm:text-right">
                 <span className="text-xs font-mono text-brand-red font-semibold block uppercase">
                   {language === 'id' ? 'STANDAR PENDIDIKAN TINGGI' : 'ACADEMIC EXCELLENCE STANDARD'}
                 </span>

@@ -8,6 +8,45 @@ import { ShieldCheck, Mail, User, Phone, BookOpen, Clock, Send, Calendar, CheckS
 import { PackageType, Registration } from '../types';
 import { useApp } from '../context/AppContext';
 
+// =========================================================================
+// PANDUAN INTEGRASI GOOGLE SHEETS / GOOGLE FORMS
+// =========================================================================
+// Anda bisa mengirimkan data pendaftaran di form ini secara otomatis ke Google Sheets
+// atau Google Forms dengan mengisi variabel di bawah ini.
+//
+// PILIHAN A: INTEGRASI GOOGLE SHEETS (Via Google Apps Script Web App)
+// -------------------------------------------------------------------------
+// 1. Buka Google Sheets Anda -> Klik "Extensions" -> "Apps Script".
+// 2. Buat fungsi doPost(e) sederhana untuk menyimpan JSON pendaftaran ke baris baru.
+// 3. Deploy sebagai "Web App", Atur Akses (Who has access) ke "Anyone" (Siapa saja).
+// 4. Salin URL Web App yang didapat dan paste ke GOOGLE_SHEET_WEBHOOK_URL di bawah.
+//
+// PILIHAN B: INTEGRASI GOOGLE FORMS (Mengirim data langsung ke Google Form)
+// -------------------------------------------------------------------------
+// 1. Buat Google Form dengan pertanyaan yang sesuai dengan form ini.
+// 2. Salin Link Kirim Form Response (ganti /viewform di akhir link menjadi /formResponse).
+// 3. Cari name="entry.xxxxxx" untuk masing-masing field di Google Form Anda (bisa didapatkan dengan inspect element).
+// 4. Atur USE_GOOGLE_FORM ke true, masukkan URL dan sesuaikan Entry IDs di bawah ini.
+// =========================================================================
+export const REGISTRATION_INTEGRATION_CONFIG = {
+  // Pilihan A: Google Sheets Webhook
+  GOOGLE_SHEET_WEBHOOK_URL: '', // Contoh: 'https://script.google.com/macros/s/AKfycb.../exec'
+
+  // Pilihan B: Google Forms Direct POST
+  USE_GOOGLE_FORM: false, 
+  GOOGLE_FORM_SUBMIT_URL: '', // Contoh: 'https://docs.google.com/forms/d/e/1FAIpQLSfxxxxxx/formResponse'
+  GOOGLE_FORM_ENTRY_IDS: {
+    fullName: 'entry.111111111',  // ID input Nama Lengkap
+    email: 'entry.222222222',     // ID input Email
+    phone: 'entry.333333333',     // ID input WhatsApp / Telepon
+    selectedPackage: 'entry.444444444', // ID input Paket Belajar
+    background: 'entry.555555555', // ID input Latar Belakang
+    openClawExperience: 'entry.666666666', // ID input Pengalaman OpenClaw
+    motivation: 'entry.777777777', // ID input Motivasi Belajar
+    preferredSchedule: 'entry.888888888', // ID input Jadwal Pilihan
+  }
+};
+
 interface RegistrationFormProps {
   selectedPackage: PackageType;
   setSelectedPackage: (pkg: PackageType) => void;
@@ -89,7 +128,7 @@ export default function RegistrationForm({
   };
 
   // Submit Handler
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!validateForm()) {
@@ -98,28 +137,69 @@ export default function RegistrationForm({
 
     setLoading(true);
 
-    // Simulate submission delay
-    setTimeout(() => {
-      const newReg: Registration = {
-        id: Math.random().toString(36).substring(2, 9),
-        fullName,
-        email,
-        phone: phone || undefined,
-        selectedPackage: formPackage,
-        experienceLevel: openClawExperience,
-        background,
-        openClawExperience,
-        motivation,
-        preferredSchedule,
-        submittedAt: new Date().toISOString(),
-      };
+    const newReg: Registration = {
+      id: Math.random().toString(36).substring(2, 9),
+      fullName,
+      email,
+      phone: phone || undefined,
+      selectedPackage: formPackage,
+      experienceLevel: openClawExperience,
+      background,
+      openClawExperience,
+      motivation,
+      preferredSchedule,
+      submittedAt: new Date().toISOString(),
+    };
 
-      // Call callback to store in global/localStorage
-      onNewRegistration(newReg);
+    // 1. Pilihan A: Integrasi Google Sheets (POST ke Apps Script Web App)
+    if (REGISTRATION_INTEGRATION_CONFIG.GOOGLE_SHEET_WEBHOOK_URL) {
+      try {
+        await fetch(REGISTRATION_INTEGRATION_CONFIG.GOOGLE_SHEET_WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors', // Mencegah pemblokiran CORS dari browser ke Google Apps Script
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newReg),
+        });
+        console.log('Successfully posted data to Google Sheets script');
+      } catch (err) {
+        console.error('Error posting to Google Sheets script:', err);
+      }
+    }
 
-      setLoading(false);
-      setIsSubmitted(true);
-    }, 1200);
+    // 2. Pilihan B: Integrasi Google Forms (Direct POST ke formResponse)
+    if (REGISTRATION_INTEGRATION_CONFIG.USE_GOOGLE_FORM && REGISTRATION_INTEGRATION_CONFIG.GOOGLE_FORM_SUBMIT_URL) {
+      try {
+        const formData = new URLSearchParams();
+        formData.append(REGISTRATION_INTEGRATION_CONFIG.GOOGLE_FORM_ENTRY_IDS.fullName, fullName);
+        formData.append(REGISTRATION_INTEGRATION_CONFIG.GOOGLE_FORM_ENTRY_IDS.email, email);
+        formData.append(REGISTRATION_INTEGRATION_CONFIG.GOOGLE_FORM_ENTRY_IDS.phone, phone);
+        formData.append(REGISTRATION_INTEGRATION_CONFIG.GOOGLE_FORM_ENTRY_IDS.selectedPackage, formPackage);
+        formData.append(REGISTRATION_INTEGRATION_CONFIG.GOOGLE_FORM_ENTRY_IDS.background, background);
+        formData.append(REGISTRATION_INTEGRATION_CONFIG.GOOGLE_FORM_ENTRY_IDS.openClawExperience, openClawExperience);
+        formData.append(REGISTRATION_INTEGRATION_CONFIG.GOOGLE_FORM_ENTRY_IDS.motivation, motivation);
+        formData.append(REGISTRATION_INTEGRATION_CONFIG.GOOGLE_FORM_ENTRY_IDS.preferredSchedule, preferredSchedule.join(', '));
+
+        await fetch(REGISTRATION_INTEGRATION_CONFIG.GOOGLE_FORM_SUBMIT_URL, {
+          method: 'POST',
+          mode: 'no-cors', // Mencegah pemblokiran CORS dari browser ke Google Forms
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: formData.toString(),
+        });
+        console.log('Successfully posted data to Google Forms');
+      } catch (err) {
+        console.error('Error posting to Google Forms:', err);
+      }
+    }
+
+    // Call local callback to sync state (still useful for local testing or immediate preview)
+    onNewRegistration(newReg);
+
+    setLoading(false);
+    setIsSubmitted(true);
   };
 
   // Reset form

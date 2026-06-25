@@ -4,15 +4,10 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Shield, Database, Sun, Moon } from 'lucide-react';
+import { Menu, X, Shield, Sun, Moon } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
-interface HeaderProps {
-  onOpenAdmin: () => void;
-  leadCount: number;
-}
-
-export default function Header({ onOpenAdmin, leadCount }: HeaderProps) {
+export default function Header() {
   const { language, setLanguage, theme, setTheme, t } = useApp();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,6 +23,18 @@ export default function Header({ onOpenAdmin, leadCount }: HeaderProps) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Lock background scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   const navLinks = [
     { name: t('nav_why_us'), href: '#mengapa-kami' },
@@ -51,8 +58,10 @@ export default function Header({ onOpenAdmin, leadCount }: HeaderProps) {
     <header
       id="main-header"
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-cyber-navy/90 backdrop-blur-md border-b border-cyber-slate/50 py-3 shadow-lg'
+        isOpen
+          ? 'bg-cyber-navy border-b border-cyber-slate/50 py-3 shadow-lg'
+          : isScrolled
+          ? 'bg-cyber-navy/95 backdrop-blur-md border-b border-cyber-slate/50 py-3 shadow-lg'
           : 'bg-transparent py-5'
       }`}
     >
@@ -65,7 +74,7 @@ export default function Header({ onOpenAdmin, leadCount }: HeaderProps) {
             </div>
             <div>
               <span className="text-xl font-extrabold tracking-tight text-theme-title block leading-none">
-                OPEN<span className="text-brand-red">CLAW</span>
+                UNDER<span className="text-brand-red">ONE</span>
               </span>
               <span className="text-[10px] font-mono text-accent-cyan tracking-wider uppercase block mt-1">
                 ACADEMY
@@ -118,19 +127,6 @@ export default function Header({ onOpenAdmin, leadCount }: HeaderProps) {
               {theme === 'dark' ? <Sun className="w-4 h-4 text-accent-gold" /> : <Moon className="w-4 h-4 text-brand-red" />}
             </button>
 
-            <button
-              id="header-admin-btn"
-              onClick={onOpenAdmin}
-              className="flex items-center space-x-1.5 px-3 py-1.5 rounded-md text-xs font-mono border border-cyber-slate bg-cyber-charcoal text-accent-cyan hover:border-accent-cyan hover:bg-cyber-slate/50 transition-all duration-200 cursor-pointer"
-            >
-              <Database className="w-3.5 h-3.5" />
-              <span>{t('nav_admin')}</span>
-              {leadCount > 0 && (
-                <span className="bg-brand-red text-white text-[10px] px-1.5 py-0.5 rounded-full font-sans font-bold">
-                  {leadCount}
-                </span>
-              )}
-            </button>
             <a
               id="header-cta-btn"
               href="#registrasi"
@@ -144,14 +140,6 @@ export default function Header({ onOpenAdmin, leadCount }: HeaderProps) {
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
             <button
-              id="header-admin-mobile-btn"
-              onClick={onOpenAdmin}
-              className="p-2 rounded-md border border-cyber-slate text-accent-cyan bg-cyber-charcoal cursor-pointer"
-              title="Admin Leads"
-            >
-              <Database className="w-4 h-4" />
-            </button>
-            <button
               id="header-hamburger"
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-md text-cyber-text-sec hover:text-theme-title hover:bg-cyber-slate focus:outline-none transition-colors cursor-pointer"
@@ -164,7 +152,7 @@ export default function Header({ onOpenAdmin, leadCount }: HeaderProps) {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed inset-0 top-[65px] bg-cyber-navy/95 backdrop-blur-lg z-40 transition-all duration-300 transform ${
+        className={`md:hidden fixed inset-x-0 bottom-0 top-[65px] bg-cyber-navy z-40 transition-all duration-300 transform overflow-y-auto ${
           isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
         }`}
       >
@@ -211,17 +199,6 @@ export default function Header({ onOpenAdmin, leadCount }: HeaderProps) {
               </div>
             </div>
 
-            <button
-              id="header-admin-menu-mobile"
-              onClick={() => {
-                setIsOpen(false);
-                onOpenAdmin();
-              }}
-              className="w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-lg text-sm font-mono border border-cyber-slate bg-cyber-charcoal text-accent-cyan cursor-pointer"
-            >
-              <Database className="w-4 h-4" />
-              <span>{t('nav_admin')} ({leadCount})</span>
-            </button>
             <a
               id="header-cta-mobile"
               href="#registrasi"
