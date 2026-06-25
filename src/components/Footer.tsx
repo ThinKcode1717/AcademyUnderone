@@ -36,7 +36,7 @@ export default function Footer() {
                 <Shield className="w-5 h-5 text-brand-red" />
               </div>
               <span className="text-lg font-black tracking-tight text-theme-title">
-                OPEN<span className="text-brand-red">CLAW</span> ACADEMY
+                UNDER<span className="text-brand-red">ONE</span> ACADEMY
               </span>
             </div>
             
@@ -184,7 +184,7 @@ export default function Footer() {
 
         {/* Footer Bottom Divider */}
         <div className="border-t border-cyber-slate/40 pt-8 mt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-cyber-text-muted text-center sm:text-left gap-4">
-          <p>© 2026 OpenClaw Academy & FEDUCATION. All Rights Reserved.</p>
+          <p>© 2026 UNDERONE Academy & FEDUCATION. All Rights Reserved.</p>
           <p>
             {language === 'id'
               ? 'Dibuat secara profesional untuk memajukan ketahanan siber nasional.'
