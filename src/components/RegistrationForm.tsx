@@ -218,7 +218,7 @@ export default function RegistrationForm({
   const getWaLink = () => {
     const textId = `Halo OpenClaw Academy, saya ${encodeURIComponent(fullName)} baru saja mendaftar untuk paket ${formPackage}. Bisa bantu langkah selanjutnya?`;
     const textEn = `Hello OpenClaw Academy, I am ${encodeURIComponent(fullName)} and I just registered for the ${formPackage} plan. Can you help me with the next steps?`;
-    return `https://wa.me/6281234567890?text=${encodeURIComponent(language === 'id' ? textId : textEn)}`;
+    return `https://wa.me/6285119551741?text=${encodeURIComponent(language === 'id' ? textId : textEn)}`;
   };
 
   return (

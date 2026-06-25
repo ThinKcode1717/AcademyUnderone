@@ -165,7 +165,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-brand-red flex-shrink-0" />
-                <span>+62 812-3456-7890 (WhatsApp)</span>
+                <span>+62 851-1955-1741 (WhatsApp)</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-brand-red flex-shrink-0" />
