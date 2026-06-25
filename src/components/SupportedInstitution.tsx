@@ -10,40 +10,23 @@ import { useApp } from '../context/AppContext';
 import FeducationLogo from './FeducationLogo';
 
 export default function SupportedInstitution() {
-  const { language } = useApp();
+  const { t, language } = useApp();
 
-  const instructors = language === 'id' ? [
+  const instructors = [
     {
       name: 'Wira Kusuma',
-      role: 'Lead Security Instructor',
+      role: language === 'id' ? 'Instruktur Utama Otomatisasi' : 'Lead Automation Instructor',
       photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer',
-      story: 'Saya memulai segalanya dari nol sama seperti Anda. Kini saya mendedikasikan waktu penuh untuk membimbing pemula agar tidak terintimidasi istilah teknis.',
-      philosophy: 'Siapa saja bisa menguasai keamanan siber asal dijelaskan dengan analogi yang ramah dan membumi.',
+      story: t('instructor_wira_story'),
+      philosophy: t('instructor_wira_philo'),
       linkedIn: '#'
     },
     {
       name: 'Fiona Amanda',
       role: 'Mentor & Community Lead',
       photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer',
-      story: 'Pernah menjadi career-changer dari bidang administrasi ke dunia siber. Saya sangat memahami rasa ragu dan takut salah di awal proses belajar.',
-      philosophy: 'Belajar di lingkungan yang aman, suportif, dan bebas dari penghakiman adalah kunci keberhasilan murni.',
-      linkedIn: '#'
-    }
-  ] : [
-    {
-      name: 'Wira Kusuma',
-      role: 'Lead Security Instructor',
-      photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer',
-      story: 'I started from scratch just like you. Now I dedicate my full-time work to mentoring beginners so they never feel intimidated by technical jargon.',
-      philosophy: 'Anyone can master cyber defense when explained with simple, real-world analogies.',
-      linkedIn: '#'
-    },
-    {
-      name: 'Fiona Amanda',
-      role: 'Mentor & Community Lead',
-      photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer',
-      story: 'I pivoted my career from administrative staff to cybersecurity. I understand the hesitation and anxiety at the beginning of learning.',
-      philosophy: 'Learning in a safe, non-judgmental, and supportive sandbox environment is the key to actual success.',
+      story: t('instructor_fiona_story'),
+      philosophy: t('instructor_fiona_philo'),
       linkedIn: '#'
     }
   ];

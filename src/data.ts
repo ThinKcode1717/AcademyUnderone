@@ -70,101 +70,101 @@ export const valueProps: { id: ValueProp[]; en: ValueProp[] } = {
 export const skillsBenefits: { id: SkillBenefit[]; en: SkillBenefit[] } = {
   id: [
     {
-      title: "Memahami Koneksi Sistem",
-      capability: "Tahu bagaimana komputer, website, dan server saling terhubung dan berkomunikasi satu sama lain.",
-      industry: "Sangat dasar dan penting: \"Bukan sihir, semuanya memiliki logika di baliknya.\"",
+      title: "Memahami Cara Kerja AI",
+      capability: "Tahu bagaimana AI Agent, Large Language Model (LLM), dan sistem otomatisasi bekerja di balik layar.",
+      industry: "Sangat mendasar dan penting: Memahami logika AI dan cara memberi perintah (prompting) efektif.",
       iconName: "Server",
     },
     {
-      title: "Konsep Keamanan Dasar",
-      capability: "Mengerti mengapa keamanan siber itu penting dan langkah praktis untuk melindungi sistem secara umum.",
-      industry: "Bisa diaplikasikan di pekerjaan teknologi apa pun, bahkan berguna melindungi diri sendiri.",
+      title: "Otomatisasi Tugas Rutin",
+      capability: "Mengonfigurasi AI Agent untuk menyelesaikan pekerjaan rutin seperti merangkum email dan menyusun data.",
+      industry: "Bisa diaplikasikan langsung untuk menghemat jam kerja harian Anda secara signifikan.",
       iconName: "Globe",
     },
     {
       title: "Percaya Diri Menggunakan Tool",
-      capability: "Bisa menggunakan tools profesional seperti OpenClaw dengan nyaman dan tanpa rasa takut salah klik.",
-      industry: "Meningkatkan nilai jual Anda di mata perekrut kerja (dari nol ke bisa pakai tool profesional).",
+      capability: "Bisa menggunakan tools profesional seperti OpenClaw dengan nyaman tanpa rasa takut salah klik.",
+      industry: "Meningkatkan nilai produktivitas dan keunggulan Anda di era kerja cerdas masa kini.",
       iconName: "Fingerprint",
     },
     {
-      title: "Scan & Analisis Sistem Aman",
-      capability: "Melakukan pemindaian (scanning) sistem dengan aman dan tahu cara membaca data hasil scanning tersebut.",
-      industry: "Keterampilan inti (core skill) dalam melakukan penilaian keamanan digital (security assessment).",
+      title: "Koneksi & Alur Kerja Pintar",
+      capability: "Menghubungkan asisten virtual AI Anda dengan aplikasi produktivitas harian secara lancar.",
+      industry: "Keterampilan bernilai tinggi dalam posisi koordinasi bisnis atau administratif apa pun.",
       iconName: "Activity",
     },
     {
-      title: "Membaca Laporan Teknis",
-      capability: "Bisa membaca dan memahami isi laporan keamanan teknis yang sebelumnya terlihat sangat membingungkan.",
-      industry: "Keterampilan yang sangat bernilai tinggi dalam posisi teknologi atau koordinasi bisnis apa pun.",
+      title: "Analisis Dokumen & Data Cepat",
+      capability: "Memanfaatkan asisten pintar untuk membaca dokumen panjang dan mengekstrak data penting dalam hitungan detik.",
+      industry: "Sangat menunjang efisiensi kerja di bidang marketing, administrasi, hingga manajemen.",
       iconName: "Bug",
     },
     {
-      title: "Berpikir Kritis Soal Keamanan",
-      capability: "Mampu mengajukan pertanyaan cerdas dan menganalisis potensi celah keamanan di tempat kerja atau kehidupan.",
-      industry: "Membantu Anda berkembang dengan pemahaman mendalam: \"Tahu apa yang perlu Anda cari tahu.\"",
+      title: "Berpikir Logis & Sistematis",
+      capability: "Melatih pola pikir computational thinking dalam merancang alur otomatisasi asisten virtual.",
+      industry: "Membantu memecahkan masalah kerja dengan solusi teknologi pintar yang terstruktur.",
       iconName: "Cpu",
     },
     {
-      title: "Confidence dalam Skill Teknologi",
-      capability: "Meningkatkan rasa percaya diri untuk terus belajar dan memperdalam wawasan seputar dunia teknologi.",
-      industry: "Mengubah pola pikir dari \"Saya bukan orang teknologi\" menjadi \"Saya juga bisa belajar teknologi.\"",
+      title: "Confidence dengan Teknologi",
+      capability: "Meningkatkan rasa percaya diri untuk berinteraksi dengan AI dan sistem asisten modern.",
+      industry: "Mengubah pola pikir dari \"saya gaptek\" menjadi \"saya mampu mendelegasikan tugas ke AI.\"",
       iconName: "Eye",
     },
     {
       title: "Membuka Peluang Karir Baru",
-      capability: "Membangun fondasi kuat untuk melangkah ke karir menjanjikan di bidang cybersecurity.",
-      industry: "Langkah awal sebelum masuk ke spesialisasi lebih dalam (DevSecOps, Analis SOC, Auditor Keamanan).",
+      capability: "Membangun landasan kokoh untuk merambah ke dunia otomatisasi digital dan spesialisasi AI.",
+      industry: "Langkah awal sempurna untuk meningkatkan daya saing karir Anda di era kecerdasan buatan.",
       iconName: "FileCheck",
     }
   ],
   en: [
     {
-      title: "Understanding System Connections",
-      capability: "Understand how computers, websites, and servers connect and communicate with each other.",
-      industry: "Essential basic knowledge: \"It is not magic; everything operates on simple logic.\"",
+      title: "Understanding AI Workflows",
+      capability: "Understand how AI Agents, Large Language Models (LLMs), and automation systems operate behind the scenes.",
+      industry: "Essential knowledge: Grasping AI logic and crafting highly effective instructions.",
       iconName: "Server",
     },
     {
-      title: "Fundamental Security Concepts",
-      capability: "Understand why digital security matters and learn practical measures to protect systems.",
-      industry: "Applicable in any tech role, and highly useful for personal digital safety.",
+      title: "Repetitive Task Automation",
+      capability: "Configure AI Agents to automate routine chores like summarizing emails and generating spreadsheets.",
+      industry: "Can be deployed directly to save hours of manual operations every single day.",
       iconName: "Globe",
     },
     {
-      title: "Confident Tool Operation",
-      capability: "Operate professional tools like OpenClaw comfortably without the fear of making mistakes.",
-      industry: "Boosts your market value in recruiters' eyes (from zero knowledge to active operator).",
+      title: "Confident Tool Deployment",
+      capability: "Run powerful tools like OpenClaw smoothly to execute your custom daily automations.",
+      industry: "Supercharges your efficiency as a highly valued modern digital worker.",
       iconName: "Fingerprint",
     },
     {
-      title: "Safe System Scanning",
-      capability: "Perform system scanning safely and learn how to read and interpret scanned results.",
-      industry: "Core prerequisite skill for carrying out digital security assessments.",
+      title: "Smart App Integrations",
+      capability: "Connect AI Agents with the software applications you use daily securely and seamlessly.",
+      industry: "Future-proof skill essential for modern, highly efficient business operations.",
       iconName: "Activity",
     },
     {
-      title: "Reading Technical Reports",
-      capability: "Read and comprehend technical security reports that previously looked completely confusing.",
-      industry: "A highly valued asset in technical coordination or general business roles.",
+      title: "Rapid Data Analysis",
+      capability: "Utilize AI to read through massive documents and extract key data points within seconds.",
+      industry: "Incredibly high-value skill for administrative, marketing, and management roles.",
       iconName: "Bug",
     },
     {
-      title: "Critical Security Thinking",
-      capability: "Ask smart, analytical questions and detect potential security loopholes at work or at home.",
-      industry: "Assists personal development with deep intuition: \"Knowing what you need to look for.\"",
+      title: "Computational Thinking",
+      capability: "Train your logical mindset to design custom automated workflows and processes.",
+      industry: "Helps you break down complex administrative hurdles logically and systematically.",
       iconName: "Cpu",
     },
     {
-      title: "Tech Skill Confidence",
-      capability: "Enhance your self-confidence to keep learning and exploring digital landscapes.",
-      industry: "Shifts mindsets from \"I am not a tech person\" to \"I can master technology too.\"",
+      title: "Tech Adaptability Confidence",
+      capability: "Shift your mindset from \"I don't understand AI\" to \"I can successfully deploy AI to work for me\".",
+      industry: "Gives you complete confidence in adapting to modern technological shifts.",
       iconName: "Eye",
     },
     {
-      title: "New Career Opportunities",
-      capability: "Build a strong foundational pillar to transition into promising cybersecurity career pathways.",
-      industry: "Excellent headstart before deep specialization (DevSecOps, SOC Analyst, Security Auditor).",
+      title: "AI-Driven Career Pathways",
+      capability: "Build an impressive portfolio of custom automations to land modern AI-powered roles.",
+      industry: "A solid foundation to transition into high-demand roles like Operations Specialist or AI Automation Consultant.",
       iconName: "FileCheck",
     }
   ]
@@ -174,101 +174,101 @@ export const weeklyModules: { id: WeeklyModule[]; en: WeeklyModule[] } = {
   id: [
     {
       week: "Minggu 1",
-      title: "Pengenalan & Setup (Understand the basics)",
-      description: "Menghilangkan kebingungan seputar OpenClaw. Di minggu pertama ini, kami membimbing Anda dari proses penginstalan hingga mencoba pemindaian pertama Anda secara aman.",
+      title: "Pengenalan AI Agent & Setup (The Automation Mindset)",
+      description: "Menghilangkan kebingungan seputar AI. Di minggu pertama ini, kami membimbing Anda memahami cara kerja AI Agent dasar serta mengonfigurasi OpenClaw dengan mudah.",
       details: [
-        "Module 1.1: Apa itu OpenClaw? Kenapa ini penting dipelajari? (Menepis mitos hacker di film Hollywood)",
-        "Module 1.2: Dasar Internet & Jaringan (Bagaimana komputer berkomunikasi - IP, Port, dan Protokol dengan analogi sederhana)",
-        "Module 1.3: Instalasi OpenClaw & Setup Environment (Walkthrough langkah demi langkah untuk sistem Windows, Mac, dan Linux)",
-        "Module 1.4: Tur Antarmuka (Interface Tour) OpenClaw (Mengenal tombol dan navigasi utama tanpa rasa takut merusak sistem)"
+        "Module 1.1: Apa itu OpenClaw? Bagaimana AI Agent membantu tugas harian dan bisnis? (Prinsip kerja cerdas vs kerja keras)",
+        "Module 1.2: Memahami Aliran Otomatisasi (Bagaimana AI menerima instruksi dan menyelesaikan tugas mandiri)",
+        "Module 1.3: Instalasi & Setup OpenClaw (Walkthrough lengkap langkah demi langkah untuk sistem Windows, Mac, dan Linux)",
+        "Module 1.4: Tur Antarmuka (Interface Tour) OpenClaw (Mengenal dashboard kontrol AI Agent pertama Anda tanpa rasa takut salah klik)"
       ],
-      labName: "Lab 1: Hello OpenClaw - Menjalankan scan pertama pada target aman simulasi"
+      labName: "Lab 1: Hello OpenClaw - Menjalankan otomatisasi instruksi sederhana pertama Anda"
     },
     {
       week: "Minggu 2",
-      title: "Reconnaissance Basics (Learning to collect information safely)",
-      description: "Belajar mengumpulkan informasi awal mengenai target secara legal dan etis. Di sini Anda akan memahami cara kerja pemindaian informasi yang sesungguhnya.",
+      title: "Data & Task Automation (Mendelegasikan tugas administratif rutin)",
+      description: "Belajar mendelegasikan tugas administratif harian Anda. Anda akan memahami cara menghubungkan dokumen dan memproses berbagai jenis data secara otomatis.",
       details: [
-        "Module 2.1: Sisi Hukum & Etika (Paling penting! Memahami perbedaan belajar legal dengan peretasan ilegal)",
-        "Module 2.2: Konsep Pengumpulan Informasi (Reconnaissance Pasif vs Aktif secara sederhana)",
-        "Module 2.3: Menggunakan Fitur Scanning OpenClaw (Langkah demi langkah melakukan scan mandiri)",
-        "Module 2.4: Menganalisis Scan Pertama Anda (Membaca hasil keluaran scanning dan mengerti tingkat bahaya/severity)"
+        "Module 2.1: Otomatisasi Dokumen (Merangkum laporan panjang, membaca PDF, dan mengekstrak data penting)",
+        "Module 2.2: AI untuk Komunikasi & Email (Membuat draf balasan pesan cerdas otomatis berdasarkan kata kunci)",
+        "Module 2.3: Logika Kondisional AI Agent (Mengajari asisten AI membuat keputusan sederhana: jika 'A' maka lakukan 'B')",
+        "Module 2.4: Memantau Sesi AI (Memastikan AI Agent menyelesaikan seluruh rangkaian tugas dengan benar)"
       ],
-      labName: "Lab 2: Scan & Report - Melakukan reconnaissance mandiri dan mendokumentasikan hasilnya"
+      labName: "Lab 2: Assistant Builder - Membuat asisten perangkum email dan data laporan otomatis"
     },
     {
       week: "Minggu 3",
-      title: "Understanding Vulnerabilities (What does it mean when OpenClaw finds something?)",
-      description: "Menguak makna di balik temuan OpenClaw. Anda akan belajar mengenali jenis-jenis kerentanan keamanan paling umum dengan bahasa sehari-hari.",
+      title: "Web & API Integrations (Menghubungkan asisten dengan dunia luar)",
+      description: "Belajar menghubungkan AI Agent Anda dengan web dan layanan cloud populer untuk mengambil atau menyimpan informasi secara real-time.",
       details: [
-        "Module 3.1: Apa itu Kerentanan Keamanan (Vulnerability)? (Penjelasan analogi dunia nyata tanpa jargon membingungkan)",
-        "Module 3.2: 10 Kerentanan Umum yang Bisa Ditemukan OpenClaw (Contoh nyata dan cara mendeteksinya)",
-        "Module 3.3: Menginterpretasikan Laporan Kerentanan (Membaca detail kerentanan, rating risiko, dan dampaknya)",
-        "Module 3.4: Membuat Laporan Penilaian Sederhana (Dokumentasi temuan dan cara rekomendasi perbaikan dasar)"
+        "Module 3.1: Konsep Integrasi & Web Scraping Sederhana (Mengumpulkan info dari halaman web secara otomatis)",
+        "Module 3.2: Sinkronisasi Google Workspace / Spreadsheet (Membaca dan menulis baris data langsung menggunakan asisten AI)",
+        "Module 3.3: Memanfaatkan API AI (Mengintegrasikan API key untuk memperluas kemampuan berpikir asisten digital Anda)",
+        "Module 3.4: Praktik Keamanan Data Otomatisasi (Tips menjaga data pribadi dan API key Anda tetap aman)"
       ],
-      labName: "Lab 3: Full Scan & Analysis - Melakukan audit keamanan lengkap di lingkungan sandbox sandbox"
+      labName: "Lab 3: Sheet Sync - Membangun AI Agent pencari info produk lalu menyimpannya langsung ke spreadsheet"
     },
     {
       week: "Minggu 4",
-      title: "Integration, Best Practices & Next Steps (Putting it all together)",
-      description: "Menggabungkan semua keahlian yang telah Anda pelajari untuk diaplikasikan ke skenario nyata, serta merencanakan karir ke depan.",
+      title: "Advanced Workflows & Capstone (Asisten otomatis mandiri 24/7)",
+      description: "Menggabungkan seluruh keterampilan yang dipelajari untuk membuat sistem otomatisasi yang berjalan mandiri di latar belakang.",
       details: [
-        "Module 4.1: Membangun Alur Kerja Anda (Membuat template pemindaian harian untuk efisiensi kerja)",
-        "Module 4.2: OpenClaw dalam Ekosistem Keamanan (Bagaimana tool ini bekerja beriringan dengan standar keamanan industri)",
-        "Module 4.3: Prospek Karir & Peluang Kerja di Bidang Keamanan (Membahas berbagai jenis peran, tip resume, dan wawancara)",
-        "Module 4.4: Belajar Berkelanjutan & Komunitas (Resource gratis, forum belajar, dan tips update info teknologi)"
+        "Module 4.1: Menjadwalkan Otomatisasi Tugas (Menjalankan tugas secara rutin setiap jam, harian, atau setiap pagi)",
+        "Module 4.2: Penanganan Kesalahan (Error Handling) Pintar (Mengajari AI mendeteksi glitch dan mengulangi proses secara otomatis)",
+        "Module 4.3: Menyusun Portofolio AI Produktivitas (Menampilkan asisten buatan sendiri ke rekan kerja, atasan, atau klien)",
+        "Module 4.4: Langkah Belajar Lanjut & Komunitas (Resource gratis untuk terus mengoptimalkan performa AI Agent Anda)"
       ],
-      labName: "Lab 4: Capstone Project - Simulasi audit keamanan menyeluruh dan refleksi hasil belajar"
+      labName: "Lab 4: Capstone Project - Simulasi otomatisasi tugas harian menyeluruh dan presentasi asisten mandiri Anda"
     }
   ],
   en: [
     {
       week: "Week 1",
-      title: "Introduction & Setup (Understand the basics)",
-      description: "Demystify OpenClaw. In this first week, we guide you from the installation process to safely running your very first scan.",
+      title: "AI Agent Introduction & Setup (The Automation Mindset)",
+      description: "Erase any fear of learning AI. In this first week, we guide you through setting up OpenClaw and understanding how basic AI Agents work.",
       details: [
-        "Module 1.1: What is OpenClaw? Why learn it? (Dispelling Hollywood hacker myths)",
-        "Module 1.2: Internet & Network Basics (How computers communicate - IP, Port, Protocols with easy analogies)",
-        "Module 1.3: OpenClaw Installation & Setup (Step-by-step walkthrough for Windows, Mac, and Linux)",
-        "Module 1.4: Interface Tour (Get familiar with primary menus and controls without fearing you will break anything)"
+        "Module 1.1: What is OpenClaw? How can AI Agents assist in daily operations? (Work smart vs work hard principle)",
+        "Module 1.2: Understanding Automation Flows (How AI receives instructions and runs tasks independently)",
+        "Module 1.3: Installation & Configuration (Step-by-step beginner walkthrough for Windows, Mac, and Linux)",
+        "Module 1.4: Interface Tour (Familiarize yourself with your first AI Agent control dashboard with confidence)"
       ],
-      labName: "Lab 1: Hello OpenClaw - Executing your first scan on a safe target environment"
+      labName: "Lab 1: Hello OpenClaw - Executing your very first simple automation command"
     },
     {
       week: "Week 2",
-      title: "Reconnaissance Basics (Learning to collect information safely)",
-      description: "Learn to discover initial information about targets legally and ethically. Here, you will understand how actual system discovery works.",
+      title: "Data & Task Automation (Delegating repetitive chores)",
+      description: "Start delegating administrative tasks. Learn to connect documents and process various data files automatically.",
       details: [
-        "Module 2.1: Legal & Ethical Guidelines (Crucial! Differentiating ethical learning from illegal activities)",
-        "Module 2.2: Information Gathering Concepts (Passive vs Active Reconnaissance explained simply)",
-        "Module 2.3: Operating OpenClaw Scanning Features (Step-by-step scanning operations)",
-        "Module 2.4: Analyzing Your First Scan (Reading outputs and understanding risk levels/severity)"
+        "Module 2.1: Document Automation (Summarizing PDF papers, parsing files, and moving data seamlessly)",
+        "Module 2.2: AI-Powered Communications (Drafting smart email replies based on incoming keywords)",
+        "Module 2.3: Conditional Agent Logic (Teaching your AI to make simple decisions: if 'A' then do 'B')",
+        "Module 2.4: Monitoring Agent Sessions (Ensuring your AI Agent completes its assigned tasks correctly)"
       ],
-      labName: "Lab 2: Scan & Report - Performing discovery and documenting findings"
+      labName: "Lab 2: Assistant Builder - Creating an automatic email and document summarizer assistant"
     },
     {
       week: "Week 3",
-      title: "Understanding Vulnerabilities (What does it mean when OpenClaw finds something?)",
-      description: "Unravel the meaning behind findings. You will learn to recognize common digital vulnerabilities using relatable daily examples.",
+      title: "Web & API Integrations (Connecting your assistant to the world)",
+      description: "Connect your AI Agent with external web resources and popular cloud services to fetch or store real-time information.",
       details: [
-        "Module 3.1: What is a Vulnerability? (Real-world analogies instead of complex technical jargon)",
-        "Module 3.2: 10 Common Vulnerabilities Detected by OpenClaw (Real examples and detection paths)",
-        "Module 3.3: Interpreting Vulnerability Reports (Reading risk details, severity ratings, and impact)",
-        "Module 3.4: Writing Simple Assessment Reports (Documenting findings and recommending basic fixes)"
+        "Module 3.1: Simplified Web Integration Concepts (Harvesting info from web pages automatically)",
+        "Module 3.2: Connecting Google Workspace / Spreadsheet (Reading and writing row data directly using AI)",
+        "Module 3.3: Leveraging AI APIs (Integrating API keys to expand OpenClaw's intelligence capabilities)",
+        "Module 3.4: Secure Automation Practices (Crucial guidelines to keep your private data and API keys safe)"
       ],
-      labName: "Lab 3: Full Scan & Analysis - Conducting a complete digital security audit inside cloud sandbox"
+      labName: "Lab 3: Sheet Sync - Building an AI Agent that searches for product info and saves it into a spreadsheet"
     },
     {
       week: "Week 4",
-      title: "Integration, Best Practices & Next Steps (Putting it all together)",
-      description: "Combine all your acquired skills to apply them in real-world scenarios and map out your tech career goals.",
+      title: "Advanced Workflows & Capstone (Deploying 24/7 self-running assistants)",
+      description: "Synthesize everything you have learned to build a personal automated assistant that works background tasks.",
       details: [
-        "Module 4.1: Building Your Workspace (Creating scanning templates for optimal efficiency)",
-        "Module 4.2: OpenClaw in the Security Ecosystem (How it operates alongside modern industry standards)",
-        "Module 4.3: Career Pathways & Job Openings (Exploring roles, writing resumes, and preparing for interviews)",
-        "Module 4.4: Continuous Learning & Community (Free resources, forums, and tips to stay updated in tech)"
+        "Module 4.1: Scheduling Task Operations (Setting up routines to trigger actions hourly or every morning)",
+        "Module 4.2: Graceful Error Handling (Teaching your AI Agent to handle glitches and retry operations safely)",
+        "Module 4.3: AI Productivity Portfolio (Organizing your self-made assistants to showcase to clients or team leaders)",
+        "Module 4.4: Next Steps & Continuous Growth (Free tools, communities, and guidelines to keep building AI Agents)"
       ],
-      labName: "Lab 4: Capstone Project - Simulating a comprehensive digital audit and reflecting on findings"
+      labName: "Lab 4: Capstone Automation - Showcasing your custom self-built daily task automation system"
     }
   ]
 };
@@ -285,7 +285,7 @@ export const FAQs: { id: FAQItem[]; en: FAQItem[] } = {
     },
     {
       question: "Apakah akan ada banyak coding atau pemrograman?",
-      answer: "Tidak ada keharusan bisa coding. OpenClaw adalah sebuah program/tool siap pakai yang ramah pengguna. Anda hanya perlu memahami tombol-tombol utama dan logika dasar pemakaiannya."
+      answer: "Tidak ada keharusan bisa coding. OpenClaw adalah sebuah program/tool siap pakai yang ramah pengguna. Anda hanya perlu memahami logika dasarnya untuk melatih AI Agent buatan Anda."
     },
     {
       question: "Berapa jam per minggu yang harus saya luangkan?",
@@ -296,12 +296,12 @@ export const FAQs: { id: FAQItem[]; en: FAQItem[] } = {
       answer: "Seluruh sesi live direkam dengan kualitas tinggi dan diunggah ke Portal Siswa maksimal 2 jam setelah kelas selesai. Anda bisa menonton ulang kapan saja dan bertanya di forum komunitas jika ada materi yang kurang dipahami."
     },
     {
-      question: "Apakah ini legal untuk dipelajari? Apakah saya akan belajar meretas secara ilegal?",
-      answer: "Pelatihan ini 100% legal dan etis. Kita belajar di dalam lingkungan simulasi laboratorium terisolasi yang diizinkan (sandbox). Kami juga menyediakan materi khusus mengenai aturan hukum keamanan siber nasional agar Anda tahu batasannya."
+      question: "Apakah ini legal untuk dipelajari? Apakah ada risiko penyalahgunaan?",
+      answer: "Pelatihan ini 100% legal dan etis. Kita belajar mengotomatiskan produktivitas dan alur kerja menggunakan AI Agent resmi di lingkungan belajar terisolasi (sandbox). Tidak ada materi mengenai tindakan meretas atau eksploitasi ilegal."
     },
     {
       question: "Bagaimana dengan lab praktisnya? Apakah aman bagi komputer saya?",
-      answer: "Sangat aman! Laboratorium kami berjalan di server cloud sandbox milik OpenClaw. Komputer Anda tidak akan terkena virus atau risiko apa pun saat melakukan eksperimen pemindaian sistem."
+      answer: "Sangat aman! Laboratorium otomatisasi kami berjalan di server cloud sandbox milik UnderOne Academy. Komputer Anda tidak akan mengalami gangguan apa pun saat bereksperimen dengan AI Agent."
     },
     {
       question: "Apakah saya bisa mengakses materi selamanya?",
@@ -347,7 +347,7 @@ export const FAQs: { id: FAQItem[]; en: FAQItem[] } = {
     },
     {
       question: "Will there be a lot of coding or programming?",
-      answer: "No coding is required. OpenClaw is a user-friendly program/tool. You only need to understand the primary menus, buttons, and overall logic of usage."
+      answer: "No coding is required. OpenClaw is a user-friendly program/tool. You only need to understand the fundamental logic of deploying your AI Agents."
     },
     {
       question: "How many hours per week should I allocate?",
@@ -358,12 +358,12 @@ export const FAQs: { id: FAQItem[]; en: FAQItem[] } = {
       answer: "All live classes are recorded in high quality and uploaded to the Student Portal within 2 hours. You can review them anytime and ask questions in our active community."
     },
     {
-      question: "Is this legal to learn? Will I learn how to hack illegally?",
-      answer: "This training is 100% legal and ethical. We practice inside isolated cloud sandbox environments (simulations). We also include dedicated sections on cyber law so you know legal boundaries."
+      question: "Is this legal to learn? Are there any misuse risks?",
+      answer: "Completely legal and 100% ethical! We learn productivity automation using official AI Agents inside isolated learning sandboxes. There are no malicious hacking or exploit materials."
     },
     {
       question: "Are the practical labs safe for my computer?",
-      answer: "Completely safe! Our labs run on cloud sandbox servers. Your computer is never exposed to viruses or other hazards when performing scan experiments."
+      answer: "Completely safe! Our automation labs run on secure cloud sandboxes. Your computer is never exposed to any risks while experimenting with AI Agents."
     },
     {
       question: "Do I get lifetime access to the materials?",
@@ -407,7 +407,7 @@ export const testimonials: { id: Testimonial[]; en: Testimonial[] } = {
       name: "Adi Pratama",
       role: "Lulusan Non-IT / Mandiri",
       company: "Sekarang di Tech Support",
-      quote: "Dulu saya pikir belajar security itu hanya untuk jenius matematika. Penjelasan instruktur di OpenClaw begitu sederhana, menggunakan analogi sehari-hari yang mudah diingat. Sekarang saya sangat percaya diri mengoperasikan tools siber profesional!",
+      quote: "Dulu saya pikir belajar otomatisasi AI itu hanya untuk jenius pemrograman. Penjelasan instruktur di UnderOne Academy begitu sederhana, menggunakan analogi sehari-hari yang mudah diingat. Sekarang saya sangat percaya diri membuat asisten otomatis kerja sendiri!",
       rating: 5,
       avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer"
     },
@@ -416,7 +416,7 @@ export const testimonials: { id: Testimonial[]; en: Testimonial[] } = {
       name: "Rina Wijaya",
       role: "Career Changer",
       company: "Mantan Pegawai Administrasi",
-      quote: "Sebagai pemula murni, saya sempat takut merasa bodoh saat bertanya. Namun di OpenClaw, suasananya sangat mendukung, ramah, dan bebas menghakimi. Kursus terbaik untuk siapa saja yang ingin pivot ke dunia siber!",
+      quote: "Sebagai pemula murni, saya sempat takut merasa bodoh saat bertanya. Namun di UnderOne Academy, suasananya sangat mendukung, ramah, dan bebas menghakimi. Kursus terbaik untuk siapa saja yang ingin melipatgandakan produktivitas kerja harian!",
       rating: 5,
       avatarUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer"
     },
@@ -425,7 +425,7 @@ export const testimonials: { id: Testimonial[]; en: Testimonial[] } = {
       name: "Kevin Sanjaya",
       role: "Mahasiswa Tingkat Akhir",
       company: "Universitas Swasta",
-      quote: "Kuliah seringkali terlalu banyak teori abstrak. Praktik langsung 70% di lab simulasi OpenClaw ini membuka mata saya tentang cara kerja jaringan komputer di dunia nyata secara aman. Sangat direkomendasikan untuk pemula IT!",
+      quote: "Kuliah seringkali terlalu banyak teori abstrak. Praktik langsung 70% di lab simulasi otomatisasi OpenClaw ini membuka mata saya tentang cara mendelegasikan tugas berulang ke AI secara nyata. Sangat merekomendasikan program ini untuk produktivitas kerja!",
       rating: 5,
       avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer"
     }
@@ -436,7 +436,7 @@ export const testimonials: { id: Testimonial[]; en: Testimonial[] } = {
       name: "Adi Pratama",
       role: "Non-IT Graduate / Self-taught",
       company: "Now in Tech Support",
-      quote: "I used to think security is only for math geniuses. The instructors' explanations here are so simple, using relatable day-to-day analogies. I am now extremely confident operating professional digital scanning tools!",
+      quote: "I used to think AI automation is only for programming geniuses. The instructors' explanations here are so simple, using relatable day-to-day analogies. I am now extremely confident creating my own automated work assistants!",
       rating: 5,
       avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer"
     },
@@ -445,7 +445,7 @@ export const testimonials: { id: Testimonial[]; en: Testimonial[] } = {
       name: "Rina Wijaya",
       role: "Career Changer",
       company: "Former Administrative Staff",
-      quote: "As a pure beginner, I was afraid of looking foolish when asking questions. But at OpenClaw, the vibe is extremely encouraging, friendly, and non-judgmental. The perfect course for pivoting into tech!",
+      quote: "As a pure beginner, I was afraid of looking foolish when asking questions. But at UnderOne Academy, the vibe is extremely encouraging, friendly, and non-judgmental. The perfect course for doubling your daily work efficiency!",
       rating: 5,
       avatarUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer"
     },
@@ -454,7 +454,7 @@ export const testimonials: { id: Testimonial[]; en: Testimonial[] } = {
       name: "Kevin Sanjaya",
       role: "Final Year Student",
       company: "Private University",
-      quote: "College courses are often filled with abstract theory. The 70% hands-on exercises in the OpenClaw labs showed me how network architecture actually runs in real life. Highly recommended for IT beginners!",
+      quote: "College courses are often filled with abstract theory. The 70% hands-on exercises in the OpenClaw labs showed me how to actually delegate routine tasks to AI in real life. Highly recommended for boosting productivity!",
       rating: 5,
       avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer"
     }

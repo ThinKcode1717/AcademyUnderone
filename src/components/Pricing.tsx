@@ -37,73 +37,22 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
 
   const formatNumber = (num: number) => num.toString().padStart(2, '0');
 
-  const packages = language === 'id' ? [
+  const packages = [
     {
       id: 'starter' as PackageType,
-      name: 'Starter Package',
-      price: 'Rp 699.000',
-      originalPrice: 'Rp 999.000',
-      duration: '4 Minggu Pelatihan',
-      description: 'Dibuat khusus untuk budget-conscious. Belajar mandiri dengan dukungan komunitas terpercaya.',
-      features: [
+      name: t('price_package_starter_title'),
+      price: language === 'id' ? 'Rp 699.000' : '$49',
+      originalPrice: language === 'id' ? 'Rp 999.000' : '$69',
+      duration: t('price_package_starter_duration'),
+      description: t('price_package_starter_desc'),
+      features: language === 'id' ? [
         'Akses Materi Utama 4 Minggu',
         'Akses Shared Sandbox Environment',
         'Dukungan Forum Komunitas',
         '2x per Minggu Group Q&A Session',
         'Sertifikat Kelulusan Resmi',
         'Sangat Pas Untuk Pemula Murni'
-      ],
-      cta: 'Pilih Paket Starter',
-      featured: false,
-    },
-    {
-      id: 'standard' as PackageType,
-      name: 'Standard Package',
-      price: 'Rp 1.499.000',
-      originalPrice: 'Rp 1.999.000',
-      duration: '4 Minggu + 2 Bulan Akses',
-      description: 'Rekomendasi terbaik bagi kebanyakan siswa. Dapatkan bimbingan privat agar belajar lebih terarah.',
-      features: [
-        'Semua Fitur Paket Starter',
-        'Tambahan 2 Bulan Akses Portal',
-        'Akses Laboratorium Private Sandbox',
-        'Dukungan Layanan Priority Support',
-        '1x per Bulan Sesi Mentoring 1-on-1',
-        'Review Resume & Profil LinkedIn',
-        '81% Siswa Memilih Paket Ini'
-      ],
-      cta: 'Pilih Paket Standard',
-      featured: true,
-      badge: 'PALING POPULER',
-    },
-    {
-      id: 'premium' as PackageType,
-      name: 'Premium Package',
-      price: 'Rp 2.299.000',
-      originalPrice: 'Rp 2.999.000',
-      duration: '4 Minggu + 6 Bulan Akses',
-      description: 'Akses tanpa batas (all-access) untuk kesiapan penuh terjun di industri keamanan siber.',
-      features: [
-        'Semua Fitur Paket Standard',
-        'Tambahan 6 Bulan Akses Portal',
-        'Akses Laboratorium Premium Sandbox',
-        'Dukungan Layanan VIP 24/7',
-        '2x per Bulan Sesi Mentoring 1-on-1',
-        'Akses Prioritas Update Modul Baru',
-        'Program Penyaluran Portofolio Prioritas'
-      ],
-      cta: 'Pilih Paket Premium',
-      featured: false,
-    }
-  ] : [
-    {
-      id: 'starter' as PackageType,
-      name: 'Starter Package',
-      price: '$49',
-      originalPrice: '$69',
-      duration: '4-Week Training',
-      description: 'Specifically crafted for budget-conscious learners. Independent learning with community access.',
-      features: [
+      ] : [
         '4-Week Core Syllabus Access',
         'Shared Sandbox Lab Environment',
         'Active Learning Support Forum',
@@ -111,17 +60,25 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
         'Official Completion Certificate',
         'Highly Suitable for Pure Beginners'
       ],
-      cta: 'Choose Starter Plan',
+      cta: t('price_package_starter_cta'),
       featured: false,
     },
     {
       id: 'standard' as PackageType,
-      name: 'Standard Package',
-      price: '$99',
-      originalPrice: '$139',
-      duration: '4 Weeks + 2 Months Access',
-      description: 'Our highly recommended tier for most students. Receive personalized tutoring to accelerate learning.',
-      features: [
+      name: t('price_package_standard_title'),
+      price: language === 'id' ? 'Rp 1.499.000' : '$99',
+      originalPrice: language === 'id' ? 'Rp 1.999.000' : '$139',
+      duration: t('price_package_standard_duration'),
+      description: t('price_package_standard_desc'),
+      features: language === 'id' ? [
+        'Semua Fitur Paket Starter',
+        'Tambahan 2 Bulan Akses Portal',
+        'Akses Laboratorium Private Sandbox',
+        'Dukungan Layanan Priority Support',
+        '1x per Bulan Sesi Mentoring 1-on-1',
+        'Review Resume & Profil LinkedIn',
+        '81% Siswa Memilih Paket Ini'
+      ] : [
         'All Starter Package features',
         'Additional 2 Months Portal Access',
         'Private Sandbox Lab Access',
@@ -130,18 +87,26 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
         'Resume & LinkedIn Profile Review',
         '81% of Students Choose This Plan'
       ],
-      cta: 'Choose Standard Plan',
+      cta: t('price_package_standard_cta'),
       featured: true,
-      badge: 'MOST POPULAR',
+      badge: t('price_badge_popular'),
     },
     {
       id: 'premium' as PackageType,
-      name: 'Premium Package',
-      price: '$149',
-      originalPrice: '$199',
-      duration: '4 Weeks + 6 Months Access',
-      description: 'All-access package designed for comprehensive preparation to enter the cybersecurity landscape.',
-      features: [
+      name: t('price_package_premium_title'),
+      price: language === 'id' ? 'Rp 2.299.000' : '$149',
+      originalPrice: language === 'id' ? 'Rp 2.999.000' : '$199',
+      duration: t('price_package_premium_duration'),
+      description: t('price_package_premium_desc'),
+      features: language === 'id' ? [
+        'Semua Fitur Paket Standard',
+        'Tambahan 6 Bulan Akses Portal',
+        'Akses Laboratorium Premium Sandbox',
+        'Dukungan Layanan VIP 24/7',
+        '2x per Bulan Sesi Mentoring 1-on-1',
+        'Akses Prioritas Update Modul Baru',
+        'Program Penyaluran Portofolio Prioritas'
+      ] : [
         'All Standard Package features',
         'Additional 6 Months Portal Access',
         'Premium Dedicated Sandbox Lab',
@@ -150,7 +115,7 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
         'Priority Access to New Syllabus Updates',
         'Priority Career Referral & Matching Services'
       ],
-      cta: 'Choose Premium Plan',
+      cta: t('price_package_premium_cta'),
       featured: false,
     }
   ];

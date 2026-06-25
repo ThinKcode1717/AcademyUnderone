@@ -8,7 +8,7 @@ import { Shield, Mail, Phone, MapPin, Linkedin, Instagram, Youtube, Twitter, Sen
 import { useApp } from '../context/AppContext';
 
 export default function Footer() {
-  const { language } = useApp();
+  const { t, language } = useApp();
   const [newsEmail, setNewsEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 
@@ -41,9 +41,7 @@ export default function Footer() {
             </div>
             
             <p className="text-cyber-text-sec text-xs sm:text-sm leading-relaxed">
-              {language === 'id'
-                ? 'Platform pelatihan cybersecurity praktis (hands-on) terdepan di Indonesia. Melahirkan pertahanan siber profesional siap kerja yang berlisensi industri bersama FEDUCATION.'
-                : 'The leading hands-on cybersecurity training academy. Empowering job-ready digital security professionals with industry-grade certifications alongside FEDUCATION.'}
+              {t('foot_desc')}
             </p>
 
             {/* Social Medias */}
@@ -124,21 +122,17 @@ export default function Footer() {
           {/* Newsletter Box */}
           <div className="lg:col-span-4 space-y-4">
             <h4 className="text-xs font-mono font-bold text-theme-title uppercase tracking-wider">
-              {language === 'id' ? 'Newsletter Tips Siber' : 'Cyber Security Newsletter'}
+              {t('foot_news_hdr')}
             </h4>
             <p className="text-cyber-text-sec text-xs leading-relaxed">
-              {language === 'id'
-                ? 'Dapatkan modul hacking gratis, tips pertahanan siber mingguan, dan info batch baru langsung di inbox email Anda.'
-                : 'Get free cybersecurity guides, weekly defensive insights, and early-bird batch announcements right to your inbox.'}
+              {t('foot_news_desc')}
             </p>
             
             {subscribed ? (
               <div className="bg-accent-green/10 border border-accent-green/20 p-3 rounded-lg text-accent-green text-xs flex items-center space-x-2">
                 <Check className="w-4 h-4 flex-shrink-0" />
                 <span>
-                  {language === 'id'
-                    ? 'Terima kasih! Cek inbox Anda untuk tips siber pertama.'
-                    : 'Thank you! Check your inbox for your first cybersecurity guide.'}
+                  {t('foot_news_success')}
                 </span>
               </div>
             ) : (
@@ -187,8 +181,8 @@ export default function Footer() {
           <p>© 2026 UNDERONE Academy & FEDUCATION. All Rights Reserved.</p>
           <p>
             {language === 'id'
-              ? 'Dibuat secara profesional untuk memajukan ketahanan siber nasional.'
-              : 'Professionally crafted to promote national and global cyber defense resilience.'}
+              ? 'Dibuat secara profesional untuk memajukan otomatisasi harian Anda.'
+              : 'Professionally crafted to advance your daily work automation.'}
           </p>
         </div>
 

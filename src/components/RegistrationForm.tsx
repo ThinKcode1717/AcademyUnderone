@@ -33,17 +33,17 @@ export const REGISTRATION_INTEGRATION_CONFIG = {
   GOOGLE_SHEET_WEBHOOK_URL: '', // Contoh: 'https://script.google.com/macros/s/AKfycb.../exec'
 
   // Pilihan B: Google Forms Direct POST
-  USE_GOOGLE_FORM: false, 
-  GOOGLE_FORM_SUBMIT_URL: '', // Contoh: 'https://docs.google.com/forms/d/e/1FAIpQLSfxxxxxx/formResponse'
+  USE_GOOGLE_FORM: true, 
+  GOOGLE_FORM_SUBMIT_URL: 'https://docs.google.com/forms/d/e/1FAIpQLSfQFaUJ0YtmyEpc3PHGL1KNXt47p6MgSaihTikBKIEnW8T_9Q/formResponse',
   GOOGLE_FORM_ENTRY_IDS: {
-    fullName: 'entry.111111111',  // ID input Nama Lengkap
-    email: 'entry.222222222',     // ID input Email
-    phone: 'entry.333333333',     // ID input WhatsApp / Telepon
-    selectedPackage: 'entry.444444444', // ID input Paket Belajar
-    background: 'entry.555555555', // ID input Latar Belakang
-    openClawExperience: 'entry.666666666', // ID input Pengalaman OpenClaw
-    motivation: 'entry.777777777', // ID input Motivasi Belajar
-    preferredSchedule: 'entry.888888888', // ID input Jadwal Pilihan
+    fullName: 'entry.1665580814',  // ID input Nama Lengkap
+    email: 'entry.663288318',     // ID input Email
+    phone: 'entry.1736110717',     // ID input WhatsApp / Telepon
+    selectedPackage: 'entry.1898486387', // ID input Paket Belajar
+    background: 'entry.1853173003', // ID input Latar Belakang
+    openClawExperience: 'entry.2073854927', // ID input Pengalaman OpenClaw
+    motivation: 'entry.109604537', // ID input Motivasi Belajar
+    preferredSchedule: 'entry.924376046', // ID input Jadwal Pilihan
   }
 };
 
