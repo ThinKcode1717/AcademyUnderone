@@ -18,6 +18,7 @@ export interface Registration {
   linkedIn?: string;
   preferredSchedule: string[];
   submittedAt: string;
+  bnspAddon?: boolean;
 }
 
 export interface Testimonial {

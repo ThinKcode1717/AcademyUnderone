@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { Check, ShieldCheck, Percent, HelpCircle, ChevronDown, ChevronUp, Clock } from 'lucide-react';
+import { Check, ShieldCheck, Percent, HelpCircle, ChevronDown, ChevronUp, Clock, Award } from 'lucide-react';
 import { PackageType } from '../types';
 import { useApp } from '../context/AppContext';
 
@@ -255,6 +255,33 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* BNSP Certification Option Card */}
+        <div className="max-w-6xl mx-auto mb-16 bg-gradient-to-r from-cyber-charcoal/80 to-cyber-navy border border-brand-red/30 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-start space-x-4 text-left">
+            <div className="p-3.5 bg-brand-red/10 border border-brand-red/30 rounded-xl text-brand-red shrink-0 mt-1">
+              <Award className="w-6 h-6 text-brand-red-light" />
+            </div>
+            <div>
+              <div className="inline-flex items-center space-x-1.5 bg-brand-red/15 px-2.5 py-0.5 rounded-full text-[10px] font-mono text-brand-red-light uppercase tracking-wider mb-2 font-semibold">
+                <span>{language === 'id' ? 'Sertifikasi Tambahan (Opsional)' : 'Optional Certification Addon'}</span>
+              </div>
+              <h4 className="font-extrabold text-theme-title text-lg sm:text-xl">
+                {language === 'id' ? 'Sertifikasi Kompetensi BNSP Resmi' : 'Official BNSP Competency Certification'}
+              </h4>
+              <p className="text-sm text-cyber-text-sec mt-1 max-w-3xl leading-relaxed">
+                {language === 'id'
+                  ? 'Ingin pengakuan kompetensi berlisensi negara? Anda dapat mengambil ujian sertifikasi BNSP resmi untuk skema AI Agent & Vibe Coding di akhir kelas dengan biaya tambahan (+ Rp 500.000). Sangat direkomendasikan untuk meningkatkan daya saing portofolio profesional Anda.'
+                  : 'Want state-licensed competency recognition? You can opt-in for the official BNSP certification exam for AI Agent & Vibe Coding at the end of the course with a small addon fee (+ Rp 500.000 / $35). High value for corporate recognition.'}
+              </p>
+            </div>
+          </div>
+          <div className="bg-cyber-navy border border-cyber-slate/80 p-4 rounded-xl text-center shrink-0 w-full md:w-auto flex flex-row md:flex-col items-center justify-between md:justify-center gap-2">
+            <span className="text-xs font-mono text-cyber-text-muted">{language === 'id' ? 'BIAYA UJIAN:' : 'ADDON FEE:'}</span>
+            <span className="text-xl sm:text-2xl font-black text-accent-cyan">{language === 'id' ? '+ Rp 500.000' : '+ $35'}</span>
+            <span className="text-[10px] text-cyber-text-muted">{language === 'id' ? 'Pilih di Form Registrasi' : 'Select in Registration Form'}</span>
+          </div>
         </div>
 
         {/* Extras & Guarantees */}

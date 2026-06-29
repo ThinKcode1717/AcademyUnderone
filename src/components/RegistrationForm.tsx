@@ -40,6 +40,7 @@ export const REGISTRATION_INTEGRATION_CONFIG = {
     email: 'entry.663288318',     // ID input Email
     phone: 'entry.1736110717',     // ID input WhatsApp / Telepon
     selectedPackage: 'entry.1898486387', // ID input Paket Belajar
+    sertification: 'entry.1718649527', // ID input Sertifikasi
     background: 'entry.1853173003', // ID input Latar Belakang
     openClawExperience: 'entry.2073854927', // ID input Pengalaman OpenClaw
     motivation: 'entry.109604537', // ID input Motivasi Belajar
@@ -69,6 +70,7 @@ export default function RegistrationForm({
   const [motivation, setMotivation] = useState('');
   const [preferredSchedule, setPreferredSchedule] = useState<string[]>([]);
   const [agreeToPrivacy, setAgreeToPrivacy] = useState(true);
+  const [bnspAddon, setBnspAddon] = useState(false);
 
   // Errors state
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -80,6 +82,30 @@ export default function RegistrationForm({
   useEffect(() => {
     setFormPackage(selectedPackage);
   }, [selectedPackage]);
+
+  const getPackagePrice = (pkg: PackageType) => {
+    switch (pkg) {
+      case 'starter':
+        return language === 'id' ? 999000 : 69;
+      case 'standard':
+        return language === 'id' ? 1999000 : 139;
+      case 'premium':
+        return language === 'id' ? 2999000 : 199;
+      default:
+        return 0;
+    }
+  };
+
+  const getBnspPrice = () => {
+    return language === 'id' ? 500000 : 35;
+  };
+
+  const formatCurrency = (val: number) => {
+    if (language === 'id') {
+      return `Rp ${val.toLocaleString('id-ID')}`;
+    }
+    return `$${val}`;
+  };
 
   // Handle schedule checkboxes
   const handleScheduleChange = (schedule: string) => {
@@ -149,6 +175,7 @@ export default function RegistrationForm({
       motivation,
       preferredSchedule,
       submittedAt: new Date().toISOString(),
+      bnspAddon,
     };
 
     // 1. Pilihan A: Integrasi Google Sheets (POST ke Apps Script Web App)
@@ -175,7 +202,11 @@ export default function RegistrationForm({
         formData.append(REGISTRATION_INTEGRATION_CONFIG.GOOGLE_FORM_ENTRY_IDS.fullName, fullName);
         formData.append(REGISTRATION_INTEGRATION_CONFIG.GOOGLE_FORM_ENTRY_IDS.email, email);
         formData.append(REGISTRATION_INTEGRATION_CONFIG.GOOGLE_FORM_ENTRY_IDS.phone, phone);
-        formData.append(REGISTRATION_INTEGRATION_CONFIG.GOOGLE_FORM_ENTRY_IDS.selectedPackage, formPackage);
+        
+        // Append package + certification info so it's logged in the same Google Form column
+        const finalPackageName = formPackage + (bnspAddon ? ' (+ Sertifikasi BNSP)' : '');
+        formData.append(REGISTRATION_INTEGRATION_CONFIG.GOOGLE_FORM_ENTRY_IDS.selectedPackage, finalPackageName);
+        
         formData.append(REGISTRATION_INTEGRATION_CONFIG.GOOGLE_FORM_ENTRY_IDS.background, background);
         formData.append(REGISTRATION_INTEGRATION_CONFIG.GOOGLE_FORM_ENTRY_IDS.openClawExperience, openClawExperience);
         formData.append(REGISTRATION_INTEGRATION_CONFIG.GOOGLE_FORM_ENTRY_IDS.motivation, motivation);
@@ -211,13 +242,14 @@ export default function RegistrationForm({
     setOpenClawExperience('Never heard of it');
     setMotivation('');
     setPreferredSchedule([]);
+    setBnspAddon(false);
     setIsSubmitted(false);
     setErrors({});
   };
 
   const getWaLink = () => {
-    const textId = `Halo UnderOne Academy, saya ${fullName} baru saja mendaftar untuk paket ${formPackage}. Bisa bantu langkah selanjutnya?`;
-    const textEn = `Hello UnderOne Academy, I am ${fullName} and I just registered for the ${formPackage} plan. Can you help me with the next steps?`;
+    const textId = `Halo UnderOne Academy, saya ${fullName} baru saja mendaftar untuk paket ${formPackage}${bnspAddon ? ' dengan tambahan Sertifikasi BNSP' : ''}. Bisa bantu langkah selanjutnya?`;
+    const textEn = `Hello UnderOne Academy, I am ${fullName} and I just registered for the ${formPackage} plan${bnspAddon ? ' with optional BNSP Certification addon' : ''}. Can you help me with the next steps?`;
     return `https://wa.me/6285119551741?text=${encodeURIComponent(language === 'id' ? textId : textEn)}`;
   };
 
@@ -269,6 +301,18 @@ export default function RegistrationForm({
                 <p className="text-cyber-text-sec">
                   <strong className="text-theme-title">{language === 'id' ? 'Paket Belajar:' : 'Learning Plan:'}</strong>{' '}
                   <span className="text-brand-red font-bold uppercase">{formPackage}</span>
+                </p>
+                <p className="text-cyber-text-sec">
+                  <strong className="text-theme-title">{language === 'id' ? 'Sertifikasi BNSP:' : 'BNSP Certification:'}</strong>{' '}
+                  <span className="font-semibold text-accent-cyan">
+                    {bnspAddon 
+                      ? (language === 'id' ? `Ya (${formatCurrency(getBnspPrice())})` : `Yes (${formatCurrency(getBnspPrice())})`) 
+                      : (language === 'id' ? 'Tidak' : 'No')}
+                  </span>
+                </p>
+                <p className="text-cyber-text-sec pt-1.5 border-t border-cyber-slate/50">
+                  <strong className="text-theme-title">{language === 'id' ? 'Estimasi Total Biaya:' : 'Estimated Total Fee:'}</strong>{' '}
+                  <span className="text-accent-green font-extrabold">{formatCurrency(getPackagePrice(formPackage) + (bnspAddon ? getBnspPrice() : 0))}</span>
                 </p>
                 <p className="text-cyber-text-sec">
                   <strong className="text-theme-title">{language === 'id' ? 'Latar Belakang:' : 'Background:'}</strong>{' '}
@@ -400,15 +444,15 @@ export default function RegistrationForm({
                     >
                       {language === 'id' ? (
                         <>
-                          <option value="starter">Starter Package (Rp 999.000) - Cocok untuk budget</option>
-                          <option value="standard">Standard Package (Rp 1.999.000) - Terpopuler</option>
-                          <option value="premium">Premium Package (Rp 2.999.000) - Semua Akses</option>
+                          <option value="starter">Starter Package - Cocok untuk budget</option>
+                          <option value="standard">Standard Package - Terpopuler</option>
+                          <option value="premium">Premium Package - Semua Akses</option>
                         </>
                       ) : (
                         <>
-                          <option value="starter">Starter Package ($69) - Budget-friendly</option>
-                          <option value="standard">Standard Package ($139) - Most Popular</option>
-                          <option value="premium">Premium Package ($199) - All-Access</option>
+                          <option value="starter">Starter Package - Budget-friendly</option>
+                          <option value="standard">Standard Package - Most Popular</option>
+                          <option value="premium">Premium Package - All-Access</option>
                         </>
                       )}
                     </select>
@@ -483,6 +527,62 @@ export default function RegistrationForm({
                   </div>
                 </div>
 
+              </div>
+
+              {/* Optional Addon: BNSP Certification */}
+              <div className="p-5 rounded-xl border border-brand-red/25 bg-cyber-navy/40 space-y-4">
+                <div className="flex items-start space-x-3 cursor-pointer select-none">
+                  <input
+                    id="bnsp-checkbox"
+                    type="checkbox"
+                    checked={bnspAddon}
+                    onChange={() => setBnspAddon(!bnspAddon)}
+                    className="accent-brand-red w-5 h-5 mt-0.5 shrink-0 cursor-pointer"
+                  />
+                  <div>
+                    <label htmlFor="bnsp-checkbox" className="font-bold text-theme-title text-sm block cursor-pointer select-none">
+                      {language === 'id' ? 'Ambil Ujian & Sertifikasi BNSP Resmi (+ Rp 500.000)' : 'Take Official BNSP Competency Certification Exam (+ $35)'}
+                    </label>
+                    <span className="text-xs text-cyber-text-sec block mt-1 leading-relaxed">
+                      {language === 'id'
+                        ? 'Dapatkan sertifikat kompetensi resmi dari Badan Nasional Sertifikasi Profesi (BNSP) untuk memperkuat portofolio keahlian Vibe Coding & AI Agent Anda di dunia kerja.'
+                        : 'Earn a state-authorized competency certificate from the National Professional Certification Agency (BNSP) to stand out in the job market.'}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Dynamic Cost Calculator Box */}
+                <div className="border-t border-cyber-slate/30 pt-4 space-y-2.5">
+                  <span className="text-xs font-mono text-cyber-text-muted block uppercase tracking-wider">
+                    {language === 'id' ? 'Rincian Kalkulasi Biaya:' : 'Fee Calculation Summary:'}
+                  </span>
+                  <div className="flex justify-between items-center text-sm text-cyber-text-sec">
+                    <span>
+                      {language === 'id' ? 'Biaya Paket Belajar:' : 'Base Course Fee:'}{' '}
+                      <span className="font-bold text-brand-red-light uppercase">({formPackage})</span>
+                    </span>
+                    <span className="font-mono text-theme-title font-semibold">{formatCurrency(getPackagePrice(formPackage))}</span>
+                  </div>
+                  <div className="flex justify-between items-center text-sm text-cyber-text-sec">
+                    <span>{language === 'id' ? 'Sertifikasi BNSP (Opsional):' : 'Optional BNSP Certification Addon:'}</span>
+                    <span className="font-mono text-accent-cyan font-semibold">
+                      {bnspAddon ? `+ ${formatCurrency(getBnspPrice())}` : formatCurrency(0)}
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center pt-3 border-t border-cyber-slate/30 font-bold">
+                    <span className="text-sm text-theme-title">
+                      {language === 'id' ? 'Estimasi Total Pembayaran:' : 'Estimated Total Payment:'}
+                    </span>
+                    <span className="text-lg text-accent-green font-mono font-extrabold">
+                      {formatCurrency(getPackagePrice(formPackage) + (bnspAddon ? getBnspPrice() : 0))}
+                    </span>
+                  </div>
+                  <p className="text-[10px] text-cyber-text-muted italic leading-normal">
+                    {language === 'id'
+                      ? '*Biaya di atas belum termasuk diskon promo aktif atau diskon grup pendaftaran rombongan. Tim kami akan memverifikasi dan menghitung potongan diskon tambahan Anda secara manual saat menghubungi Anda.'
+                      : '*The calculated fee does not yet include specific group discounts or custom active promo rates. Our team will verify and apply your custom discounts during onboarding.'}
+                  </p>
+                </div>
               </div>
 
               {/* Motivation / Why interested */}
