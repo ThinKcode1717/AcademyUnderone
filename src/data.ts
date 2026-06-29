@@ -83,7 +83,7 @@ export const skillsBenefits: { id: SkillBenefit[]; en: SkillBenefit[] } = {
     },
     {
       title: "Percaya Diri Menggunakan Tool",
-      capability: "Bisa menggunakan tools profesional seperti OpenClaw dengan nyaman tanpa rasa takut salah klik.",
+      capability: "Bisa menggunakan tools AI Agent & otomatisasi dengan nyaman tanpa rasa takut salah klik.",
       industry: "Meningkatkan nilai produktivitas dan keunggulan Anda di era kerja cerdas masa kini.",
       iconName: "Fingerprint",
     },
@@ -133,7 +133,7 @@ export const skillsBenefits: { id: SkillBenefit[]; en: SkillBenefit[] } = {
     },
     {
       title: "Confident Tool Deployment",
-      capability: "Run powerful tools like OpenClaw smoothly to execute your custom daily automations.",
+      capability: "Run powerful AI Agent & automation tools smoothly to execute your custom daily automations.",
       industry: "Supercharges your efficiency as a highly valued modern digital worker.",
       iconName: "Fingerprint",
     },
@@ -285,7 +285,7 @@ export const FAQs: { id: FAQItem[]; en: FAQItem[] } = {
     },
     {
       question: "Apakah akan ada banyak coding atau pemrograman?",
-      answer: "Tidak ada keharusan bisa coding. OpenClaw adalah sebuah program/tool siap pakai yang ramah pengguna. Anda hanya perlu memahami logika dasarnya untuk melatih AI Agent buatan Anda."
+      answer: "Tidak ada keharusan bisa coding. Anda akan diajarkan menggunakan tools asisten cerdas berbasis instruksi bahasa sehari-hari (Vibe Coding). Cukup pahami logika dasarnya untuk melatih AI Agent buatan Anda."
     },
     {
       question: "Berapa jam per minggu yang harus saya luangkan?",
@@ -317,7 +317,7 @@ export const FAQs: { id: FAQItem[]; en: FAQItem[] } = {
     },
     {
       question: "Apakah saya perlu membeli software atau perangkat keras mahal tambahan?",
-      answer: "Tidak! OpenClaw adalah aplikasi gratis dan open-source. Semua materi penunjang pembelajaran sudah termasuk lengkap di dalam biaya pelatihan awal."
+      answer: "Tidak! Semua tools pendukung, platform sandbox, dan API pembelajaran sudah disediakan lengkap di dalam biaya pelatihan awal tanpa biaya tersembunyi."
     },
     {
       question: "Apakah saya bisa belajar sambil bekerja penuh waktu (full-time)?",
@@ -347,7 +347,7 @@ export const FAQs: { id: FAQItem[]; en: FAQItem[] } = {
     },
     {
       question: "Will there be a lot of coding or programming?",
-      answer: "No coding is required. OpenClaw is a user-friendly program/tool. You only need to understand the fundamental logic of deploying your AI Agents."
+      answer: "No coding is required. You will learn to use smart assistant tools driven by everyday language (Vibe Coding). You only need to understand the fundamental logic to train your own AI Agents."
     },
     {
       question: "How many hours per week should I allocate?",
@@ -379,7 +379,7 @@ export const FAQs: { id: FAQItem[]; en: FAQItem[] } = {
     },
     {
       question: "Do I need to buy any expensive hardware or software?",
-      answer: "No! OpenClaw is free and open-source. All necessary materials, sandbox configurations, and learning resources are included in the tuition fee."
+      answer: "No! All supporting tools, sandbox platforms, and learning APIs are fully provided within the initial tuition fee with no hidden costs."
     },
     {
       question: "Can I learn while working full-time?",
@@ -404,59 +404,65 @@ export const testimonials: { id: Testimonial[]; en: Testimonial[] } = {
   id: [
     {
       id: "t1",
-      name: "Adi Pratama",
-      role: "Lulusan Non-IT / Mandiri",
-      company: "Sekarang di Tech Support",
-      quote: "Dulu saya pikir belajar otomatisasi AI itu hanya untuk jenius pemrograman. Penjelasan instruktur di UnderOne Academy begitu sederhana, menggunakan analogi sehari-hari yang mudah diingat. Sekarang saya sangat percaya diri membuat asisten otomatis kerja sendiri!",
+      name: "Andi Pratama",
+      role: "Staff Admin Operasional",
+      company: "Distributor Sembako Lokal",
+      quote: "Dulu saya menghabiskan 3 jam setiap sore hanya untuk memindahkan data pesanan dari WhatsApp dan email ke Excel. Setelah belajar Vibe Coding di UnderOne Academy, saya berhasil membuat AI Agent yang mendeteksi email pesanan masuk dan menginputnya otomatis ke spreadsheet. Sangat hemat waktu!",
       rating: 5,
-      avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer"
+      avatarUrl: "",
+      initials: "AP"
     },
     {
       id: "t2",
       name: "Rina Wijaya",
-      role: "Career Changer",
-      company: "Mantan Pegawai Administrasi",
-      quote: "Sebagai pemula murni, saya sempat takut merasa bodoh saat bertanya. Namun di UnderOne Academy, suasananya sangat mendukung, ramah, dan bebas menghakimi. Kursus terbaik untuk siapa saja yang ingin melipatgandakan produktivitas kerja harian!",
+      role: "Pemilik Toko Online",
+      company: "Fashion Retail",
+      quote: "Sebagai pemilik olshop, merekap laporan penjualan harian dan stok barang sangat melelahkan. Di sini saya diajarkan membuat asisten AI yang otomatis menyusun draft laporan keuangan bulanan dari file mutasi bank. Sangat praktis dan ramah pemula!",
       rating: 5,
-      avatarUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer"
+      avatarUrl: "",
+      initials: "RW"
     },
     {
       id: "t3",
       name: "Kevin Sanjaya",
-      role: "Mahasiswa Tingkat Akhir",
-      company: "Universitas Swasta",
-      quote: "Kuliah seringkali terlalu banyak teori abstrak. Praktik langsung 70% di lab simulasi otomatisasi OpenClaw ini membuka mata saya tentang cara mendelegasikan tugas berulang ke AI secara nyata. Sangat merekomendasikan program ini untuk produktivitas kerja!",
+      role: "Virtual Assistant Freelancer",
+      company: "Mandiri / Self-employed",
+      quote: "Materi asisten digital mandiri di sini sangat aplikatif. Saya langsung pakai untuk mengotomatiskan riset tren kompetitor dan menyusun draf konten untuk klien-klien luar negeri saya. Pekerjaan manual yang biasa makan waktu 5 jam sekarang beres dalam 15 menit saja!",
       rating: 5,
-      avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer"
+      avatarUrl: "",
+      initials: "KS"
     }
   ],
   en: [
     {
       id: "t1",
-      name: "Adi Pratama",
-      role: "Non-IT Graduate / Self-taught",
-      company: "Now in Tech Support",
-      quote: "I used to think AI automation is only for programming geniuses. The instructors' explanations here are so simple, using relatable day-to-day analogies. I am now extremely confident creating my own automated work assistants!",
+      name: "Andi Pratama",
+      role: "Admin Operations",
+      company: "Local Wholesale Distributor",
+      quote: "I used to spend 3 hours every afternoon manually copying order data from WhatsApp and emails to Excel. After learning Vibe Coding at UnderOne Academy, I successfully built an AI Agent that automatically detects incoming order emails and logs them to a spreadsheet. An incredible time saver!",
       rating: 5,
-      avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer"
+      avatarUrl: "",
+      initials: "AP"
     },
     {
       id: "t2",
       name: "Rina Wijaya",
-      role: "Career Changer",
-      company: "Former Administrative Staff",
-      quote: "As a pure beginner, I was afraid of looking foolish when asking questions. But at UnderOne Academy, the vibe is extremely encouraging, friendly, and non-judgmental. The perfect course for doubling your daily work efficiency!",
+      role: "E-commerce Store Owner",
+      company: "Fashion Retail",
+      quote: "As an online store owner, compiling daily sales reports and keeping track of inventory was exhausting. Here, I was taught how to build an AI assistant that automatically drafts monthly financial reports from bank statements. Super beginner-friendly!",
       rating: 5,
-      avatarUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer"
+      avatarUrl: "",
+      initials: "RW"
     },
     {
       id: "t3",
       name: "Kevin Sanjaya",
-      role: "Final Year Student",
-      company: "Private University",
-      quote: "College courses are often filled with abstract theory. The 70% hands-on exercises in the OpenClaw labs showed me how to actually delegate routine tasks to AI in real life. Highly recommended for boosting productivity!",
+      role: "Freelance Virtual Assistant",
+      company: "Self-employed",
+      quote: "The autonomous digital assistant modules here are incredibly practical. I immediately used them to automate competitor trend research and draft content calendars for my international clients. 5 hours of manual work now takes just 15 minutes!",
       rating: 5,
-      avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer"
+      avatarUrl: "",
+      initials: "KS"
     }
   ]
 };

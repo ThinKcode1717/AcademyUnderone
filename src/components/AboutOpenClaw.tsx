@@ -22,19 +22,19 @@ export default function AboutOpenClaw() {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center space-x-2 bg-brand-red/10 border border-brand-red/30 px-3 py-1 rounded-full text-xs font-mono text-brand-red-light">
             <Info className="w-3.5 h-3.5" />
-            <span>{language === 'id' ? 'PANDUAN UNTUK ORANG AWAM' : 'GUIDE FOR ABSOLUTE BEGINNERS'}</span>
+            <span>{language === 'id' ? 'KONSEP REVOLUSIONER' : 'REVOLUTIONARY CONCEPT'}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-theme-title tracking-tight">
             {language === 'id' ? (
-              <>Sebelum Mulai, Mari Kita Pahami <span className="text-brand-red-light">OpenClaw</span></>
+              <>Kombinasi Sempurna <span className="text-brand-red-light">AI Agent & Vibe Coding</span></>
             ) : (
-              <>Before We Begin, Let's Understand <span className="text-brand-red-light">OpenClaw</span></>
+              <>The Perfect Blend of <span className="text-brand-red-light">AI Agents & Vibe Coding</span></>
             )}
           </h2>
           <p className="text-base sm:text-lg text-cyber-text-sec">
           {language === 'id'
-            ? 'OpenClaw adalah sebuah tool pembelajaran otomatisasi pintar yang membantu Anda membuat, menjadwalkan, dan mendelegasikan asisten AI Agent untuk tugas-tugas administratif rutin harian.'
-            : 'OpenClaw is a simplified visual learning platform that empowers you to create, schedule, and delegate AI Agents to handle your repetitive daily office tasks.'}
+            ? 'Era baru produktivitas digital. Delegasikan tugas-tugas administratif rutin harian Anda kepada asisten AI Agent mandiri yang Anda kendalikan sepenuhnya menggunakan teknik Vibe Coding.'
+            : 'A new era of digital productivity. Delegate repetitive daily administrative tasks to autonomous AI Agents that you fully control using modern Vibe Coding techniques.'}
         </p>
       </div>
 
@@ -47,12 +47,12 @@ export default function AboutOpenClaw() {
             <Home className="w-6 h-6" />
           </div>
           <h3 className="text-lg font-bold text-theme-title mb-2">
-            {language === 'id' ? 'Asisten Virtual Pribadi' : 'Personal Virtual Assistant'}
+            {language === 'id' ? 'Asisten AI Mandiri (AI Agent)' : 'Autonomous AI Assistant'}
           </h3>
           <p className="text-sm text-cyber-text-sec leading-relaxed">
             {language === 'id'
-              ? 'Jika beban kerja harian Anda adalah tumpukan berkas digital, OpenClaw adalah asisten virtual serba bisa—membantu membaca, merangkum, dan menginput laporan secara otomatis.'
-              : 'If your daily workload represents a massive stack of digital files, OpenClaw is your versatile helper—assisting you to read, summarize, and input reports automatically.'}
+              ? 'AI Agent bekerja layaknya karyawan digital pribadi Anda—mampu membaca berkas, merangkum laporan, menginput data, hingga membuat keputusan logis secara otomatis.'
+              : 'AI Agents operate as your personal digital employees—reading files, summarizing reports, inputting data, and executing logical actions automatically.'}
           </p>
         </div>
 
@@ -62,12 +62,12 @@ export default function AboutOpenClaw() {
             <Search className="w-6 h-6" />
           </div>
           <h3 className="text-lg font-bold text-theme-title mb-2">
-            {language === 'id' ? 'Alur Kerja Terotomatisasi' : 'Automated Workflow Pipelines'}
+            {language === 'id' ? 'Pemrograman Instuitif (Vibe Coding)' : 'Intuitive Programming (Vibe Coding)'}
           </h3>
           <p className="text-sm text-cyber-text-sec leading-relaxed">
             {language === 'id'
-              ? 'OpenClaw bekerja layaknya asisten terjadwal harian—memantau email masuk, mengekstrak data penting, dan menyimpannya langsung ke Google Spreadsheet tanpa Anda sentuh lagi.'
-              : 'OpenClaw acts like an automated daily work processor—monitoring incoming emails, extracting key data points, and writing them straight into spreadsheets with zero manual effort.'}
+              ? 'Cukup berikan instruksi dalam bahasa sehari-hari. Biarkan AI yang menerjemahkan ide-ide hebat Anda menjadi program otomatisasi fungsional tanpa hambatan sintaksis.'
+              : 'Simply instruct in plain everyday language. Let AI translate your great business ideas into functional automated programs without syntactic barriers.'}
           </p>
         </div>
 
@@ -77,12 +77,12 @@ export default function AboutOpenClaw() {
             <ShieldCheck className="w-6 h-6" />
           </div>
           <h3 className="text-lg font-bold text-theme-title mb-2">
-            {language === 'id' ? 'Tool Otomatisasi AI Resmi' : 'Official AI Productivity Tool'}
+            {language === 'id' ? 'Sistem Otomatisasi Resmi & Aman' : 'Official & Secure Automation'}
           </h3>
           <p className="text-sm text-cyber-text-sec leading-relaxed">
             {language === 'id'
-              ? 'Ini bukan alat peretas. OpenClaw adalah platform produktivitas AI resmi yang ramah pemula dan dirancang untuk membantu meningkatkan produktivitas harian semua orang.'
-              : 'This is not malicious software. OpenClaw is built upon secure, official productivity principles used daily to safely automate and streamline business workflows.'}
+              ? 'Bukan trik ilegal atau peretasan berbahaya. Kami mengajarkan standar integrasi resmi berbasis API yang aman, andal, dan siap mendukung produktivitas kerja Anda.'
+              : 'Not a malicious trick or unsafe exploit. We teach official API-based integrations that are secure, reliable, and optimized for corporate operations.'}
           </p>
         </div>
 
@@ -94,19 +94,19 @@ export default function AboutOpenClaw() {
         <div className="bg-cyber-charcoal/30 border border-cyber-slate/30 rounded-2xl p-8 text-left">
           <h3 className="text-lg sm:text-xl font-bold text-theme-title mb-6 flex items-center space-x-2">
             <span className="w-2.5 h-2.5 rounded-full bg-accent-green"></span>
-            <span>{language === 'id' ? 'Apa yang Dilakukan OpenClaw:' : 'What OpenClaw Does:'}</span>
+            <span>{language === 'id' ? 'Kemampuan Utama AI Agent:' : 'Core Capabilities of AI Agents:'}</span>
           </h3>
           <ul className="space-y-4 text-left">
             <li className="flex items-start space-x-3">
               <ShieldCheck className="w-5 h-5 text-accent-green shrink-0 mt-0.5" />
               <div>
                 <h4 className="text-sm font-semibold text-theme-title">
-                  {language === 'id' ? 'Memproses & Merangkum Dokumen' : 'Processes & Summarizes Documents'}
+                  {language === 'id' ? 'Membaca & Mengekstrak Dokumen Berukuran Besar' : 'Reading & Extracting Huge Documents'}
                 </h4>
                 <p className="text-xs text-cyber-text-sec">
                   {language === 'id'
-                    ? 'Membantu membaca file PDF panjang, merangkum dokumen laporan, dan mengekstrak rincian penting secara cepat.'
-                    : 'Checks text files and bulky documents, extracting key insights and summaries instantly.'}
+                    ? 'Menganalisis file PDF panjang, merangkum poin penting laporan keuangan, dan mengekstrak rincian spesifik secara instan.'
+                    : 'Parsing lengthy PDF files, summarizing financial reports, and extracting specific details instantly.'}
                 </p>
               </div>
             </li>
@@ -114,12 +114,12 @@ export default function AboutOpenClaw() {
               <ShieldCheck className="w-5 h-5 text-accent-green shrink-0 mt-0.5" />
               <div>
                 <h4 className="text-sm font-semibold text-theme-title">
-                  {language === 'id' ? 'Mengelola Alur Data Spreadsheet' : 'Syncs Spreadsheet Records'}
+                  {language === 'id' ? 'Mengotomatiskan Sinkronisasi Data Spreadsheet' : 'Automating Spreadsheet Data Sync'}
                 </h4>
                 <p className="text-xs text-cyber-text-sec">
                   {language === 'id'
-                    ? 'Mengatur asisten digital untuk menginput, memindahkan, dan memperbarui data spreadsheet secara otomatis.'
-                    : 'Writes, updates, and structures row data directly using your custom-made AI Agents.'}
+                    ? 'Memasukkan, mencocokkan, dan memperbarui baris data spreadsheet secara teratur tanpa input manual.'
+                    : 'Writing, matching, and updating spreadsheet records seamlessly without manual data entry.'}
                 </p>
               </div>
             </li>
@@ -127,12 +127,12 @@ export default function AboutOpenClaw() {
               <ShieldCheck className="w-5 h-5 text-accent-green shrink-0 mt-0.5" />
               <div>
                 <h4 className="text-sm font-semibold text-theme-title">
-                  {language === 'id' ? 'Mengintegrasikan Aplikasi Kerja' : 'Integrates Work Applications'}
+                  {language === 'id' ? 'Mengintegrasikan Lintas Aplikasi Kerja' : 'Integrating Cross-App Workflows'}
                 </h4>
                 <p className="text-xs text-cyber-text-sec">
                   {language === 'id'
-                    ? 'Menghubungkan email, folder laporan harian, dan spreadsheet Anda ke dalam satu alur kerja otomatis.'
-                    : 'Connects email accounts, storage folders, and tracking sheets into one robust automated ecosystem.'}
+                    ? 'Menghubungkan email masuk, penyimpanan folder, dan laporan kerja Anda menjadi satu kesatuan alur otomatis.'
+                    : 'Unifying incoming emails, cloud storage, and task lists into one centralized automated pipeline.'}
                 </p>
               </div>
             </li>
@@ -140,12 +140,12 @@ export default function AboutOpenClaw() {
               <ShieldCheck className="w-5 h-5 text-accent-green shrink-0 mt-0.5" />
               <div>
                 <h4 className="text-sm font-semibold text-theme-title">
-                  {language === 'id' ? 'Melatih Pola Pikir Produktif' : 'Builds a Highly Productive Mindset'}
+                  {language === 'id' ? 'Meningkatkan Efisiensi Kerja Hingga 10x Lipat' : 'Boosting Work Efficiency Up to 10x'}
                 </h4>
                 <p className="text-xs text-cyber-text-sec">
                   {language === 'id'
-                    ? 'Membantu Anda memahami cara mendelegasikan tugas rutin berulang ke AI agar dapat fokus pada pekerjaan penting.'
-                    : 'Helps you grasp logical computational logic to eliminate boring, repetitive daily chores.'}
+                    ? 'Membebaskan waktu Anda dari rutinitas administratif yang membosankan agar fokus pada keputusan strategis.'
+                    : 'Freeing up valuable time from repetitive administrative chores to focus on high-impact strategic growth.'}
                 </p>
               </div>
             </li>
@@ -156,19 +156,19 @@ export default function AboutOpenClaw() {
         <div className="bg-cyber-charcoal/30 border border-cyber-slate/30 rounded-2xl p-8 text-left">
           <h3 className="text-lg sm:text-xl font-bold text-theme-title mb-6 flex items-center space-x-2">
             <span className="w-2.5 h-2.5 rounded-full bg-brand-red"></span>
-            <span>{language === 'id' ? 'Yang BUKAN Karakteristik OpenClaw:' : 'What OpenClaw is NOT:'}</span>
+            <span>{language === 'id' ? 'Apa yang Menjadikannya Sangat Efektif:' : 'What Makes It Highly Effective:'}</span>
           </h3>
           <ul className="space-y-4 text-left">
             <li className="flex items-start space-x-3">
               <XCircle className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
               <div>
                 <h4 className="text-sm font-semibold text-theme-title">
-                  {language === 'id' ? 'Bukan untuk Tindakan Ilegal' : 'Not for Unauthorized Exploits'}
+                  {language === 'id' ? 'Tidak Ada Batasan Sintaksis Kode' : 'No Syntax Barriers'}
                 </h4>
                 <p className="text-xs text-cyber-text-sec">
                   {language === 'id'
-                    ? 'Tidak boleh digunakan untuk meretas sistem milik pihak lain atau merusak keamanan digital secara tidak sah.'
-                    : 'Never used to disrupt external platforms or gain unauthorized access to servers.'}
+                    ? 'Dengan Vibe Coding, Anda tidak perlu menghafal tag HTML, sintaksis Python, atau sintaksis Javascript yang kaku.'
+                    : 'With Vibe Coding, there is no need to memorize complex HTML tags, Python libraries, or strict Javascript syntax.'}
                 </p>
               </div>
             </li>
@@ -176,12 +176,12 @@ export default function AboutOpenClaw() {
               <XCircle className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
               <div>
                 <h4 className="text-sm font-semibold text-theme-title">
-                  {language === 'id' ? 'Tidak Memerlukan Skill Programming' : 'No Programming Skill Needed'}
+                  {language === 'id' ? 'Pembelajaran Praktis, Bukan Sekadar Teori' : 'Practical Learning, Not Dry Lectures'}
                 </h4>
                 <p className="text-xs text-cyber-text-sec">
                   {language === 'id'
-                    ? 'Tidak perlu mengetik ribuan baris kode rumit untuk mengoperasikan asisten otomatisasi digital Anda.'
-                    : 'Does not require writing heavy lines of code or prior software development backgrounds.'}
+                    ? 'Kurikulum dirancang langsung ke studi kasus nyata sehingga apa yang dipelajari hari ini bisa langsung dipakai besok.'
+                    : 'The curriculum is built directly on top of real-world use cases so you can implement what you learn immediately.'}
                 </p>
               </div>
             </li>
@@ -189,12 +189,12 @@ export default function AboutOpenClaw() {
               <XCircle className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
               <div>
                 <h4 className="text-sm font-semibold text-theme-title">
-                  {language === 'id' ? 'Tidak Berbahaya bagi Komputer Anda' : 'No Risk to Your Device'}
+                  {language === 'id' ? 'Aman Dieksperimenkan di Sandbox Cloud' : 'Safe to Experiment in Cloud Sandbox'}
                 </h4>
                 <p className="text-xs text-cyber-text-sec">
                   {language === 'id'
-                    ? 'Eksperimen berjalan aman di lab cloud sandbox UnderOne, sehingga komputer pribadi Anda tetap terlindungi.'
-                    : 'Interactive labs are isolated in secure cloud environments, completely safe for your host PC.'}
+                    ? 'Kami menyediakan sandbox interaktif terisolasi sehingga uji coba asisten Anda tidak akan membahayakan komputer pribadi.'
+                    : 'We provide pre-configured isolated sandbox systems, completely safe for your host PC.'}
                 </p>
               </div>
             </li>
@@ -202,12 +202,12 @@ export default function AboutOpenClaw() {
               <XCircle className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
               <div>
                 <h4 className="text-sm font-semibold text-theme-title">
-                  {language === 'id' ? 'Bukan Sekadar Teori Rumit & Kaku' : 'Not Boring Theoretical Lectures'}
+                  {language === 'id' ? 'Mentoring Intensif untuk Garansi Anti-Stuck' : 'Intensive Mentoring for Guaranteed Progress'}
                 </h4>
                 <p className="text-xs text-cyber-text-sec">
                   {language === 'id'
-                    ? 'Tidak ada hafalan membosankan—materi dirancang penuh studi kasus nyata dan langsung bisa dicoba pemula.'
-                    : 'No abstract theory. You get pure practical, hands-on exercises to solve real work chores.'}
+                    ? 'Kami mendampingi setiap langkah belajar Anda melalui sesi interaktif terjadwal untuk menyelesaikan hambatan teknis.'
+                    : 'We accompany you through every stage with group Q&As and 1-on-1 sessions to untangle any technical block.'}
                 </p>
               </div>
             </li>
@@ -216,11 +216,11 @@ export default function AboutOpenClaw() {
 
       </div>
 
-      {/* Motivation Card for Career Changer */}
+      {/* Motivation Card */}
       <div className="bg-gradient-to-r from-brand-red/10 to-cyber-slate/20 border border-brand-red/20 rounded-2xl p-6 sm:p-8 text-left">
         <h3 className="text-lg font-bold text-theme-title mb-4 flex items-center space-x-2">
           <Sparkles className="w-5 h-5 text-accent-cyan" />
-          <span>{language === 'id' ? 'Kenapa Harus Belajar Otomatisasi AI Sekarang?' : 'Why Master AI Automation Today?'}</span>
+          <span>{language === 'id' ? 'Kenapa Harus Menguasai AI Agent & Vibe Coding Sekarang?' : 'Why Master AI Agents & Vibe Coding Today?'}</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
           <div className="space-y-3">
@@ -228,9 +228,9 @@ export default function AboutOpenClaw() {
               <TrendingUp className="w-4.5 h-4.5 text-accent-cyan shrink-0 mt-0.5" />
               <span className="text-cyber-text-sec">
                 {language === 'id' ? (
-                  <><strong className="text-theme-title font-semibold">Langkah Awal yang Sederhana:</strong> Menjadi pintu masuk memahami otomatisasi AI dan digital operations yang seru.</>
+                  <><strong className="text-theme-title font-semibold">Keahlian Masa Depan yang Sangat Dicari:</strong> Kebutuhan industri akan praktisi yang mampu menyusun otomatisasi berbasis AI Agent meroket drastis.</>
                 ) : (
-                  <><strong className="text-theme-title font-semibold">Simple Foundation:</strong> Builds a clear entry point into modern digital operations and the massive AI ecosystem.</>
+                  <><strong className="text-theme-title font-semibold">High-Demand Future Skill:</strong> Industry demand for professionals who can deploy and scale AI Agents is rising exponentially.</>
                 )}
               </span>
             </div>
@@ -238,9 +238,9 @@ export default function AboutOpenClaw() {
               <Compass className="w-4.5 h-4.5 text-accent-cyan shrink-0 mt-0.5" />
               <span className="text-cyber-text-sec">
                 {language === 'id' ? (
-                  <><strong className="text-theme-title font-semibold">Peluang Meningkatkan Karir:</strong> Keahlian langka yang membuat Anda sangat dihargai di tempat kerja karena mampu menghemat waktu perusahaan.</>
+                  <><strong className="text-theme-title font-semibold">Akselerasi Efisiensi Kerja:</strong> Menghemat puluhan jam kerja repetitif harian agar Anda bisa fokus pada kontribusi kreatif bernilai tinggi.</>
                 ) : (
-                  <><strong className="text-theme-title font-semibold">Career Enhancement:</strong> A high-demand skill that makes you highly valued in any office for saving corporate hours.</>
+                  <><strong className="text-theme-title font-semibold">Accelerated Work Efficiency:</strong> Reclaim dozens of repetitive hours every week to concentrate on high-value creative contributions.</>
                 )}
               </span>
             </div>
@@ -250,9 +250,9 @@ export default function AboutOpenClaw() {
               <BookOpen className="w-4.5 h-4.5 text-accent-cyan shrink-0 mt-0.5" />
               <span className="text-cyber-text-sec">
                 {language === 'id' ? (
-                  <><strong className="text-theme-title font-semibold">Menghemat Jam Kerja:</strong> Mengetahui cara mendelegasikan tugas berulang ke AI Agent agar Anda bisa fokus pada hal penting.</>
+                  <><strong className="text-theme-title font-semibold">Kebebasan Berkreasi Tanpa Batas:</strong> Dari ide langsung menjadi solusi otomatis nyata tanpa perlu pusing belajar bahasa pemrograman konvensional.</>
                 ) : (
-                  <><strong className="text-theme-title font-semibold">Saves Valuable Hours:</strong> Learn how to successfully delegate routine chores to AI Agents so you can focus on high-impact work.</>
+                  <><strong className="text-theme-title font-semibold">Boundless Creative Freedom:</strong> Translate ideas directly into working automation solutions without dealing with conventional syntax bugs.</>
                 )}
               </span>
             </div>
@@ -260,9 +260,9 @@ export default function AboutOpenClaw() {
               <ShieldCheck className="w-4.5 h-4.5 text-accent-cyan shrink-0 mt-0.5" />
               <span className="text-cyber-text-sec">
                 {language === 'id' ? (
-                  <><strong className="text-theme-title font-semibold">Membangun Kepercayaan Diri:</strong> Dari merasa gaptek, kini Anda terbukti bisa melatih dan menjadwalkan asisten digital pintar.</>
+                  <><strong className="text-theme-title font-semibold">Tingkatkan Nilai Tawar Profesional:</strong> Buktikan diri Anda sebagai profesional yang agile, solutif, dan mampu mengintegrasikan AI Agent ke alur kerja nyata.</>
                 ) : (
-                  <><strong className="text-theme-title font-semibold">Confidence Boost:</strong> Erase doubts of being non-technical by actively building, training, and scheduling digital assistants.</>
+                  <><strong className="text-theme-title font-semibold">Elevated Professional Value:</strong> Stand out as an agile practitioner who knows how to design and build AI-driven automation workflows.</>
                 )}
               </span>
             </div>

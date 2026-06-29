@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { Shield, Mail, Phone, MapPin, Linkedin, Instagram, Youtube, Twitter, Send, Check } from 'lucide-react';
+import { Shield, Mail, Phone, MapPin, Send, Check, MessageSquare } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
 export default function Footer() {
@@ -45,18 +45,16 @@ export default function Footer() {
             </p>
 
             {/* Social Medias */}
-            <div className="flex items-center space-x-4 pt-2">
-              <a href="#" className="w-8 h-8 rounded bg-cyber-navy border border-cyber-slate/30 hover:bg-brand-red hover:text-white text-cyber-text-sec flex items-center justify-center transition-colors">
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-8 h-8 rounded bg-cyber-navy border border-cyber-slate/30 hover:bg-brand-red hover:text-white text-cyber-text-sec flex items-center justify-center transition-colors">
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-8 h-8 rounded bg-cyber-navy border border-cyber-slate/30 hover:bg-brand-red hover:text-white text-cyber-text-sec flex items-center justify-center transition-colors">
-                <Youtube className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-8 h-8 rounded bg-cyber-navy border border-cyber-slate/30 hover:bg-brand-red hover:text-white text-cyber-text-sec flex items-center justify-center transition-colors">
-                <Twitter className="w-4 h-4" />
+            <div className="flex items-center space-x-3 pt-2">
+              <span className="text-xs font-mono text-cyber-text-muted">COMMUNITY:</span>
+              <a 
+                href="https://discord.gg/jGmkRjDTv" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="px-3 py-1.5 rounded bg-[#5865F2]/10 border border-[#5865F2]/30 hover:bg-[#5865F2] hover:text-white text-[#5865F2] flex items-center space-x-1.5 text-xs font-bold transition-all"
+              >
+                <MessageSquare className="w-3.5 h-3.5" />
+                <span>Discord Group</span>
               </a>
             </div>
           </div>

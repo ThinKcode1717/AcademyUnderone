@@ -28,6 +28,7 @@ export interface Testimonial {
   quote: string;
   rating: number;
   avatarUrl: string;
+  initials?: string;
 }
 
 export interface FAQItem {

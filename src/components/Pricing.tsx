@@ -41,24 +41,24 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
     {
       id: 'starter' as PackageType,
       name: t('price_package_starter_title'),
-      price: language === 'id' ? 'Rp 699.000' : '$49',
-      originalPrice: language === 'id' ? 'Rp 999.000' : '$69',
+      price: language === 'id' ? 'Rp 999.000' : '$69',
+      originalPrice: language === 'id' ? 'Rp 1.499.000' : '$99',
       duration: t('price_package_starter_duration'),
       description: t('price_package_starter_desc'),
       features: language === 'id' ? [
-        'Akses Materi Utama 4 Minggu',
-        'Akses Shared Sandbox Environment',
-        'Dukungan Forum Komunitas',
-        '2x per Minggu Group Q&A Session',
+        'Akses Modul Utama Inti (4 Minggu)',
+        'Shared Source & Automation Environment Siap Pakai',
+        'Komunitas Kolaboratif & Networking',
+        'Live Group Q&A (2x seminggu) - Garansi anti-stuck!',
         'Sertifikat Kelulusan Resmi',
-        'Sangat Pas Untuk Pemula Murni'
+        'Premium E-Book & Library Template AI Agent'
       ] : [
         '4-Week Core Syllabus Access',
-        'Shared Sandbox Lab Environment',
-        'Active Learning Support Forum',
-        '2x per Week Group Q&A Sessions',
+        'Ready-to-Use Shared Source & Automation Environment',
+        'Collaborative Community & Networking',
+        'Live Group Q&A (2x/week) - Anti-stuck Guarantee!',
         'Official Completion Certificate',
-        'Highly Suitable for Pure Beginners'
+        'Premium E-Book & AI Agent Template Library'
       ],
       cta: t('price_package_starter_cta'),
       featured: false,
@@ -66,26 +66,24 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
     {
       id: 'standard' as PackageType,
       name: t('price_package_standard_title'),
-      price: language === 'id' ? 'Rp 1.499.000' : '$99',
-      originalPrice: language === 'id' ? 'Rp 1.999.000' : '$139',
+      price: language === 'id' ? 'Rp 1.999.000' : '$139',
+      originalPrice: language === 'id' ? 'Rp 2.999.000' : '$199',
       duration: t('price_package_standard_duration'),
       description: t('price_package_standard_desc'),
       features: language === 'id' ? [
-        'Semua Fitur Paket Starter',
-        'Tambahan 2 Bulan Akses Portal',
-        'Akses Laboratorium Private Sandbox',
-        'Dukungan Layanan Priority Support',
-        '1x per Bulan Sesi Mentoring 1-on-1',
-        'Review Resume & Profil LinkedIn',
-        '81% Siswa Memilih Paket Ini'
+        'Semua Benefit Paket Starter Terbuka Lengkap',
+        '2 Bulan Eksklusif VIP Team UnderOne (Konsultasi)',
+        'Eksklusif Source Code & Skill Buatan Team UnderOne',
+        'Dukungan Jalur Cepat (Priority Support)',
+        '1x per Bulan Sesi Mentoring Privat (1-on-1)',
+        'Audit Resume & Optimasi Profil LinkedIn'
       ] : [
-        'All Starter Package features',
-        'Additional 2 Months Portal Access',
-        'Private Sandbox Lab Access',
-        'Priority Support Handling',
-        '1x per Month 1-on-1 Mentoring Session',
-        'Resume & LinkedIn Profile Review',
-        '81% of Students Choose This Plan'
+        'All Starter Package Benefits Unlocked',
+        '2 Months Exclusive VIP Consulting (UnderOne Team)',
+        'Exclusive Source Code & Skills by Team UnderOne',
+        'Priority Support Pathway',
+        '1x per Month Private 1-on-1 Mentoring',
+        'Resume Audit & LinkedIn Optimization'
       ],
       cta: t('price_package_standard_cta'),
       featured: true,
@@ -94,26 +92,26 @@ export default function Pricing({ onSelectPackage }: PricingProps) {
     {
       id: 'premium' as PackageType,
       name: t('price_package_premium_title'),
-      price: language === 'id' ? 'Rp 2.299.000' : '$149',
-      originalPrice: language === 'id' ? 'Rp 2.999.000' : '$199',
+      price: language === 'id' ? 'Rp 2.999.000' : '$199',
+      originalPrice: language === 'id' ? 'Rp 3.999.000' : '$269',
       duration: t('price_package_premium_duration'),
       description: t('price_package_premium_desc'),
       features: language === 'id' ? [
-        'Semua Fitur Paket Standard',
-        'Tambahan 6 Bulan Akses Portal',
-        'Akses Laboratorium Premium Sandbox',
-        'Dukungan Layanan VIP 24/7',
-        '2x per Bulan Sesi Mentoring 1-on-1',
-        'Akses Prioritas Update Modul Baru',
+        'Semua Benefit Paket Standard Terbuka Lengkap',
+        '6 Bulan Akses VIP Team UnderOne (Konsultasi)',
+        'Full Access Premium Skill Custom & Source Code',
+        'Dukungan VIP Hub 24/7',
+        '2x per Bulan Sesi Mentoring Privat (1-on-1)',
+        'Golden Ticket: Prioritas Update Modul Baru',
         'Program Penyaluran Portofolio Prioritas'
       ] : [
-        'All Standard Package features',
-        'Additional 6 Months Portal Access',
-        'Premium Dedicated Sandbox Lab',
-        '24/7 Priority VIP Support',
-        '2x per Month 1-on-1 Mentoring Sessions',
-        'Priority Access to New Syllabus Updates',
-        'Priority Career Referral & Matching Services'
+        'All Standard Package Benefits Unlocked',
+        '6 Months VIP Team UnderOne Access (Consulting)',
+        'Full Access Premium Custom Skills & Source Code',
+        '24/7 VIP Hub Support',
+        '2x per Month Private 1-on-1 Mentoring',
+        'Golden Ticket: Priority New Module Updates',
+        'Priority Portfolio Referral Program'
       ],
       cta: t('price_package_premium_cta'),
       featured: false,

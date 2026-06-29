@@ -145,7 +145,7 @@ export default function Hero({ onCtaclick, onSecondaryClick }: HeroProps) {
                   </div>
                   <div className="flex items-center space-x-1.5 text-xs text-cyber-text-muted font-mono">
                     <TerminalIcon className="w-3.5 h-3.5 text-accent-cyan" />
-                    <span>openclaw-pemula-v3.sh</span>
+                    <span>vibe-coder-agent.sh</span>
                   </div>
                   <div className="w-12"></div> {/* spacer */}
                 </div>
@@ -153,7 +153,7 @@ export default function Hero({ onCtaclick, onSecondaryClick }: HeroProps) {
                 {/* Shell Content */}
                 <div className="p-5 font-mono text-xs sm:text-sm text-left h-80 overflow-y-auto bg-[#050b16] space-y-2 select-none">
                   {terminalText.map((line, index) => {
-                    const isCommand = line.startsWith('root@') || line.startsWith('openclaw-session_1$') || line.startsWith('openclaw-beginner');
+                    const isCommand = line.startsWith('root@') || line.startsWith('vibe-session_1$') || line.startsWith('vibe-beginner') || line.startsWith('openclaw-session_1$') || line.startsWith('openclaw-beginner');
                     const isSuccess = line.startsWith('[+]') || line.includes('✓');
                     const isAlert = line.includes('Website Simulasi') || line.includes('Simulation Website');
                     

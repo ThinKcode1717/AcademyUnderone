@@ -14,19 +14,51 @@ export default function SupportedInstitution() {
 
   const instructors = [
     {
-      name: 'Wira Kusuma',
-      role: language === 'id' ? 'Instruktur Utama Otomatisasi' : 'Lead Automation Instructor',
-      photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer',
-      story: t('instructor_wira_story'),
-      philosophy: t('instructor_wira_philo'),
+      name: 'Riswan Murisidin',
+      role: language === 'id' ? 'Lead AI Agent Engineer' : 'Lead AI Agent Engineer',
+      initials: 'RM',
+      story: language === 'id' 
+        ? 'Bekerja penuh waktu mendesain arsitektur AI Agent mandiri untuk berbagai alur proses operasional bisnis modern.' 
+        : 'Full-time specialist designing autonomous AI Agent architectures for modern operational workflows.',
+      philosophy: language === 'id' 
+        ? 'Automasi cerdas adalah kunci mendelegasikan tugas repetitif sehingga kita bisa fokus pada karya strategis.' 
+        : 'Smart automation is the key to delegating repetitive tasks so we can focus on strategic creations.',
       linkedIn: '#'
     },
     {
-      name: 'Fiona Amanda',
-      role: 'Mentor & Community Lead',
-      photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80&referrerpolicy=no-referrer',
-      story: t('instructor_fiona_story'),
-      philosophy: t('instructor_fiona_philo'),
+      name: 'Yoga Adi Pratama',
+      role: language === 'id' ? 'Senior Vibe Coder' : 'Senior Vibe Coder',
+      initials: 'YP',
+      story: language === 'id' 
+        ? 'Berpengalaman membangun prototipe cepat berbasis instruksi bahasa alami (natural language programming) dan asisten pintar.' 
+        : 'Experienced in rapid prototyping using natural language programming instructions and smart assistants.',
+      philosophy: language === 'id' 
+        ? 'Vibe coding memberikan kebebasan berpikir kreatif tanpa terhambat kerumitan sintaksis kode tradisional.' 
+        : 'Vibe coding grants creative freedom without being slowed down by traditional syntax syntax struggles.',
+      linkedIn: '#'
+    },
+    {
+      name: 'Akbar Rayhan',
+      role: language === 'id' ? 'AI Operations Specialist' : 'AI Operations Specialist',
+      initials: 'AR',
+      story: language === 'id' 
+        ? 'Mengkhususkan diri pada integrasi sistem cloud, konfigurasi API key, dan sinkronisasi log otomatisasi harian.' 
+        : 'Specializing in cloud integrations, API key provisioning, and automated work log syncing.',
+      philosophy: language === 'id' 
+        ? 'Ekosistem otomatisasi yang kokoh selalu berakar pada setup lingkungan yang teratur dan aman.' 
+        : 'A robust automation ecosystem is always rooted in organized and highly secure environments.',
+      linkedIn: '#'
+    },
+    {
+      name: 'Ayi',
+      role: language === 'id' ? 'Learning Facilitator & Mentor' : 'Learning Facilitator & Mentor',
+      initials: 'AY',
+      story: language === 'id' 
+        ? 'Siap mendampingi keluhan teknis harian peserta dan memastikan setiap modul praktik dapat dieksekusi dengan mulus.' 
+        : 'Ready to assist students with daily technical issues and ensure every practical exercise runs flawlessly.',
+      philosophy: language === 'id' 
+        ? 'Tidak ada pertanyaan yang terlalu sederhana. Pemahaman kokoh dimulai dari keberanian untuk bertanya.' 
+        : 'No question is too simple. Solid comprehension begins with the courage to seek answers.',
       linkedIn: '#'
     }
   ];
@@ -94,11 +126,13 @@ export default function SupportedInstitution() {
                 <li className="flex items-start space-x-3 text-sm text-cyber-text-sec">
                   <Award className="w-5 h-5 text-accent-cyan mt-0.5 shrink-0" />
                   <div>
-                    <strong className="text-theme-title font-semibold block">Curriculum for Clarity</strong>
+                    <strong className="text-theme-title font-semibold block">
+                      {language === 'id' ? 'Kurikulum Terstruktur & Praktis' : 'Structured & Practical Syllabus'}
+                    </strong>
                     <span className="text-xs text-cyber-text-muted">
                       {language === 'id'
-                        ? 'Setiap materi dirancang khusus demi kemudahan pemahaman tanpa jargon rumit.'
-                        : 'Every piece of curriculum is explicitly designed for easy comprehension without complex jargon.'}
+                        ? 'Materi dirancang berbasis studi kasus riil dunia kerja, tanpa perlu menghafal baris kode yang rumit.'
+                        : 'Syllabus designed around real workplace projects, without the need for memorizing complex syntax.'}
                     </span>
                   </div>
                 </li>
@@ -106,12 +140,12 @@ export default function SupportedInstitution() {
                   <ShieldCheck className="w-5 h-5 text-accent-green mt-0.5 shrink-0" />
                   <div>
                     <strong className="text-theme-title font-semibold block">
-                      {language === 'id' ? 'Sabar & Terlatih Mengajar' : 'Patient & Trained Mentors'}
+                      {language === 'id' ? 'Didampingi Praktisi Berpengalaman' : 'Guided by Active Practitioners'}
                     </strong>
                     <span className="text-xs text-cyber-text-muted">
                       {language === 'id'
-                        ? 'Instruktur dilatih khusus untuk mendampingi pemula dari benar-benar nol.'
-                        : 'Instructors are explicitly trained to guide absolute beginners from level zero.'}
+                        ? 'Interaksi langsung dengan mentor berpengalaman yang aktif membangun sistem otomatisasi di industri.'
+                        : 'Direct interaction with experienced mentors actively building automation systems in the industry.'}
                     </span>
                   </div>
                 </li>
@@ -119,12 +153,12 @@ export default function SupportedInstitution() {
                   <Users className="w-5 h-5 text-accent-gold mt-0.5 shrink-0" />
                   <div>
                     <strong className="text-theme-title font-semibold block">
-                      {language === 'id' ? 'Lab Sandbox Terawat' : 'Well-Maintained Sandbox Labs'}
+                      {language === 'id' ? 'Lingkungan Kerja & Sandbox Siap Pakai' : 'Ready-to-Use Sandbox Environments'}
                     </strong>
                     <span className="text-xs text-cyber-text-muted">
                       {language === 'id'
-                        ? 'Infrastruktur laboratorium simulasi kami dipantau secara profesional & aman.'
-                        : 'Our laboratory simulator is safely managed and monitored on secure cloud servers.'}
+                        ? 'Praktik langsung di sandbox terisolasi tanpa perlu pusing melakukan instalasi atau merusak perangkat Anda.'
+                        : 'Hands-on practice in isolated sandboxes without installation friction or risk of system failure.'}
                     </span>
                   </div>
                 </li>
@@ -132,12 +166,12 @@ export default function SupportedInstitution() {
                   <Briefcase className="w-5 h-5 text-brand-red mt-0.5 shrink-0" />
                   <div>
                     <strong className="text-theme-title font-semibold block">
-                      {language === 'id' ? 'Konten Terus Diperbarui' : 'Continuously Updated Content'}
+                      {language === 'id' ? 'Sertifikasi Kredibel Bersama Feducation' : 'Credible Joint Certification'}
                     </strong>
                     <span className="text-xs text-cyber-text-muted">
                       {language === 'id'
-                        ? 'Materi di-update rutin berdasarkan umpan balik siswa agar selalu relevan.'
-                        : 'Syllabus is regularly refreshed based on student feedback to match industry trends.'}
+                        ? 'Lulus dengan sertifikat resmi hasil kolaborasi yang diakui dan siap memperkuat portofolio Anda.'
+                        : 'Graduate with an official, recognized certificate to strengthen your professional portfolio.'}
                     </span>
                   </div>
                 </li>
@@ -165,12 +199,9 @@ export default function SupportedInstitution() {
 
                     <div className="flex items-center justify-between pt-2 border-t border-cyber-slate/30">
                       <div className="flex items-center space-x-3">
-                        <img
-                          src={test.avatarUrl}
-                          alt={test.name}
-                          referrerPolicy="no-referrer"
-                          className="w-10 h-10 rounded-full border border-cyber-slate object-cover shrink-0"
-                        />
+                        <div className="w-10 h-10 rounded-full border border-brand-red/30 bg-brand-red/10 text-brand-red-light font-mono flex items-center justify-center text-sm font-bold shrink-0 select-none">
+                          {test.initials || test.name.split(' ').map(n => n[0]).join('')}
+                        </div>
                         <div>
                           <span className="text-sm font-bold text-theme-title block">{test.name}</span>
                           <span className="text-xs text-cyber-text-muted block">
@@ -202,11 +233,9 @@ export default function SupportedInstitution() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
             {instructors.map((instructor, idx) => (
               <div key={idx} className="bg-cyber-charcoal/50 border border-cyber-slate/50 rounded-2xl p-6 flex flex-col sm:flex-row gap-6 hover:border-brand-red/30 transition-all duration-300">
-                <img
-                  src={instructor.photo}
-                  alt={instructor.name}
-                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover border-2 border-cyber-slate shrink-0 mx-auto sm:mx-0"
-                />
+                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-brand-red/10 border-2 border-brand-red/30 flex items-center justify-center text-brand-red font-mono text-xl sm:text-2xl font-black shrink-0 mx-auto sm:mx-0 select-none">
+                  {instructor.initials}
+                </div>
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
                     <div>

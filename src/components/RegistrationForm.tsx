@@ -216,8 +216,8 @@ export default function RegistrationForm({
   };
 
   const getWaLink = () => {
-    const textId = `Halo OpenClaw Academy, saya ${fullName} baru saja mendaftar untuk paket ${formPackage}. Bisa bantu langkah selanjutnya?`;
-    const textEn = `Hello OpenClaw Academy, I am ${fullName} and I just registered for the ${formPackage} plan. Can you help me with the next steps?`;
+    const textId = `Halo UnderOne Academy, saya ${fullName} baru saja mendaftar untuk paket ${formPackage}. Bisa bantu langkah selanjutnya?`;
+    const textEn = `Hello UnderOne Academy, I am ${fullName} and I just registered for the ${formPackage} plan. Can you help me with the next steps?`;
     return `https://wa.me/6285119551741?text=${encodeURIComponent(language === 'id' ? textId : textEn)}`;
   };
 
@@ -233,7 +233,7 @@ export default function RegistrationForm({
             <span>{language === 'id' ? 'Formulir Pendaftaran' : 'Registration Form'}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-theme-title">
-            {language === 'id' ? 'Mulai Belajar OpenClaw Sekarang' : 'Start Learning OpenClaw Today'}
+            {language === 'id' ? 'Mulai Belajar AI Agent & Vibe Coding Sekarang' : 'Start Learning AI Agent & Vibe Coding Today'}
           </h2>
           <p className="text-cyber-text-sec text-sm sm:text-base max-w-2xl mx-auto">
             {language === 'id'
@@ -279,8 +279,8 @@ export default function RegistrationForm({
 
             <p className="text-cyber-text-sec text-sm sm:text-base max-w-lg mx-auto leading-relaxed text-center">
               {language === 'id'
-                ? 'Tim pendaftaran OpenClaw Academy akan segera menghubungi Anda dalam waktu maksimal 24 jam melalui email atau WhatsApp untuk proses aktivasi dan panduan login kelas perdana Anda.'
-                : 'Our OpenClaw Academy coordinators will contact you within 24 hours via email or WhatsApp to set up sandbox access keys and your onboarding session.'}
+                ? 'Tim pendaftaran UnderOne Academy akan segera menghubungi Anda dalam waktu maksimal 24 jam melalui email atau WhatsApp untuk proses aktivasi dan panduan login kelas perdana Anda.'
+                : 'Our UnderOne Academy coordinators will contact you within 24 hours via email or WhatsApp to set up sandbox access keys and your onboarding session.'}
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -400,15 +400,15 @@ export default function RegistrationForm({
                     >
                       {language === 'id' ? (
                         <>
-                          <option value="starter">Starter Package (Rp 699.000) - Cocok untuk budget</option>
-                          <option value="standard">Standard Package (Rp 1.499.000) - Terpopuler</option>
-                          <option value="premium">Premium Package (Rp 2.299.000) - Semua Akses</option>
+                          <option value="starter">Starter Package (Rp 999.000) - Cocok untuk budget</option>
+                          <option value="standard">Standard Package (Rp 1.999.000) - Terpopuler</option>
+                          <option value="premium">Premium Package (Rp 2.999.000) - Semua Akses</option>
                         </>
                       ) : (
                         <>
-                          <option value="starter">Starter Package ($49) - Budget-friendly</option>
-                          <option value="standard">Standard Package ($99) - Most Popular</option>
-                          <option value="premium">Premium Package ($149) - All-Access</option>
+                          <option value="starter">Starter Package ($69) - Budget-friendly</option>
+                          <option value="standard">Standard Package ($139) - Most Popular</option>
+                          <option value="premium">Premium Package ($199) - All-Access</option>
                         </>
                       )}
                     </select>
@@ -451,10 +451,10 @@ export default function RegistrationForm({
                   </div>
                 </div>
 
-                {/* OpenClaw Experience Dropdown */}
+                {/* Experience Dropdown */}
                 <div className="space-y-2">
                   <label htmlFor="reg-experience" className="block text-sm font-semibold text-theme-title">
-                    {language === 'id' ? 'Pengalaman dengan OpenClaw' : 'Experience with OpenClaw'} <span className="text-brand-red">*</span>
+                    {language === 'id' ? 'Pengalaman dengan AI & Otomatisasi' : 'Experience with AI & Automation'} <span className="text-brand-red">*</span>
                   </label>
                   <div className="relative">
                     <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-cyber-text-muted">
@@ -577,8 +577,8 @@ export default function RegistrationForm({
                   />
                   <span>
                     {language === 'id'
-                      ? 'Saya setuju dengan syarat & ketentuan serta kebijakan privasi OpenClaw Academy. Kami berjanji tidak akan menyepam email Anda.'
-                      : 'I agree to the terms, conditions and privacy policy of OpenClaw Academy. We promise never to spam your inbox.'}
+                      ? 'Saya setuju dengan syarat & ketentuan serta kebijakan privasi UnderOne Academy. Kami berjanji tidak akan menyepam email Anda.'
+                      : 'I agree to the terms, conditions and privacy policy of UnderOne Academy. We promise never to spam your inbox.'}
                   </span>
                 </label>
                 {errors.agree && <span className="text-xs text-brand-red block">{errors.agree}</span>}
