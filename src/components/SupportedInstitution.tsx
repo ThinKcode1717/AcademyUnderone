@@ -50,9 +50,9 @@ export default function SupportedInstitution() {
       linkedIn: '#'
     },
     {
-      name: 'Ayi',
+      name: 'Faalih Hibban Hilmi',
       role: language === 'id' ? 'Learning Facilitator & Mentor' : 'Learning Facilitator & Mentor',
-      initials: 'AY',
+      initials: 'FH',
       story: language === 'id' 
         ? 'Siap mendampingi keluhan teknis harian peserta dan memastikan setiap modul praktik dapat dieksekusi dengan mulus.' 
         : 'Ready to assist students with daily technical issues and ensure every practical exercise runs flawlessly.',
