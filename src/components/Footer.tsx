@@ -165,13 +165,13 @@ export default function Footer() {
                 <span>cs@underone.id</span>
               </a>
               <a 
-                href="https://wa.me/6289601486350" 
+                href="https://wa.me/62895401379738" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="flex items-center space-x-2 hover:text-white transition-colors duration-200"
               >
                 <Phone className="w-4 h-4 text-brand-red flex-shrink-0" />
-                <span>+62 896-0148-6350 (WhatsApp)</span>
+                <span>+62 895-4013-79738 (WhatsApp)</span>
               </a>
               <a 
                 href="https://maps.app.goo.gl/ZqZY57xBUpF4FmAT9" 
